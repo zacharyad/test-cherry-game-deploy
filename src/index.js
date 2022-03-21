@@ -1,5 +1,5 @@
 import Phaser from 'phaser';
-import logoImg from './assets/logo.png';
+
 
 class MyGame extends Phaser.Scene
 {
@@ -10,21 +10,24 @@ class MyGame extends Phaser.Scene
 
     preload ()
     {
-        this.load.image('logo', logoImg);
+this.load.image('base_tiles', './src/assets/tilemaps/bug.png')      
+this.load.tilemapTiledJSON('map', './src/assets/tilemaps/test_tiled.json');
+this.load.image('tiles1', './src/assets/tilesets/Tile001.png');
+this.load.image('tiles2', './src/assets/tilesets/Tile002.png');
+  
     }
       
     create ()
     {
-        const logo = this.add.image(400, 150, 'logo');
-      
-        this.tweens.add({
-            targets: logo,
-            y: 450,
-            duration: 2000,
-            ease: "Power2",
-            yoyo: true,
-            loop: -1
-        });
+        console.log(this.cache.tilemap.get('map').data);
+        //this.add.image(0, 0, 'base_tiles')
+
+        const map = this.make.tilemap({key: 'map', tileWidth: 32, tileHeight: 32});
+       
+        const tileset = map.addTilesetImage('Tile 1', 'tiles1');
+        const tileset2 = map.addTilesetImage('tile 2', 'tiles2');
+        map.createLayer('Furniture', tileset);
+        map.createLayer('Tile Layer 2', tileset2);
     }
 }
 

@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.8" tiledversion="1.8.2" orientation="orthogonal" renderorder="right-down" width="25" height="20" tilewidth="32" tileheight="32" infinite="0" nextlayerid="3" nextobjectid="1">
+ <editorsettings>
+  <export target="test_tiled.json" format="json"/>
+ </editorsettings>
+ <tileset firstgid="1" source="../tilesets/Tile1.tsx"/>
+ <tileset firstgid="257" source="../tilesets/Tile2.tsx"/>
+ <tileset firstgid="513" name="tile 3" tilewidth="1057" tileheight="537" tilecount="24" columns="0">
+  <grid orientation="orthogonal" width="1" height="1"/>
+  <tile id="0">
+   <image width="250" height="173" source="../../../TDS-Tileset/Objects/PNG/objects_house_0017_Layer-18.png"/>
+  </tile>
+  <tile id="1">
+   <image width="250" height="173" source="../../../TDS-Tileset/Objects/PNG/objects_house_0018_Layer-19.png"/>
+  </tile>
+  <tile id="2">
+   <image width="250" height="173" source="../../../TDS-Tileset/Objects/PNG/objects_house_0019_Layer-20.png"/>
+  </tile>
+  <tile id="3">
+   <image width="212" height="218" source="../../../TDS-Tileset/Objects/PNG/objects_house_0025_Layer-26.png"/>
+  </tile>
+  <tile id="4">
+   <image width="211" height="218" source="../../../TDS-Tileset/Objects/PNG/objects_house_0026_Layer-27.png"/>
+  </tile>
+  <tile id="5">
+   <image width="212" height="218" source="../../../TDS-Tileset/Objects/PNG/objects_house_0027_Layer-28.png"/>
+  </tile>
+  <tile id="6">
+   <image width="218" height="219" source="../../../TDS-Tileset/Objects/PNG/objects_house_0030_Layer-31.png"/>
+  </tile>
+  <tile id="7">
+   <image width="218" height="219" source="../../../TDS-Tileset/Objects/PNG/objects_house_0031_Layer-32.png"/>
+  </tile>
+  <tile id="8">
+   <image width="218" height="219" source="../../../TDS-Tileset/Objects/PNG/objects_house_0032_Layer-33.png"/>
+  </tile>
+  <tile id="9">
+   <image width="917" height="537" source="../../../TDS-Tileset/Objects/PNG/objects_house_0045_Layer-46.png"/>
+  </tile>
+  <tile id="10">
+   <image width="918" height="537" source="../../../TDS-Tileset/Objects/PNG/objects_house_0046_Layer-47.png"/>
+  </tile>
+  <tile id="11">
+   <image width="918" height="537" source="../../../TDS-Tileset/Objects/PNG/objects_house_0047_Layer-48.png"/>
+  </tile>
+  <tile id="12">
+   <image width="519" height="430" source="../../../TDS-Tileset/Objects/PNG/objects_house_0048_Layer-49.png"/>
+  </tile>
+  <tile id="13">
+   <image width="519" height="431" source="../../../TDS-Tileset/Objects/PNG/objects_house_0049_Layer-50.png"/>
+  </tile>
+  <tile id="14">
+   <image width="519" height="431" source="../../../TDS-Tileset/Objects/PNG/objects_house_0050_Layer-51.png"/>
+  </tile>
+  <tile id="15">
+   <image width="316" height="314" source="../../../TDS-Tileset/Objects/PNG/objects_house_0051_Layer-52.png"/>
+  </tile>
+  <tile id="16">
+   <image width="316" height="314" source="../../../TDS-Tileset/Objects/PNG/objects_house_0052_Layer-53.png"/>
+  </tile>
+  <tile id="17">
+   <image width="315" height="314" source="../../../TDS-Tileset/Objects/PNG/objects_house_0053_Layer-54.png"/>
+  </tile>
+  <tile id="18">
+   <image width="423" height="408" source="../../../TDS-Tileset/Objects/PNG/objects_house_0054_Layer-55.png"/>
+  </tile>
+  <tile id="19">
+   <image width="423" height="408" source="../../../TDS-Tileset/Objects/PNG/objects_house_0055_Layer-56.png"/>
+  </tile>
+  <tile id="20">
+   <image width="440" height="472" source="../../../TDS-Tileset/Objects/PNG/objects_house_0056_Layer-57.png"/>
+  </tile>
+  <tile id="21">
+   <image width="440" height="473" source="../../../TDS-Tileset/Objects/PNG/objects_house_0057_Layer-58.png"/>
+  </tile>
+  <tile id="22">
+   <image width="1057" height="290" source="../../../TDS-Tileset/Objects/PNG/objects_house_0058_Layer-59.png"/>
+  </tile>
+  <tile id="23">
+   <image width="1057" height="290" source="../../../TDS-Tileset/Objects/PNG/objects_house_0059_Layer-60.png"/>
+  </tile>
+ </tileset>
+ <layer id="1" name="Furniture" width="25" height="20">
+  <data encoding="base64">
+   TwAAAE8AAABPAAAATwAAAE8AAABPAAAATwAAAE8AAABPAAAATwAAAE8AAABPAAAATwAAAE8AAAAjAAAAJAAAACMAAAAkAAAAIwAAACQAAABPAAAAcQEAAE8AAABPAAAATwAAABoBAACFAQAAhgEAAIgBAAAaAQAAGgEAABoBAAAaAQAAGgEAABoBAAAaAQAAGgEAABoBAAAaAQAAMwAAADQAAAAzAAAANAAAADMAAAA0AAAAGgEAABoBAAAaAQAASAEAABoBAABGAAAAlQEAAJYBAACYAQAAGgEAABoBAAAaAQAAGgEAABoBAAAaAQAAGgEAABoBAAAaAQAAGgEAABoBAAAaAQAAGgEAABoBAAAaAQAAGgEAABoBAAAaAQAAGgEAAFgBAABFAAAAVgAAABoBAAAaAQAAGgEAABoBAAAaAQAAGgEAABoBAAAaAQAAGgEAABoBAAAaAQAAGgEAABoBAAAaAQAAGgEAABoBAAAaAQAAGgEAABoBAAAaAQAAGgEAABoBAABoAQAAVQAAABoBAAAaAQAAGgEAABoBAAAaAQAAGgEAABoBAAAaAQAAGgEAABoBAAAaAQAAGgEAABoBAAAaAQAAGgEAABoBAAAaAQAAGgEAABoBAAAaAQAAGgEAABoBAAAaAQAAGgEAABoBAABEAAAAGgEAABoBAAAaAQAAGgEAABoBAAAaAQAAGgEAABoBAAAaAQAAGgEAABoBAAAaAQAAGgEAABoBAAAaAQAAGgEAABoBAAAaAQAAGgEAABoBAAAaAQAAGgEAABoBAAAaAQAAVAAAABoBAAAaAQAAGgEAABoBAAAaAQAAGgEAABoBAAAaAQAAGgEAABoBAAAaAQAAGgEAABoBAAAaAQAAGgEAABoBAAAaAQAAGgEAABoBAAAaAQAAGgEAABoBAADXAAAAGgEAABoBAAAaAQAAGgEAABoBAAAaAQAAGgEAABoBAAAaAQAAGgEAABoBAAAaAQAAGgEAABoBAAAaAQAAGgEAABoBAAAaAQAAGgEAABoBAAAaAQAAGgEAABoBAAAaAQAA5wAAABoBAAAaAQAAGgEAABoBAAAaAQAAGgEAABoBAAAaAQAAGgEAABoBAAAaAQAAGgEAABoBAAAaAQAAGgEAABoBAAAaAQAAGgEAABoBAAAaAQAAGgEAABoBAAAaAQAAGgEAAPcAAAAaAQAAGgEAABoBAAAaAQAAGgEAABoBAAAaAQAAGgEAABoBAAAaAQAAVwAAAGUAAABmAAAAeAAAABoBAAAaAQAAGgEAABoBAAAaAQAAGgEAABoBAAAaAQAAGgEAABoBAAAaAQAA6gAAAEQAAAAaAQAAGgEAABoBAAAaAQAAGgEAABoBAAAaAQAAGgEAAGcAAAB1AAAAdgAAAIgAAAAaAQAAGgEAABoBAAAaAQAAGgEAABoBAAAaAQAAGgEAABoBAAAaAQAAGgEAABoBAABUAAAAGgEAABoBAAAaAQAAGgEAABoBAAAaAQAAGgEAABoBAAAaAQAAGgEAABoBAAAaAQAAGgEAABoBAAAaAQAAGgEAABoBAAAaAQAAGgEAABoBAAAaAQAAGgEAAEQAAAAaAQAAGgEAABoBAAAaAQAAGgEAABoBAAAaAQAAGgEAABoBAAAaAQAAGgEAABoBAAAaAQAAGgEAABoBAAAaAQAAGgEAABoBAAAaAQAAGgEAABoBAAAaAQAAGgEAABoBAABUAAAAGgEAAEUAAAAaAQAAGgEAABoBAAAaAQAAGgEAABoBAAAaAQAAGgEAABoBAABxAAAAcgAAABoBAAAaAQAAGgEAABoBAAAaAQAAGgEAABoBAAAaAQAAGgEAABoBAAAaAQAAGgEAABoBAABVAAAAGgEAABoBAAAaAQAAGgEAABoBAAAaAQAAGgEAABoBAAAaAQAAgQAAAIIAAAAaAQAAGgEAABoBAAC3AAAAuAAAABoBAAAaAQAAGgEAABoBAAAaAQAAGgEAABoBAAAaAQAAGgEAABoBAAAaAQAAGgEAABoBAAAaAQAAGgEAABoBAAAaAQAAtwAAALgAAAAaAQAAGgEAABoBAAAaAQAAxwAAAMgAAAAaAQAAGgEAABoBAAAaAQAAGgEAABoBAAAaAQAAGgEAABoBAAAaAQAAGgEAABoBAAAaAQAAGgEAABoBAAAaAQAAGgEAAMcAAADIAAAAGgEAABoBAAAaAQAAGgEAABoBAAAaAQAAGgEAABoBAAAaAQAAGgEAABoBAAAaAQAAGgEAABoBAABEAAAAGgEAABoBAAAaAQAAGgEAABoBAAAaAQAAGgEAABoBAAAaAQAAGgEAABoBAAAaAQAAGgEAABoBAAAaAQAAGgEAABoBAAAaAQAAGgEAABoBAAAaAQAAGgEAABoBAAAaAQAAVAAAABoBAAAaAQAAGgEAAEQAAAAaAQAAGgEAABoBAAAaAQAAGgEAABoBAAAaAQAAGgEAABoBAAAaAQAAGgEAABoBAAAaAQAAGgEAABoBAAAaAQAAGgEAABoBAAAaAQAARgAAABoBAAAaAQAAGgEAABoBAABUAAAAGgEAABoBAAAaAQAAGgEAABoBAAAaAQAAGgEAABoBAAAaAQAAGgEAABoBAAAaAQAAGgEAABoBAAAaAQAAGgEAABoBAAAaAQAAGgEAAFYAAAA=
+  </data>
+ </layer>
+</map>
