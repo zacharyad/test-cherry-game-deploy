@@ -12,7 +12,7 @@ class MyGame extends Phaser.Scene
     {
        // this.load.image('base_tiles', './src/assets/tilemaps/bug.png')      
         this.load.tilemapTiledJSON('map', './src/assets/tilemaps/GHLobby1.json');
-        this.load.image('lobbyTiles', './src/assets/tilesets/LobbyTiles.png');
+        this.load.image('lobby', './src/assets/tilesets/LobbyTiles.png');
         this.load.image('text', './src/assets/tilesets/Text.png');
   
     }
@@ -24,13 +24,13 @@ class MyGame extends Phaser.Scene
 
         const map = this.make.tilemap({key: 'map', tileWidth: 32, tileHeight: 32});
        
-        const tileset = map.addTilesetImage('Walls and Floor', 'lobbyTiles');
-        const tileset2 = map.addTilesetImage('Text', 'text');
-        map.createLayer('Floor and Wall', tileset);
-        map.createLayer('Furniture', tileset);
-        map.createLayer('Objects', tileset);
-        map.createLayer('Letters', tileset2);
-        map.createLayer('Curtains', tileset);
+        const lobbyTiles = map.addTilesetImage('Walls and Floor', 'lobby');
+        const textTiles = map.addTilesetImage('Text', 'text');
+        map.createLayer('Floor and Wall', lobbyTiles);
+        map.createLayer('Furniture', lobbyTiles);
+        map.createLayer('Objects', lobbyTiles);
+        map.createLayer('Letters', textTiles);
+        map.createLayer('Curtains', lobbyTiles);
     }
 }
 
