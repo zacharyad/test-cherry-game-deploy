@@ -11,7 +11,7 @@ class MyGame extends Phaser.Scene
     preload ()
     {
        // this.load.image('base_tiles', './src/assets/tilemaps/bug.png')      
-        this.load.tilemapTiledJSON('map', './src/assets/tilemaps/GHLobby1.json');
+        this.load.tilemapTiledJSON('map', './src/assets/tilemaps/GHLobby.json');
         this.load.image('lobby', './src/assets/tilesets/LobbyTiles.png');
         this.load.image('text', './src/assets/tilesets/Text.png');
   
@@ -33,6 +33,10 @@ class MyGame extends Phaser.Scene
         map.createLayer('Curtains', lobbyTiles);
     }
 }
+
+// 29 map.createLayer('Layer name in Tiled', variable name)
+// 27 variable name = map.addTilesetImage('Tileset name in Tiled', tileset .png file)
+
 
 const config = {
     type: Phaser.AUTO,
