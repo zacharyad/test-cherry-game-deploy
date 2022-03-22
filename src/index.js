@@ -1,6 +1,6 @@
 import Phaser from 'phaser';
 let cursors;
-let pinkMan;
+let grace;
 
 class MyGame extends Phaser.Scene {
   constructor() {
@@ -15,14 +15,14 @@ class MyGame extends Phaser.Scene {
     this.load.image('lobby', './src/assets/tilesets/LobbyTiles.png');
     this.load.image('text', './src/assets/tilesets/Text.png');
 
-    this.load.spritesheet('pinkMan', './src/assets/sprites/idle.png', {
-      frameWidth: 32,
-      frameHeight: 32,
+    this.load.spritesheet('grace', './src/assets/sprites/gh-spritesheet.png', {
+      frameWidth: 16,
+      frameHeight: 34,
     });
-    this.load.spritesheet('run', './src/assets/sprites/run.png', {
-      frameWidth: 32,
-      frameHeight: 32,
-    });
+    // this.load.spritesheet('run', './src/assets/sprites/run.png', {
+    //   frameWidth: 32,
+    //   frameHeight: 32,
+    // });
   }
 
   create() {
@@ -44,14 +44,21 @@ class MyGame extends Phaser.Scene {
     map.createLayer('Curtains', lobbyTiles);
 
     this.anims.create({
-      key: 'run',
-      frames: this.anims.generateFrameNumbers('run', { start: 0, end: 10 }),
-      frameRate: 10,
+      key: 'walk right',
+      frames: this.anims.generateFrameNumbers('grace', { start: 11, end: 14 }),
+      frameRate: 6,
       repeat: -1,
     });
+    this.anims.create({
+        key: 'walk left',
+        frames: this.anims.generateFrameNumbers('grace', { start: 15, end: 18 }),
+        frameRate: 5,
+        repeat: -1,
+      });
 
-    pinkMan = this.add.sprite(470, 610, 'pinkMan').setScale(1.5);
-    pinkMan.anims.load('run');
+    grace = this.add.sprite(470, 610, 'grace').setScale(1.75);
+    grace.anims.load('walk right');
+    grace.anims.load('walk left');
 
     cursors = this.input.keyboard.createCursorKeys();
     // console.log(cursors);
@@ -59,8 +66,12 @@ class MyGame extends Phaser.Scene {
 
   update() {
     if (cursors.right.isDown) {
-        console.log('running');
-        pinkMan.anims.play('run', true);
+        console.log('walk right');
+        grace.anims.play('walk right', true);
+    }
+    if (cursors.left.isDown) {
+        console.log('walk left');
+        grace.anims.play('walk left', true);
     }
   }
 }
