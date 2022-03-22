@@ -76,6 +76,12 @@ export default class Lobby extends Phaser.Scene {
             frameRate: 6,
             repeat: -1,
           }); 
+          this.anims.create({
+            key: 'idle',
+            frames: this.anims.generateFrameNumbers('grace', { start: 0, end: 0 }),
+            frameRate: 6,
+            repeat: -1,
+          }); 
 
       }
       
