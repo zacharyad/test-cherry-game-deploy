@@ -13,7 +13,7 @@ export default class Lobby extends Phaser.Scene {
         this.load.image('text', '../public/assets/tilesets/Text.png');
     
         this.load.spritesheet('grace', '../public/assets/sprites/gh-spritesheet.png', {
-          frameWidth: 16,
+          frameWidth: 17,
           frameHeight: 34,
         });
         // this.load.spritesheet('run', './src/assets/sprites/run.png', {
@@ -61,9 +61,21 @@ export default class Lobby extends Phaser.Scene {
           this.anims.create({
               key: 'walk left',
               frames: this.anims.generateFrameNumbers('grace', { start: 15, end: 18 }),
-              frameRate: 5,
+              frameRate: 6,
               repeat: -1,
-        });  
+          }); 
+          this.anims.create({
+            key: 'walk up',
+            frames: this.anims.generateFrameNumbers('grace', { start: 23, end: 30 }),
+            frameRate: 6,
+            repeat: -1,
+          });
+          this.anims.create({
+            key: 'walk down',
+            frames: this.anims.generateFrameNumbers('grace', { start: 0, end: 6 }),
+            frameRate: 6,
+            repeat: -1,
+          }); 
 
       }
       
