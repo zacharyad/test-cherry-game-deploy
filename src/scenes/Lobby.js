@@ -16,15 +16,11 @@ export default class Lobby extends Phaser.Scene {
           frameWidth: 17,
           frameHeight: 34,
         });
-        // this.load.spritesheet('run', './src/assets/sprites/run.png', {
-        //   frameWidth: 32,
-        //   frameHeight: 32,
-        // });
+
       }
     
       create() {
         console.log(this.cache.tilemap.get('map').data);
-        //this.add.image(0, 0, 'base_tiles')
     
         const map = this.make.tilemap({
           key: 'map',
@@ -34,17 +30,24 @@ export default class Lobby extends Phaser.Scene {
     
         const lobbyTiles = map.addTilesetImage('Walls and Floor', 'lobby');
         const textTiles = map.addTilesetImage('Text', 'text');
-        map.createLayer('Floor and Wall', lobbyTiles);
-        map.createLayer('Furniture', lobbyTiles);
-        map.createLayer('Objects', lobbyTiles);
-        map.createLayer('Letters', textTiles);
-        map.createLayer('Curtains', lobbyTiles);
+        let floorLayer = map.createLayer('Floor and Wall', lobbyTiles);
+        let furnitureLayer = map.createLayer('Furniture', lobbyTiles);
+        let objectLayer = map.createLayer('Objects', lobbyTiles);
+        let letterLayer = map.createLayer('Letters', textTiles);
+        let curtainsLayer = map.createLayer('Curtains', lobbyTiles);
     
         this.player = new Player(this, 470, 610, 'grace').setScale(1.75);
         
         this.createAnimations()
     
         this.cursors = this.input.keyboard.createCursorKeys();
+
+       // this.createCollisions();
+
+        furnitureLayer.setCollisionByExclusion([-1]);
+        objectLayer.setCollisionByExclusion([-1]);
+        this.physics.add.collider(this.player, furnitureLayer);
+        this.physics.add.collider(this.player, objectLayer);
       }
 
       update() {
@@ -82,8 +85,12 @@ export default class Lobby extends Phaser.Scene {
             frameRate: 6,
             repeat: -1,
           }); 
-
       }
+
+      // createCollisions() {
+      //   this.furnitureLayer.setCollisionByExclusion([-1]);
+      //   this.physics.add.collider(this.player, this.furnitureLayer);
+      // }
       
 
 }
