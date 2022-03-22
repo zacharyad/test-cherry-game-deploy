@@ -61,7 +61,6 @@ export default class Lobby extends Phaser.Scene {
 
       update() {
           this.player.update(this.cursors)
-          console.log(Date.now())
       }
     
       createAnimations() { // Joe says this belongs in the player class, even if it changes by scene - it's attached to each specific sprite 
