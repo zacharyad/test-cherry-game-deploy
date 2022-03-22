@@ -4,9 +4,10 @@ let pinkMan;
 
 class MyGame extends Phaser.Scene {
   constructor() {
-    super();
+    super(config);
+    // this.scene.physics.world.enable(this);
+    // this.scene.add.existing(this);
   }
-
 
   preload() {
     // this.load.image('base_tiles', './src/assets/tilemaps/bug.png')
@@ -43,25 +44,23 @@ class MyGame extends Phaser.Scene {
     map.createLayer('Curtains', lobbyTiles);
 
     this.anims.create({
-      key: 'walk',
+      key: 'run',
       frames: this.anims.generateFrameNumbers('run', { start: 0, end: 10 }),
       frameRate: 10,
       repeat: -1,
     });
 
     pinkMan = this.add.sprite(470, 610, 'pinkMan').setScale(1.5);
-    // pinkMan.anims.load('run');
-    pinkMan.anims.load('walk');
-    pinkMan.anims.play('walk');
-    
+    pinkMan.anims.load('run');
+
     cursors = this.input.keyboard.createCursorKeys();
-    console.log(cursors);
+    // console.log(cursors);
   }
 
   update() {
     if (cursors.right.isDown) {
         console.log('running');
-        pinkMan.anims.play('walk');
+        pinkMan.anims.play('run', true);
     }
   }
 }
@@ -74,6 +73,13 @@ const config = {
   parent: 'phaser-example',
   width: 800,
   height: 640,
+  physics: {
+    default: 'arcade',
+    arcade: {
+      gravity: { y: 0 },
+      debug: false
+    }
+  },
   scene: MyGame,
 };
 
