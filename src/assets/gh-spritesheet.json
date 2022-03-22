@@ -1,0 +1,41 @@
+{
+	"textures": [
+		{
+			"image": "gh-spritesheet.png",
+			"format": "RGBA8888",
+			"size": {
+				"w": 650,
+				"h": 36
+			},
+			"scale": 1,
+			"frames": [
+				{
+					"filename": "Grace-Spritesheet-img.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 648,
+						"h": 34
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 648,
+						"h": 34
+					},
+					"frame": {
+						"x": 1,
+						"y": 1,
+						"w": 648,
+						"h": 34
+					}
+				}
+			]
+		}
+	],
+	"meta": {
+		"app": "https://www.codeandweb.com/texturepacker",
+		"version": "3.0",
+		"smartupdate": "$TexturePacker:SmartUpdate:efc39f54ae104a5b8299a0682857ca8a:a15d5ab3e57195fb745042c847afc797:fe0e9c47b0c6cc338484c0150b69f696$"
+	}
+}
