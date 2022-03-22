@@ -1,9 +1,12 @@
 import Phaser from 'phaser';
+let cursors;
+let pinkMan;
 
 class MyGame extends Phaser.Scene {
   constructor() {
     super();
   }
+
 
   preload() {
     // this.load.image('base_tiles', './src/assets/tilemaps/bug.png')
@@ -15,7 +18,7 @@ class MyGame extends Phaser.Scene {
       frameWidth: 32,
       frameHeight: 32,
     });
-    this.load.spritesheet('pinkManRun', './src/assets/sprites/run.png', {
+    this.load.spritesheet('run', './src/assets/sprites/run.png', {
       frameWidth: 32,
       frameHeight: 32,
     });
@@ -41,23 +44,26 @@ class MyGame extends Phaser.Scene {
 
     this.anims.create({
       key: 'walk',
-      frames: this.anims.generateFrameNumbers('run', { start: 0, end: 4 }),
-      frameRate: 2,
+      frames: this.anims.generateFrameNumbers('run', { start: 0, end: 10 }),
+      frameRate: 10,
       repeat: -1,
     });
 
-    const pinkMan = this.add.sprite(470, 610, 'pinkMan').setScale(1.5);
-    pinkMan.anims.load('run');
-    pinkMan.anims.play('run', true);
-
-    const cursors = this.input.keyboard.createCursorKeys();
-    console.log(cursors)
-    if (cursors.space.isDown) {
-      console.log('running')
-    }
+    pinkMan = this.add.sprite(470, 610, 'pinkMan').setScale(1.5);
+    // pinkMan.anims.load('run');
+    pinkMan.anims.load('walk');
+    pinkMan.anims.play('walk');
+    
+    cursors = this.input.keyboard.createCursorKeys();
+    console.log(cursors);
   }
 
-  update() {}
+  update() {
+    if (cursors.right.isDown) {
+        console.log('running');
+        pinkMan.anims.play('walk');
+    }
+  }
 }
 
 // 29 map.createLayer('Layer name in Tiled', variable name)
