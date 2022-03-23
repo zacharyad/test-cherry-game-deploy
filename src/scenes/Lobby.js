@@ -1,8 +1,12 @@
 import Phaser from "phaser";
-import Player from '../entities/Player'
+import Player from '../entities/Player';
+
+let Interactables;
+let skull;
+let text;
 
 export default class Lobby extends Phaser.Scene {
-    constructor (){
+    constructor () {
         super("Lobby")
     }
 
@@ -11,14 +15,14 @@ export default class Lobby extends Phaser.Scene {
         this.load.tilemapTiledJSON('map', '../public/assets/tilemaps/GHLobby.json');
         this.load.image('lobby', '../public/assets/tilesets/LobbyTiles.png');
         this.load.image('text', '../public/assets/tilesets/Text.png');
-    
+        this.load.image('skull', '../public/assets/images/Skull.png');
         this.load.spritesheet('grace', '../public/assets/sprites/gh-spritesheet.png', {
           frameWidth: 17,
           frameHeight: 34,
         });
 
     }
-    
+
       create() {
         //to change color of h1 - this is when the lobbby scene is being made 
         const objectlist = document.querySelector("#objectslist h1")
@@ -42,6 +46,7 @@ export default class Lobby extends Phaser.Scene {
       let objectLayer = map.createLayer('Objects', lobbyTiles);
       let letterLayer = map.createLayer('Letters', textTiles);
       let curtainsLayer = map.createLayer('Curtains', lobbyTiles);
+
     
         this.player = new Player(this, 470, 610, 'grace').setScale(1.75); //Joe is pleased 
 
@@ -53,6 +58,26 @@ export default class Lobby extends Phaser.Scene {
 
        // this.createCollisions();
 
+
+       Interactables = map.getObjectLayer('Interactables')['objects'];
+      //coins
+        skull = this.physics.add.staticGroup();
+        //this is how we actually render our coin object with coin asset we loaded into our game in the preload function
+        Interactables.forEach(object => {
+        let obj = skull.create(object.x, object.y, "skull"); 
+          obj.setScale(object.width/32, object.height/32); 
+          obj.setOrigin(0); 
+          obj.body.width = object.width; 
+          obj.body.height = object.height; 
+        });
+        this.physics.add.overlap(this.player, skull, this.collectSkull, null, this);
+
+        text = this.add.text(570, 70, `Clues: x`, {
+          fontSize: '20px',
+          fill: '#ffffff'
+        });
+        text.setScrollFactor(0);
+
       furnitureLayer.setCollisionByExclusion([-1]);
       objectLayer.setCollisionByExclusion([-1]);
       this.physics.add.collider(this.player, furnitureLayer);
@@ -61,6 +86,12 @@ export default class Lobby extends Phaser.Scene {
 
       update() {
           this.player.update(this.cursors)
+      }
+
+      collectSkull(player, skull) {
+        skull.destroy(skull.x, skull.y);
+        text.setText(`Clues: x`); // set the text to show the current score
+        return false;
       }
     
       createAnimations() { // Joe says this belongs in the player class, even if it changes by scene - it's attached to each specific sprite 
