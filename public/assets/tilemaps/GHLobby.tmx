@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.8" tiledversion="1.8.2" orientation="orthogonal" renderorder="right-down" width="25" height="20" tilewidth="32" tileheight="32" infinite="0" nextlayerid="8" nextobjectid="4">
+<map version="1.8" tiledversion="1.8.2" orientation="orthogonal" renderorder="right-down" width="25" height="20" tilewidth="32" tileheight="32" infinite="0" nextlayerid="9" nextobjectid="12">
  <editorsettings>
   <export target="GHLobby.json" format="json"/>
  </editorsettings>
@@ -8,6 +8,15 @@
  </tileset>
  <tileset firstgid="1065" name="Text" tilewidth="8" tileheight="10" tilecount="50" columns="10">
   <image source="../tilesets/Text.png" width="80" height="50"/>
+ </tileset>
+ <tileset firstgid="1115" name="ship" tilewidth="64" tileheight="64" tilecount="2" columns="0">
+  <grid orientation="orthogonal" width="1" height="1"/>
+  <tile id="2">
+   <image width="32" height="32" source="../images/StaticScroll.png"/>
+  </tile>
+  <tile id="4">
+   <image width="64" height="64" source="../../../../—Pngtree—war ship or kapal perang_3714316.png"/>
+  </tile>
  </tileset>
  <layer id="1" name="Floor and Wall" width="25" height="20">
   <data encoding="base64">
@@ -35,8 +44,15 @@
   </data>
  </layer>
  <objectgroup id="7" name="Interactables">
-  <object id="1" gid="1055" x="639.391" y="195.755" width="32" height="32"/>
-  <object id="2" gid="1055" x="31.7226" y="247.455" width="32" height="32"/>
-  <object id="3" gid="1055" x="768.242" y="550.493" width="32" height="32"/>
+  <object id="9" name="Scroll" gid="1117" x="702.4" y="238.4" width="32" height="32">
+   <properties>
+    <property name="isCollected" type="bool" value="false"/>
+   </properties>
+  </object>
+  <object id="11" name="Ship" gid="1119" x="-1.6" y="254.4" width="64" height="64">
+   <properties>
+    <property name="isCollected" type="bool" value="false"/>
+   </properties>
+  </object>
  </objectgroup>
 </map>

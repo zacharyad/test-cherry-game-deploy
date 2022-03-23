@@ -2,8 +2,11 @@ import Phaser from "phaser";
 import Player from '../entities/Player';
 
 let Interactables;
-let skull;
+let item;
 let text;
+let object;
+
+//items obj
 
 export default class Lobby extends Phaser.Scene {
     constructor () {
@@ -15,7 +18,8 @@ export default class Lobby extends Phaser.Scene {
         this.load.tilemapTiledJSON('map', '../public/assets/tilemaps/GHLobby.json');
         this.load.image('lobby', '../public/assets/tilesets/LobbyTiles.png');
         this.load.image('text', '../public/assets/tilesets/Text.png');
-        this.load.image('skull', '../public/assets/images/Skull.png');
+        this.load.image('Scroll', '../public/assets/images/StaticScroll.png');
+        this.load.image('Ship', '../public/assets/images/navyShip.png');
         this.load.spritesheet('grace', '../public/assets/sprites/gh-spritesheet.png', {
           frameWidth: 17,
           frameHeight: 34,
@@ -23,7 +27,7 @@ export default class Lobby extends Phaser.Scene {
 
     }
 
-      create() {
+    create() {
         //to change color of h1 - this is when the lobbby scene is being made 
         const objectlist = document.querySelector("#objectslist h1")
         // Joe likes query selector because we cna write a css string to write things
@@ -50,6 +54,8 @@ export default class Lobby extends Phaser.Scene {
     
         this.player = new Player(this, 470, 610, 'grace').setScale(1.75); //Joe is pleased 
 
+        // this.item = new InteractableObj(this, 'ship')
+
         //Player class might have five different modes - grace, mary, etc... 
         
         this.createAnimations() //maybe also move this to player class? 
@@ -60,23 +66,44 @@ export default class Lobby extends Phaser.Scene {
 
 
        Interactables = map.getObjectLayer('Interactables')['objects'];
-      //coins
-        skull = this.physics.add.staticGroup();
-        //this is how we actually render our coin object with coin asset we loaded into our game in the preload function
+
+       console.log(Interactables);
+       console.log(Interactables[0].name) 
+
+       item = this.physics.add.staticGroup();
+       console.log(item)
+
         Interactables.forEach(object => {
-        let obj = skull.create(object.x, object.y, "skull"); 
-          obj.setScale(object.width/32, object.height/32); 
-          obj.setOrigin(0); 
-          obj.body.width = object.width; 
-          obj.body.height = object.height; 
+        let obj = item.create(object.x, object.y, object.name);
+          obj.setScale(object.width/object.width, object.height/object.height);
+          obj.setOrigin(0);
+          obj.body.width = object.width;
+          obj.body.height = object.height;
+          console.log(object)
+         console.log(item)
         });
-        this.physics.add.overlap(this.player, skull, this.collectSkull, null, this);
+        this.physics.add.overlap(this.player, item, this.collect, null, this);
+
 
         text = this.add.text(570, 70, `Clues: x`, {
           fontSize: '20px',
           fill: '#ffffff'
         });
         text.setScrollFactor(0);
+
+
+          //addToList (object) {
+        //     `${listText[obj.skull]}
+        //   }
+        // //listText = {
+        // //   skull:'this is a skull',
+        // //   ship: 'in the navy'
+        // // }
+        
+        // // `${listText[obj.skull]}
+
+
+
 
       furnitureLayer.setCollisionByExclusion([-1]);
       objectLayer.setCollisionByExclusion([-1]);
@@ -88,12 +115,12 @@ export default class Lobby extends Phaser.Scene {
           this.player.update(this.cursors)
       }
 
-      collectSkull(player, skull) {
-        skull.destroy(skull.x, skull.y);
-        text.setText(`Clues: x`); // set the text to show the current score
+      collect(player, object) {
+        object.destroy(object.x, object.y);
+        text.setText(`Clues: y`); // set the text to show the current score
         return false;
       }
-    
+
       createAnimations() { // Joe says this belongs in the player class, even if it changes by scene - it's attached to each specific sprite 
         this.anims.create({
             key: 'walk right',
