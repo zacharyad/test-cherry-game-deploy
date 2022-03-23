@@ -6,7 +6,13 @@ let item;
 let text;
 let object;
 
-//items obj
+//items obj {
+  // ship: {
+    //listClues: 'ewihrahfakhkr'
+  //}
+//}
+
+
 
 export default class Lobby extends Phaser.Scene {
     constructor () {
@@ -118,6 +124,9 @@ export default class Lobby extends Phaser.Scene {
       collect(player, object) {
         object.destroy(object.x, object.y);
         text.setText(`Clues: y`); // set the text to show the current score
+        // list = []
+        // list.push(object.listClues)
+        //`${list}
         return false;
       }
 

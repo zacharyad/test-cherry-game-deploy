@@ -1,5 +1,7 @@
 import Phaser from "phaser";
 
+//obj
+
 export default class Player extends Phaser.Physics.Arcade.Sprite {
     constructor (scene, x, y, spriteKey) { 
         super(scene, x, y, spriteKey)
@@ -40,14 +42,22 @@ export default class Player extends Phaser.Physics.Arcade.Sprite {
 
 }
 
-
+/*
+//  const animations = {
 //   grace: {
-//     walkRight: {start: 11, end: 18}
+        image: 'grace'
+//     walkRight: {start: 11, end: 18},
+        walkUp: {afhe},
+        walkDown: {akhjf}
+
 //    },
 //    mary: {
 //     walkRight: {start: 8, end: 16}
 //    }
 //  }
+//}
+*/
+
 
 //have 4-5 "modes" of a player - could also do this in scene
 //this is where interaction comes in 
