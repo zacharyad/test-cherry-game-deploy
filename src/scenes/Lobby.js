@@ -1,10 +1,14 @@
 import Phaser from "phaser";
 import Player from '../entities/Player';
 
-let Interactables;
+let Clues;
 let item;
 let text;
 let object;
+let SDoor;
+let TDoor;
+let EDoor;
+let MDoor;
 
 //items obj {
   // ship: {
@@ -26,6 +30,7 @@ export default class Lobby extends Phaser.Scene {
         this.load.image('text', '../public/assets/tilesets/Text.png');
         this.load.image('Scroll', '../public/assets/images/StaticScroll.png');
         this.load.image('Ship', '../public/assets/images/navyShip.png');
+        this.load.image('Door', '../public/assets/images/Door.png')
         this.load.spritesheet('grace', '../public/assets/sprites/gh-spritesheet.png', {
           frameWidth: 17,
           frameHeight: 34,
@@ -50,13 +55,14 @@ export default class Lobby extends Phaser.Scene {
     
       const lobbyTiles = map.addTilesetImage('Walls and Floor', 'lobby');
       const textTiles = map.addTilesetImage('Text', 'text');
+      
       let floorLayer = map.createLayer('Floor and Wall', lobbyTiles);
       let furnitureLayer = map.createLayer('Furniture', lobbyTiles);
       let objectLayer = map.createLayer('Objects', lobbyTiles);
       let letterLayer = map.createLayer('Letters', textTiles);
       let curtainsLayer = map.createLayer('Curtains', lobbyTiles);
 
-    
+
         this.player = new Player(this, 470, 610, 'grace').setScale(1.75); //Joe is pleased 
 
         // this.item = new InteractableObj(this, 'ship')
@@ -70,15 +76,23 @@ export default class Lobby extends Phaser.Scene {
        // this.createCollisions();
 
 
-       Interactables = map.getObjectLayer('Interactables')['objects'];
+       Clues = map.getObjectLayer('Clues')['objects'];
 
-       console.log(Interactables);
-       console.log(Interactables[0].name) 
+       // Doors layers
+
+       SDoor = map.getObjectLayer('SDoor')['objects'];
+       TDoor = map.getObjectLayer('TDoor')['objects'];
+       EDoor = map.getObjectLayer('EDoor')['objects'];
+       MDoor = map.getObjectLayer('MDoor')['objects'];
+
+
+       console.log(Clues);
+       console.log(Clues[0].name) 
 
        item = this.physics.add.staticGroup();
        console.log(item)
 
-        Interactables.forEach(object => {
+        Clues.forEach(object => {
         let obj = item.create(object.x, object.y, object.name);
           obj.setScale(object.width/object.width, object.height/object.height);
           obj.setOrigin(0);
