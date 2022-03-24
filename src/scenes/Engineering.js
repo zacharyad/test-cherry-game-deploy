@@ -64,7 +64,7 @@ export default class Engineering extends Phaser.Scene {
     }
 
     update () {
-
+        this.player.update(this.cursors)
     }
     createAnimations() { 
         this.anims.create({
