@@ -1,7 +1,6 @@
 import Phaser from "phaser";
 import Player from '../entities/Player'
 
-let Interactables;
 let item;
 let text;
 let object;
