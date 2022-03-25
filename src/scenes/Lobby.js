@@ -99,7 +99,6 @@ export default class Lobby extends Phaser.Scene {
           obj.setOrigin(0);
           obj.body.width = object.width;
           obj.body.height = object.height;
-          console.log(object)
           console.log(item)
         });
         this.physics.add.overlap(this.player, item, this.collect, null, this);
