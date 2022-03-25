@@ -30,6 +30,7 @@ export default class Lobby extends Phaser.Scene {
         this.load.image('text', '../public/assets/tilesets/Text.png');
         this.load.image('Scroll', '../public/assets/images/StaticScroll.png');
         this.load.image('Ship', '../public/assets/images/navyShip.png');
+        this.load.image('MothPic', '../public/assets/images/CompPic.png')
         this.load.image('Door', '../public/assets/images/Door.png')
         this.load.spritesheet('grace', '../public/assets/sprites/gh-spritesheet.png', {
           frameWidth: 17,
