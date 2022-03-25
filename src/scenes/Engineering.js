@@ -1,10 +1,10 @@
 import Phaser from "phaser";
 import Player from '../entities/Player'
 
-let item;
-let text;
-let object;
-let Clues;
+let eItem;
+let eText;
+let eObject;
+let EngineeringClues;
 
 export default class Engineering extends Phaser.Scene {
     constructor () {
@@ -20,7 +20,7 @@ export default class Engineering extends Phaser.Scene {
         this.load.image('planet','../public/assets/images/purplePlanet.png' )
         this.load.image('coin','../public/assets/images/coin.png')
         this.load.image('skunk','../public/assets/images/skunk.png')
-        this.load.image('cherokeeFlag','../public/assets/images/cherokeeFlag.png' )
+        this.load.image('flag','../public/assets/images/cherokeeFlag.png' )
         this.load.image('lock','../public/assets/images/lock.png' )
         this.load.spritesheet('mary', '../public/assets/sprites/marySprite.png', {
             frameWidth: 32,
@@ -57,8 +57,18 @@ export default class Engineering extends Phaser.Scene {
         this.createAnimations()
         this.cursors = this.input.keyboard.createCursorKeys();
         
-        Clues = map.getObjectLayer('Clues')['objects'];
-        console.log(['objects'])
+        EngineeringClues = map.getObjectLayer('Clues')['objects'];
+        eItem = this.physics.add.staticGroup();
+
+        EngineeringClues.forEach(object => {
+          let obj = eItem.create(object.x, object.y, object.name);
+            obj.setScale(object.width/object.width, object.height/object.height);
+            obj.setOrigin(0);
+            obj.body.width = object.width;
+            obj.body.height = object.height;
+          });
+        
+          this.physics.add.overlap(this.player, eItem, this.eCollect, null, this);
 
         wallLayer.setCollisionByExclusion([-1]);
         spaceStation.setCollisionByExclusion([-1]);
@@ -71,11 +81,25 @@ export default class Engineering extends Phaser.Scene {
         this.physics.add.collider(this.player, chalkboardLayer)
         this.physics.add.collider(this.player, plantsAndDecorLayer)
 
+        eText = this.add.text(570, 70, `Clues: x`, {
+          fontSize: '20px',
+          fill: '#ffffff'
+        });
+      eText.setScrollFactor(0);
+
     
     }
 
     update () {
         this.player.update(this.cursors)
+    }
+    eCollect(player, object) {
+      object.destroy(object.x, object.y);
+      eText.setText(`Clues: y`); // set the text to show the current score
+      // list = []
+      // list.push(object.listClues)
+      //`${list}
+      return false;
     }
     createAnimations() { 
         this.anims.create({
