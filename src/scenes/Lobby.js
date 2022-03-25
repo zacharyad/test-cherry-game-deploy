@@ -128,6 +128,8 @@ export default class Lobby extends Phaser.Scene {
       objectLayer.setCollisionByExclusion([-1]);
       this.physics.add.collider(this.player, furnitureLayer);
       this.physics.add.collider(this.player, objectLayer);
+      // collider for each specific curtain & separate collider for each curtain 
+      // this.physics.add.collider(this.player, curtainE, () => {this.scene.stop('Lobby'); this.scene.launch('Engineering')}) curtainE is an object
     }
 
       update() {

@@ -13,6 +13,7 @@ const config = {
       }
     },
     scene: [],
+    //[Lobby, Engineering] 
   };
 
   export default config
