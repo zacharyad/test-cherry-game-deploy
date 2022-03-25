@@ -19,7 +19,7 @@ export default class Engineering extends Phaser.Scene {
         this.load.image('plantsAndDecorPng','../public/assets/tilesets/studyTimeTiles.png' );
         this.load.image('planet','../public/assets/images/purplePlanet.png' )
         this.load.image('coin','../public/assets/images/coin.png')
-        this.load.image('skunk','../public/assets/images/skunk.png' )
+        this.load.image('skunk','../public/assets/images/skunk.png')
         this.load.image('cherokeeFlag','../public/assets/images/cherokeeFlag.png' )
         this.load.image('lock','../public/assets/images/lock.png' )
         this.load.spritesheet('mary', '../public/assets/sprites/marySprite.png', {
@@ -42,7 +42,7 @@ export default class Engineering extends Phaser.Scene {
         const engineeringTiles = map.addTilesetImage('LobbyTiles', 'engineeringFloor');
         const spaceStationTiles = map.addTilesetImage('spacestation', 'spaceStationpng');
         const furnitureTiles = map.addTilesetImage('shop-and-hospital', 'furniturepng');
-        const chalkboardTiles = map.addTilesetImage('building_inner-tileg','chalkboardpng');
+        const chalkboardTiles = map.addTilesetImage('building_inner-tileg','chalkboardpng', 32, 32);
         const plantsAndDecorTiles = map.addTilesetImage('furniture', 'plantsAndDecorPng')
 
         // create layer in order, p1=name of layer in Tiled, p2= tileset image constant it's referring to
@@ -53,12 +53,23 @@ export default class Engineering extends Phaser.Scene {
         let chalkboardLayer = map.createLayer('ChalkBoards', chalkboardTiles);
         let plantsAndDecorLayer = map.createLayer('Objects', plantsAndDecorTiles)
 
-        this.player = new Player(this, 470, 610, 'mary').setScale(1.75);
+        this.player = new Player(this, 470, 610, 'mary').setScale(1.5);
         this.createAnimations()
         this.cursors = this.input.keyboard.createCursorKeys();
         
         Clues = map.getObjectLayer('Clues')['objects'];
         console.log(['objects'])
+
+        wallLayer.setCollisionByExclusion([-1]);
+        spaceStation.setCollisionByExclusion([-1]);
+        furnitureLayer.setCollisionByExclusion([-1]);
+        chalkboardLayer.setCollisionByExclusion([-1]);
+        plantsAndDecorLayer.setCollisionByExclusion([-1]);
+        this.physics.add.collider(this.player, wallLayer)
+        this.physics.add.collider(this.player, spaceStation);
+        this.physics.add.collider(this.player, furnitureLayer)
+        this.physics.add.collider(this.player, chalkboardLayer)
+        this.physics.add.collider(this.player, plantsAndDecorLayer)
 
     
     }
