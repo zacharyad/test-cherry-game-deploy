@@ -11,7 +11,7 @@ export default class Engineering extends Phaser.Scene {
         super("Engineering")
     }
     preload(){
-        this.load.tilemapTiledJSON('map', '../public/assets/tilemaps/engineeringnew.json');
+        this.load.tilemapTiledJSON('map', '../public/assets/tilemaps/engineeringnew3.json');
         this.load.image('engineeringFloor', '../public/assets/tilesets/LobbyTiles.png');
         this.load.image('spaceStationpng', '../public/assets/tilesets/neotiles.png');
         this.load.image('furniturepng', '../public/assets/tilesets/shop-and-hospital.png');
