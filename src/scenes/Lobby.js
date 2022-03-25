@@ -1,5 +1,6 @@
 import Phaser from "phaser";
 import Player from '../entities/Player';
+import Engineering from './Engineering'
 
 let Clues;
 let item;
@@ -9,6 +10,7 @@ let SDoor;
 let TDoor;
 let EDoor;
 let MDoor;
+let engDoor; 
 
 //items obj {
   // ship: {
@@ -31,7 +33,8 @@ export default class Lobby extends Phaser.Scene {
         this.load.image('Scroll', '../public/assets/images/StaticScroll.png');
         this.load.image('Ship', '../public/assets/images/navyShip.png');
         this.load.image('Moth', '../public/assets/images/CompPic.png')
-        this.load.image('Door', '../public/assets/images/Door.png')
+        this.load.image('Engineering', '../public/assets/images/Door.png')
+
         this.load.spritesheet('grace', '../public/assets/sprites/gh-spritesheet.png', {
           frameWidth: 17,
           frameHeight: 34,
@@ -91,7 +94,8 @@ export default class Lobby extends Phaser.Scene {
        console.log(Clues[0].name) 
 
        item = this.physics.add.staticGroup();
-       console.log(item)
+       engDoor = this.physics.add.staticGroup();
+      //  console.log(engDoor, 'engDoor')
 
         Clues.forEach(object => {
         let obj = item.create(object.x, object.y, object.name);
@@ -101,7 +105,19 @@ export default class Lobby extends Phaser.Scene {
           obj.body.height = object.height;
           console.log(item)
         });
+
+        EDoor.forEach(object => {
+          let obj = engDoor.create(object.x, object.y, object.name);
+            obj.setScale(object.width/object.width, object.height/object.height);
+            obj.setOrigin(0);
+            obj.body.width = object.width;
+            obj.body.height = object.height;
+            console.log(object)
+            console.log(item)
+          });
+
         this.physics.add.overlap(this.player, item, this.collect, null, this);
+        this.physics.add.overlap(this.player, engDoor, this.enterRoom, null, this )
 
 
         text = this.add.text(570, 70, `Clues: x`, {
@@ -130,10 +146,18 @@ export default class Lobby extends Phaser.Scene {
       this.physics.add.collider(this.player, objectLayer);
       // collider for each specific curtain & separate collider for each curtain 
       // this.physics.add.collider(this.player, curtainE, () => {this.scene.stop('Lobby'); this.scene.launch('Engineering')}) curtainE is an object
+      // this.physics.add.collider(this.player, EDoor, () => this.enterRoom)
+      // console.log(EDoor[0], 'edoor');
+      // console.log(this.scene, 'this scene')
     }
 
       update() {
           this.player.update(this.cursors)
+      }
+
+      enterRoom () {
+          this.scene.stop('Lobby')
+          this.scene.launch('Engineering');
       }
 
       collect(player, object) {
