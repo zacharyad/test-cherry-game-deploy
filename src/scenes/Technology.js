@@ -3,11 +3,11 @@ import Player from "../entities/Player";
 
 export default class Technology extends Phaser.Scene {
   constructor() {
-    super("Technology");
+    super({ key: "Technology" });
   }
   preload() {
     this.load.tilemapTiledJSON(
-      "map",
+      "techMap",
       "../public/assets/tilemaps/TechRoomM.json"
     );
     this.load.image(
@@ -23,17 +23,18 @@ export default class Technology extends Phaser.Scene {
     this.load.image("Pride", "../public/assets/tilesets/pride.png");
   }
   create() {
-    console.log("hi", this.cache.tilemap.get("map").data);
-    this.add.image(275, 275, "Floor");
+    console.log("hi", this.cache.tilemap.get("techMap").data);
+    //this.add.image(275, 275, "Floor");
 
     const map = this.make.tilemap({
-      key: "map",
+      key: "techMap",
       tileWidth: 32,
       tileHeight: 32,
     });
     const schoolTiles = map.addTilesetImage("SCHOOL", "schoolmap");
     const wallTiles = map.addTilesetImage("MODERNSTUDY-WALLS", "walls");
     const prideTiles = map.addTilesetImage("PRIDEFLAG", "Pride");
+    const floorTiles = map.addTilesetImage("FLOOR", "Floor");
     const vaporTiles = map.addTilesetImage(
       "VAPORWAVE",
       "VaporwaveFurniture",
@@ -43,6 +44,7 @@ export default class Technology extends Phaser.Scene {
 
     let floorLayer = map.createLayer("floorsnwallsnsuch", [
       wallTiles,
+      floorTiles,
       vaporTiles,
       schoolTiles,
     ]);
