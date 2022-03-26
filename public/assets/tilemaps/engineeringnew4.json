@@ -88,8 +88,8 @@
                  "type":"",
                  "visible":true,
                  "width":32,
-                 "x":643.779127501853,
-                 "y":191.529087472202
+                 "x":676.988912527798,
+                 "y":190.343023721275
                 }, 
                 {
                  "gid":2284,
@@ -100,8 +100,8 @@
                  "type":"",
                  "visible":true,
                  "width":32,
-                 "x":355.296,
-                 "y":16.0741
+                 "x":776.348631578947,
+                 "y":116.889518828762
                 }, 
                 {
                  "gid":2289,
@@ -112,8 +112,8 @@
                  "type":"",
                  "visible":true,
                  "width":32,
-                 "x":767.593063750927,
-                 "y":382.613852483321
+                 "x":749.802107487027,
+                 "y":610.338092661231
                 }, 
                 {
                  "gid":2290,
@@ -124,8 +124,8 @@
                  "type":"",
                  "visible":true,
                  "width":32,
-                 "x":-0.925046249073386,
-                 "y":382.790214974055
+                 "x":114.332181326909,
+                 "y":517.257968865827
                 }, 
                 {
                  "gid":2291,
@@ -136,8 +136,43 @@
                  "type":"",
                  "visible":true,
                  "width":32,
-                 "x":8.07407,
-                 "y":233.741
+                 "x":24.6789625129726,
+                 "y":183.926322461082
+                }],
+         "opacity":1,
+         "type":"objectgroup",
+         "visible":true,
+         "x":0,
+         "y":0
+        }, 
+        {
+         "draworder":"topdown",
+         "id":12,
+         "name":"Door",
+         "objects":[
+                {
+                 "gid":745,
+                 "height":32,
+                 "id":16,
+                 "name":"",
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":32,
+                 "x":511.551544500697,
+                 "y":27.7396727566219
+                }, 
+                {
+                 "gid":753,
+                 "height":32,
+                 "id":17,
+                 "name":"door",
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":32,
+                 "x":511.551544500697,
+                 "y":64.4261501210654
                 }],
          "opacity":1,
          "type":"objectgroup",
@@ -145,8 +180,8 @@
          "x":0,
          "y":0
         }],
- "nextlayerid":12,
- "nextobjectid":13,
+ "nextlayerid":13,
+ "nextobjectid":18,
  "orientation":"orthogonal",
  "renderorder":"right-down",
  "tiledversion":"1.8.2",

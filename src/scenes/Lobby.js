@@ -153,6 +153,7 @@ export default class Lobby extends Phaser.Scene {
   enterRoom() {
     this.scene.stop("Lobby");
     this.scene.start("Engineering", Engineering);
+
   }
 
   collect(player, object) {
