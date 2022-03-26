@@ -1,10 +1,13 @@
 import Phaser from "phaser";
 import Player from "../entities/Player";
+import Lobby from "./Lobby";
 
 let eItem;
 let eText;
 let eObject;
 let EngineeringClues;
+let Door;
+let backToLobbyDoor;
 
 export default class Engineering extends Phaser.Scene {
   constructor() {
@@ -40,6 +43,7 @@ export default class Engineering extends Phaser.Scene {
     this.load.image("skunk", "../public/assets/images/skunk.png");
     this.load.image("flag", "../public/assets/images/cherokeeFlag.png");
     this.load.image("lock", "../public/assets/images/lock.png");
+    this.load.image("door", "../public/assets/images/Door.png")
     this.load.spritesheet("mary", "../public/assets/sprites/marySprite.png", {
       frameWidth: 32,
       frameHeight: 32,
@@ -103,14 +107,28 @@ export default class Engineering extends Phaser.Scene {
       obj.body.height = object.height;
     });
 
+    // Door layers
+    Door = map.getObjectLayer("Door")["objects"];
+    backToLobbyDoor = this.physics.add.staticGroup()
+    Door.forEach((object) => {
+      let obj = backToLobbyDoor.create(object.x, object.y, object.name);
+      obj.setScale(object.width / object.width, object.height / object.height);
+      obj.setOrigin(0);
+      obj.body.width = object.width;
+      obj.body.height = object.height;
+      console.log(object);
+      console.log(eItem);
+    });
+
     this.physics.add.overlap(this.player, eItem, this.eCollect, null, this);
+    this.physics.add.overlap(this.player, backToLobbyDoor, this.exitRoom, null, this);
 
     wallLayer.setCollisionByExclusion([-1]);
     spaceStation.setCollisionByExclusion([-1]);
     furnitureLayer.setCollisionByExclusion([-1]);
     chalkboardLayer.setCollisionByExclusion([-1]);
     plantsAndDecorLayer.setCollisionByExclusion([-1]);
-    this.physics.add.collider(this.player, wallLayer);
+    // this.physics.add.collider(this.player, wallLayer);
     this.physics.add.collider(this.player, spaceStation);
     this.physics.add.collider(this.player, furnitureLayer);
     this.physics.add.collider(this.player, chalkboardLayer);
@@ -125,6 +143,13 @@ export default class Engineering extends Phaser.Scene {
 
   update() {
     this.player.update(this.cursors);
+  }
+
+
+  exitRoom() {
+    this.scene.stop("Engineering");
+    this.scene.start("Lobby", Lobby);
+
   }
 
   eCollect(player, object) {
