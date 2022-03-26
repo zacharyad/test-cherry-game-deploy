@@ -14,12 +14,6 @@ let EDoor;
 let MDoor;
 let engDoor;
 
-//items obj {
-// ship: {
-//listClues: 'ewihrahfakhkr'
-//}
-//}
-
 export default class Lobby extends Phaser.Scene {
   constructor() {
     super({ key: "Lobby" });
@@ -156,7 +150,7 @@ export default class Lobby extends Phaser.Scene {
     this.scene.start("Engineering", Engineering);
   }
 
-  collect(player, object) {
+  collect(player, object) { // this is what happens when we overlap with the object
     object.destroy(object.x, object.y);
     text.setText(`Clues: y`); // set the text to show the current score
     // list = []
@@ -170,7 +164,7 @@ export default class Lobby extends Phaser.Scene {
     this.anims.create({
       key: "walk right",
       frames: this.anims.generateFrameNumbers("grace", { start: 11, end: 14 }),
-      //something to keep in mind about line 62 - it is a decidion that youre making and it can be a return from afunction i.e. getWalkRight and you can pass in string, if character === grace return start (numbers) else if character === mary start(marynumbers)
+      //something to keep in mind about line 62 - it is a decision that youre making and it can be a return from a function i.e. getWalkRight and you can pass in string, if character === grace return start (numbers) else if character === mary start(marynumbers)
       //each mechanism is like its own system
 
       frameRate: 6,
@@ -201,9 +195,4 @@ export default class Lobby extends Phaser.Scene {
       repeat: -1,
     });
   }
-
-  // createCollisions() {
-  //   this.furnitureLayer.setCollisionByExclusion([-1]);
-  //   this.physics.add.collider(this.player, this.furnitureLayer);
-  // }
 }
