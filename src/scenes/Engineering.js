@@ -91,6 +91,7 @@ export default class Engineering extends Phaser.Scene {
     let chalkboardLayer = map.createLayer("ChalkBoards", chalkboardTiles);
     let plantsAndDecorLayer = map.createLayer("Objects", plantsAndDecorTiles);
 
+    
     this.player = new Player(this, 470, 610, "mary").setScale(1.5);
     this.createAnimations();
     this.cursors = this.input.keyboard.createCursorKeys();
@@ -144,11 +145,13 @@ export default class Engineering extends Phaser.Scene {
     this.player.update(this.cursors);
   }
 
+
   exitRoom() {
     this.scene.stop("Engineering");
     this.scene.start("Lobby", Lobby);
 
   }
+
   eCollect(player, object) {
     object.destroy(object.x, object.y);
     eText.setText(`Clues: y`); // set the text to show the current score
@@ -158,31 +161,31 @@ export default class Engineering extends Phaser.Scene {
     return false;
   }
   createAnimations() {
-    this.anims.create({
+    this.player.anims.create({
       key: "walk right",
       frames: this.anims.generateFrameNumbers("mary", { start: 6, end: 8 }),
       frameRate: 6,
       repeat: -1,
     });
-    this.anims.create({
+    this.player.anims.create({
       key: "walk left",
       frames: this.anims.generateFrameNumbers("mary", { start: 2, end: 5 }),
       frameRate: 6,
       repeat: -1,
     });
-    this.anims.create({
+    this.player.anims.create({
       key: "walk up",
       frames: this.anims.generateFrameNumbers("mary", { start: 9, end: 11 }),
       frameRate: 6,
       repeat: -1,
     });
-    this.anims.create({
+    this.player.anims.create({
       key: "walk down",
       frames: this.anims.generateFrameNumbers("mary", { start: 0, end: 2 }),
       frameRate: 6,
       repeat: -1,
     });
-    this.anims.create({
+    this.player.anims.create({
       key: "idle",
       frames: this.anims.generateFrameNumbers("mary", { start: 0, end: 0 }),
       frameRate: 6,
