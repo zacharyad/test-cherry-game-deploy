@@ -1,10 +1,13 @@
 import Phaser from "phaser";
 import Player from "../entities/Player";
+import Lobby from "./Lobby";
 
 let eItem;
 let eText;
 let eObject;
 let EngineeringClues;
+let Door;
+let backToLobbyDoor;
 
 export default class Engineering extends Phaser.Scene {
   constructor() {
@@ -40,6 +43,7 @@ export default class Engineering extends Phaser.Scene {
     this.load.image("skunk", "../public/assets/images/skunk.png");
     this.load.image("flag", "../public/assets/images/cherokeeFlag.png");
     this.load.image("lock", "../public/assets/images/lock.png");
+    this.load.image("door", "../public/assets/images/Door.png")
     this.load.spritesheet("mary", "../public/assets/sprites/marySprite.png", {
       frameWidth: 32,
       frameHeight: 32,
@@ -87,6 +91,7 @@ export default class Engineering extends Phaser.Scene {
     let chalkboardLayer = map.createLayer("ChalkBoards", chalkboardTiles);
     let plantsAndDecorLayer = map.createLayer("Objects", plantsAndDecorTiles);
 
+    
     this.player = new Player(this, 470, 610, "mary").setScale(1.5);
     this.createAnimations();
     this.cursors = this.input.keyboard.createCursorKeys();
@@ -102,14 +107,28 @@ export default class Engineering extends Phaser.Scene {
       obj.body.height = object.height;
     });
 
+    // Door layers
+    Door = map.getObjectLayer("Door")["objects"];
+    backToLobbyDoor = this.physics.add.staticGroup()
+    Door.forEach((object) => {
+      let obj = backToLobbyDoor.create(object.x, object.y, object.name);
+      obj.setScale(object.width / object.width, object.height / object.height);
+      obj.setOrigin(0);
+      obj.body.width = object.width;
+      obj.body.height = object.height;
+      console.log(object);
+      console.log(eItem);
+    });
+
     this.physics.add.overlap(this.player, eItem, this.eCollect, null, this);
+    this.physics.add.overlap(this.player, backToLobbyDoor, this.exitRoom, null, this);
 
     wallLayer.setCollisionByExclusion([-1]);
     spaceStation.setCollisionByExclusion([-1]);
     furnitureLayer.setCollisionByExclusion([-1]);
     chalkboardLayer.setCollisionByExclusion([-1]);
     plantsAndDecorLayer.setCollisionByExclusion([-1]);
-    this.physics.add.collider(this.player, wallLayer);
+    // this.physics.add.collider(this.player, wallLayer);
     this.physics.add.collider(this.player, spaceStation);
     this.physics.add.collider(this.player, furnitureLayer);
     this.physics.add.collider(this.player, chalkboardLayer);
@@ -125,6 +144,14 @@ export default class Engineering extends Phaser.Scene {
   update() {
     this.player.update(this.cursors);
   }
+
+
+  exitRoom() {
+    this.scene.stop("Engineering");
+    this.scene.start("Lobby", Lobby);
+
+  }
+
   eCollect(player, object) {
     object.destroy(object.x, object.y);
     eText.setText(`Clues: y`); // set the text to show the current score
@@ -134,31 +161,31 @@ export default class Engineering extends Phaser.Scene {
     return false;
   }
   createAnimations() {
-    this.anims.create({
+    this.player.anims.create({
       key: "walk right",
       frames: this.anims.generateFrameNumbers("mary", { start: 6, end: 8 }),
       frameRate: 6,
       repeat: -1,
     });
-    this.anims.create({
+    this.player.anims.create({
       key: "walk left",
       frames: this.anims.generateFrameNumbers("mary", { start: 2, end: 5 }),
       frameRate: 6,
       repeat: -1,
     });
-    this.anims.create({
+    this.player.anims.create({
       key: "walk up",
       frames: this.anims.generateFrameNumbers("mary", { start: 9, end: 11 }),
       frameRate: 6,
       repeat: -1,
     });
-    this.anims.create({
+    this.player.anims.create({
       key: "walk down",
       frames: this.anims.generateFrameNumbers("mary", { start: 0, end: 2 }),
       frameRate: 6,
       repeat: -1,
     });
-    this.anims.create({
+    this.player.anims.create({
       key: "idle",
       frames: this.anims.generateFrameNumbers("mary", { start: 0, end: 0 }),
       frameRate: 6,

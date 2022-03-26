@@ -14,12 +14,6 @@ let EDoor;
 let MDoor;
 let engDoor;
 
-//items obj {
-// ship: {
-//listClues: 'ewihrahfakhkr'
-//}
-//}
-
 export default class Lobby extends Phaser.Scene {
   constructor() {
     super({ key: "Lobby" });
@@ -30,7 +24,6 @@ export default class Lobby extends Phaser.Scene {
     this.load.tilemapTiledJSON("map", "../public/assets/tilemaps/GHLobby.json");
     this.load.image("lobby", "../public/assets/tilesets/LobbyTiles.png");
     this.load.image("text", "../public/assets/tilesets/Text.png");
-    this.load.image("Scroll", "../public/assets/images/StaticScroll.png");
     this.load.image("Ship", "../public/assets/images/navyShip.png");
     this.load.image("Moth", "../public/assets/images/CompPic.png");
     this.load.image("Engineering", "../public/assets/images/Door.png");
@@ -67,7 +60,7 @@ export default class Lobby extends Phaser.Scene {
     let furnitureLayer = map.createLayer("Furniture", lobbyTiles);
     let objectLayer = map.createLayer("Objects", lobbyTiles);
     let letterLayer = map.createLayer("Letters", textTiles);
-    let curtainsLayer = map.createLayer("Curtains", lobbyTiles);
+    
 
     this.player = new Player(this, 470, 610, "grace").setScale(1.75); //Joe is pleased
 
@@ -89,6 +82,7 @@ export default class Lobby extends Phaser.Scene {
     TDoor = map.getObjectLayer("TDoor")["objects"];
     EDoor = map.getObjectLayer("EDoor")["objects"];
     MDoor = map.getObjectLayer("MDoor")["objects"];
+
 
     console.log(Clues);
     console.log(Clues[0].name);
@@ -144,6 +138,7 @@ export default class Lobby extends Phaser.Scene {
     // this.physics.add.collider(this.player, EDoor, () => this.enterRoom)
     // console.log(EDoor[0], 'edoor');
     // console.log(this.scene, 'this scene')
+    let curtainsLayer = map.createLayer("Curtains", lobbyTiles);
   }
 
   update() {
@@ -153,9 +148,10 @@ export default class Lobby extends Phaser.Scene {
   enterRoom() {
     this.scene.stop("Lobby");
     this.scene.start("Engineering", Engineering);
+
   }
 
-  collect(player, object) {
+  collect(player, object) { // this is what happens when we overlap with the object
     object.destroy(object.x, object.y);
     text.setText(`Clues: y`); // set the text to show the current score
     // list = []
@@ -169,7 +165,7 @@ export default class Lobby extends Phaser.Scene {
     this.anims.create({
       key: "walk right",
       frames: this.anims.generateFrameNumbers("grace", { start: 11, end: 14 }),
-      //something to keep in mind about line 62 - it is a decidion that youre making and it can be a return from afunction i.e. getWalkRight and you can pass in string, if character === grace return start (numbers) else if character === mary start(marynumbers)
+      //something to keep in mind about line 62 - it is a decision that youre making and it can be a return from a function i.e. getWalkRight and you can pass in string, if character === grace return start (numbers) else if character === mary start(marynumbers)
       //each mechanism is like its own system
 
       frameRate: 6,
@@ -200,9 +196,4 @@ export default class Lobby extends Phaser.Scene {
       repeat: -1,
     });
   }
-
-  // createCollisions() {
-  //   this.furnitureLayer.setCollisionByExclusion([-1]);
-  //   this.physics.add.collider(this.player, this.furnitureLayer);
-  // }
 }
