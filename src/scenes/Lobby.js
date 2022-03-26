@@ -30,7 +30,6 @@ export default class Lobby extends Phaser.Scene {
     this.load.tilemapTiledJSON("map", "../public/assets/tilemaps/GHLobby.json");
     this.load.image("lobby", "../public/assets/tilesets/LobbyTiles.png");
     this.load.image("text", "../public/assets/tilesets/Text.png");
-    this.load.image("Scroll", "../public/assets/images/StaticScroll.png");
     this.load.image("Ship", "../public/assets/images/navyShip.png");
     this.load.image("Moth", "../public/assets/images/CompPic.png");
     this.load.image("Engineering", "../public/assets/images/Door.png");
@@ -67,7 +66,7 @@ export default class Lobby extends Phaser.Scene {
     let furnitureLayer = map.createLayer("Furniture", lobbyTiles);
     let objectLayer = map.createLayer("Objects", lobbyTiles);
     let letterLayer = map.createLayer("Letters", textTiles);
-    let curtainsLayer = map.createLayer("Curtains", lobbyTiles);
+    
 
     this.player = new Player(this, 470, 610, "grace").setScale(1.75); //Joe is pleased
 
@@ -89,6 +88,7 @@ export default class Lobby extends Phaser.Scene {
     TDoor = map.getObjectLayer("TDoor")["objects"];
     EDoor = map.getObjectLayer("EDoor")["objects"];
     MDoor = map.getObjectLayer("MDoor")["objects"];
+
 
     console.log(Clues);
     console.log(Clues[0].name);
@@ -144,6 +144,7 @@ export default class Lobby extends Phaser.Scene {
     // this.physics.add.collider(this.player, EDoor, () => this.enterRoom)
     // console.log(EDoor[0], 'edoor');
     // console.log(this.scene, 'this scene')
+    let curtainsLayer = map.createLayer("Curtains", lobbyTiles);
   }
 
   update() {
