@@ -43,6 +43,7 @@ export default class Engineering extends Phaser.Scene {
     this.load.image("skunk", "../public/assets/images/skunk.png");
     this.load.image("flag", "../public/assets/images/cherokeeFlag.png");
     this.load.image("lock", "../public/assets/images/lock.png");
+    this.load.image("door", "../public/assets/images/Door.png")
     this.load.spritesheet("mary", "../public/assets/sprites/marySprite.png", {
       frameWidth: 32,
       frameHeight: 32,
@@ -126,7 +127,7 @@ export default class Engineering extends Phaser.Scene {
     furnitureLayer.setCollisionByExclusion([-1]);
     chalkboardLayer.setCollisionByExclusion([-1]);
     plantsAndDecorLayer.setCollisionByExclusion([-1]);
-    this.physics.add.collider(this.player, wallLayer);
+    // this.physics.add.collider(this.player, wallLayer);
     this.physics.add.collider(this.player, spaceStation);
     this.physics.add.collider(this.player, furnitureLayer);
     this.physics.add.collider(this.player, chalkboardLayer);
