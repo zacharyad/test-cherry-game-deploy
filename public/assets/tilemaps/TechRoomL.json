@@ -3,8 +3,7 @@
     {
      "export":
         {
-         "format":"json",
-         "target":"TechRoomM.json"
+         "format":"json"
         }
     },
  "height":20,
@@ -228,8 +227,17 @@
          "source":"Computer01.tsx"
         }, 
         {
+         "columns":16,
          "firstgid":2533,
-         "source":"..\/tilesets\/books4L.tsx"
+         "image":"..\/..\/..\/..\/Downloads\/Modern+ Study Time (32x32) (1)\/Tile 1.png",
+         "imageheight":512,
+         "imagewidth":512,
+         "margin":0,
+         "name":"Tile 1",
+         "spacing":0,
+         "tilecount":256,
+         "tileheight":32,
+         "tilewidth":32
         }],
  "tilewidth":32,
  "type":"map",
