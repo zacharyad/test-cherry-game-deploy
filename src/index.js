@@ -5,6 +5,7 @@ import Engineering from "./scenes/Engineering";
 import Technology from "./scenes/Technology";
 import Science from "./scenes/Science";
 import Math from "./scenes/Math";
+import Scrammble from "./scenes/Scrammble";
 
 class Game extends Phaser.Game {
   constructor() {
@@ -16,6 +17,7 @@ class Game extends Phaser.Game {
     this.scene.add("Technology", Technology);
     this.scene.add("Science", Science);
     this.scene.add("Math", Math);
+    this.scene.add("Scrammble", Scrammble)
     this.scene.start("Lobby");
 
     // change scene.start to see if it works to test it & make sure you import it on top

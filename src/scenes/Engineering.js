@@ -148,6 +148,7 @@ export default class Engineering extends Phaser.Scene {
 
   exitRoom() {
     this.scene.stop("Engineering");
+    this.scene.start("Scrammble")
     this.scene.start("Lobby", Lobby);
 
   }
