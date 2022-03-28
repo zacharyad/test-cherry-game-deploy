@@ -15,6 +15,7 @@ let EDoor;
 let MDoor;
 let engDoor;
 let mathDoor;
+let techDoor;
 
 export default class Lobby extends Phaser.Scene {
   constructor() {
@@ -92,6 +93,7 @@ export default class Lobby extends Phaser.Scene {
     engDoor = this.physics.add.staticGroup();
     techDoor = this.physics.add.staticGroup();
     mathDoor = this.physics.add.staticGroup();
+    techDoor = this.physics.add.staticGroup();
     //  console.log(engDoor, 'engDoor')
 
     Clues.forEach((object) => {
@@ -102,7 +104,13 @@ export default class Lobby extends Phaser.Scene {
       obj.body.height = object.height;
       console.log(item);
     });
-
+    TDoor.forEach((object) => {
+      let obj = techDoor.create(object.x, object.y, object.name);
+      obj.setScale(object.width / object.width, object.height / object.height);
+      obj.setOrigin(0);
+      obj.body.width = object.width;
+      obj.body.height = object.height;
+    });
     EDoor.forEach((object) => {
       let obj = engDoor.create(object.x, object.y, object.name);
       obj.setScale(object.width / object.width, object.height / object.height);
@@ -174,7 +182,10 @@ export default class Lobby extends Phaser.Scene {
   update() {
     this.player.update(this.cursors);
   }
-
+  enterTRoom() {
+    this.scene.stop("Lobby");
+    this.scene.start("Technology", Technology);
+  }
   enterERoom() {
     this.scene.stop("Lobby");
     this.scene.start("Engineering", Engineering);
