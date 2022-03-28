@@ -2,6 +2,8 @@ import Phaser from 'phaser';
 import Player from '../entities/Player';
 
 let item;
+let sciDoor;
+let sText;
 
 export default class Science extends Phaser.Scene {
   constructor() {
@@ -18,10 +20,12 @@ export default class Science extends Phaser.Scene {
       'furniture',
       '../public/assets/tilesets/shop-and-hospital.png'
     );
+    this.load.image('lobby', '../public/assets/tilesets/LobbyTiles.png')
     this.load.image('chemical', '../public/assets/images/chemical.png');
     this.load.image('coal', '../public/assets/images/coal.png');
     this.load.image('research', '../public/assets/images/research.png');
     this.load.image('dna', '../public/assets/images/dna.png');
+    this.load.image('sciDoor', "../public/assets/images/sciDoor.png");
 
     this.load.spritesheet('rosalind', '../public/assets/sprites/rosalind.png', {
       frameWidth: 32,
@@ -40,8 +44,9 @@ export default class Science extends Phaser.Scene {
 
     const labTiles = map.addTilesetImage('lab', 'lab');
     const furnitureTiles = map.addTilesetImage('furniture', 'furniture');
+    const lobbyTiles = map.addTilesetImage('LobbyTiles', 'lobby');
 
-    let floorLayer = map.createLayer('Floors', labTiles);
+    let floorLayer = map.createLayer('Floors', [labTiles, lobbyTiles]);
     let wallLayer = map.createLayer('Walls', labTiles);
     let furnitureLayer = map.createLayer('Furniture', furnitureTiles);
     let objectLayer = map.createLayer('Objects', furnitureTiles);
@@ -53,7 +58,9 @@ export default class Science extends Phaser.Scene {
     this.cursors = this.input.keyboard.createCursorKeys();
 
     let clues = map.getObjectLayer('Clues')['objects'];
+    let door = map.getObjectLayer('Door')['objects'];
     item = this.physics.add.staticGroup();
+    sciDoor = this.physics.add.staticGroup();
 
     clues.forEach((object) => {
       let obj = item.create(object.x, object.y, object.name);
@@ -62,7 +69,17 @@ export default class Science extends Phaser.Scene {
       obj.body.width = object.width;
       obj.body.height = object.height;
     });
+
+    door.forEach((object) => {
+      let obj = sciDoor.create(object.x, object.y, object.name);
+      obj.setScale(object.width / object.width, object.height / object.height);
+      obj.setOrigin(0);
+      obj.body.width = object.width;
+      obj.body.height = object.height;
+    });
+
     this.physics.add.overlap(this.player, item, this.collect, null, this);
+    this.physics.add.overlap(this.player, sciDoor, this.exit, null, this);
 
     furnitureLayer.setCollisionByExclusion([-1]);
     objectLayer.setCollisionByExclusion([-1]);
@@ -71,6 +88,12 @@ export default class Science extends Phaser.Scene {
     this.physics.add.collider(this.player, furnitureLayer);
     this.physics.add.collider(this.player, wallLayer);
     this.physics.add.collider(this.player, objectLayer);
+
+    sText = this.add.text(500, 70, `Clues List`, {
+      fontSize: "20px",
+      fill: "white",
+    });
+    sText.setScrollFactor(0);
   }
 
   update() {
@@ -79,7 +102,13 @@ export default class Science extends Phaser.Scene {
 
   collect(player, object) {
     object.destroy(object.x, object.y);
+    sText.setText(`Clues: y`);
     return false;
+  }
+
+  exit() {
+    this.scene.stop("Science");
+    this.scene.start("Lobby");
   }
 
   createAnimations() {

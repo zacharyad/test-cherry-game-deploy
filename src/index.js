@@ -15,7 +15,7 @@ class Game extends Phaser.Game {
     this.scene.add("Engineering", Engineering);
     this.scene.add("Technology", Technology);
     this.scene.add("Science", Science);
-    this.scene.start("Lobby");
+    this.scene.start("Science");
 
     // change scene.start to see if it works to test it & make sure you import it on top
 
