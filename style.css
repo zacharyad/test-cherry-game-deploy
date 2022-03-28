@@ -1,0 +1,16 @@
+#lobby {
+    position: absolute;
+    top: 20;
+    left: 850px;
+    border: 2px solid black;
+    height: 200px;
+    width: 300px;
+}
+
+p {
+    color: red;
+}
+
+.hidden {
+    display: none;
+}
