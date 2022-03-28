@@ -1,209 +1,212 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.8" tiledversion="1.8.2" orientation="orthogonal" renderorder="right-down" width="25" height="20" tilewidth="32" tileheight="32" infinite="0" nextlayerid="6" nextobjectid="7">
+<map version="1.8" tiledversion="1.8.2" orientation="orthogonal" renderorder="right-down" width="25" height="20" tilewidth="32" tileheight="32" infinite="0" nextlayerid="7" nextobjectid="16">
  <editorsettings>
-  <export target="ScienceRoom.tmj" format="json"/>
+  <export format="json"/>
  </editorsettings>
  <tileset firstgid="1" name="lab" tilewidth="32" tileheight="32" tilecount="540" columns="30">
-  <image source="grace-hopper/senior-phase/capstone/phaser-resources/tilesets/lab tileset finished transparent.png" width="960" height="576"/>
+  <image source="../../../../phaser-resources/tilesets/lab tileset finished transparent.png" width="960" height="576"/>
  </tileset>
  <tileset firstgid="541" name="items" tilewidth="32" tileheight="32" tilecount="63" columns="0">
   <grid orientation="orthogonal" width="1" height="1"/>
   <tile id="0">
-   <image width="32" height="32" source="grace-hopper/senior-phase/capstone/phaser-resources/assets/items-asset-pack/StaticSmallManaPotion.png"/>
+   <image width="32" height="32" source="../../../../phaser-resources/assets/items-asset-pack/StaticSmallManaPotion.png"/>
   </tile>
   <tile id="1">
-   <image width="32" height="32" source="grace-hopper/senior-phase/capstone/phaser-resources/assets/items-asset-pack/StaticSmallHealthPotion.png"/>
+   <image width="32" height="32" source="../../../../phaser-resources/assets/items-asset-pack/StaticSmallHealthPotion.png"/>
   </tile>
   <tile id="2">
-   <image width="32" height="32" source="grace-hopper/senior-phase/capstone/phaser-resources/assets/items-asset-pack/StaticScroll.png"/>
+   <image width="32" height="32" source="../../../../phaser-resources/assets/items-asset-pack/StaticScroll.png"/>
   </tile>
   <tile id="3">
-   <image width="32" height="32" source="grace-hopper/senior-phase/capstone/phaser-resources/assets/items-asset-pack/StaticHeart.png"/>
+   <image width="32" height="32" source="../../../../phaser-resources/assets/items-asset-pack/StaticHeart.png"/>
   </tile>
   <tile id="4">
-   <image width="32" height="32" source="grace-hopper/senior-phase/capstone/phaser-resources/assets/items-asset-pack/StaticGreenCrystal.png"/>
+   <image width="32" height="32" source="../../../../phaser-resources/assets/items-asset-pack/StaticGreenCrystal.png"/>
   </tile>
   <tile id="5">
-   <image width="32" height="32" source="grace-hopper/senior-phase/capstone/phaser-resources/assets/items-asset-pack/StaticCoin.png"/>
+   <image width="32" height="32" source="../../../../phaser-resources/assets/items-asset-pack/StaticCoin.png"/>
   </tile>
   <tile id="6">
-   <image width="32" height="32" source="grace-hopper/senior-phase/capstone/phaser-resources/assets/items-asset-pack/StaticChickenThigh.png"/>
+   <image width="32" height="32" source="../../../../phaser-resources/assets/items-asset-pack/StaticChickenThigh.png"/>
   </tile>
   <tile id="7">
-   <image width="32" height="32" source="grace-hopper/senior-phase/capstone/phaser-resources/assets/items-asset-pack/StaticBlueCrystal.png"/>
+   <image width="32" height="32" source="../../../../phaser-resources/assets/items-asset-pack/StaticBlueCrystal.png"/>
   </tile>
   <tile id="8">
-   <image width="32" height="32" source="grace-hopper/senior-phase/capstone/phaser-resources/assets/items-asset-pack/StaticBigManaPotion.png"/>
+   <image width="32" height="32" source="../../../../phaser-resources/assets/items-asset-pack/StaticBigManaPotion.png"/>
   </tile>
   <tile id="9">
-   <image width="32" height="32" source="grace-hopper/senior-phase/capstone/phaser-resources/assets/items-asset-pack/StaticBigHealthPotion.png"/>
+   <image width="32" height="32" source="../../../../phaser-resources/assets/items-asset-pack/StaticBigHealthPotion.png"/>
   </tile>
   <tile id="10">
-   <image width="32" height="32" source="grace-hopper/senior-phase/capstone/phaser-resources/assets/items-asset-pack/StaticApple.png"/>
+   <image width="32" height="32" source="../../../../phaser-resources/assets/items-asset-pack/StaticApple.png"/>
   </tile>
   <tile id="11">
-   <image width="32" height="32" source="grace-hopper/senior-phase/capstone/phaser-resources/assets/items-asset-pack/SmallManaPotionMoving4.png"/>
+   <image width="32" height="32" source="../../../../phaser-resources/assets/items-asset-pack/SmallManaPotionMoving4.png"/>
   </tile>
   <tile id="12">
-   <image width="32" height="32" source="grace-hopper/senior-phase/capstone/phaser-resources/assets/items-asset-pack/SmallManaPotionMoving3.png"/>
+   <image width="32" height="32" source="../../../../phaser-resources/assets/items-asset-pack/SmallManaPotionMoving3.png"/>
   </tile>
   <tile id="13">
-   <image width="32" height="32" source="grace-hopper/senior-phase/capstone/phaser-resources/assets/items-asset-pack/SmallManaPotionMoving2.png"/>
+   <image width="32" height="32" source="../../../../phaser-resources/assets/items-asset-pack/SmallManaPotionMoving2.png"/>
   </tile>
   <tile id="14">
-   <image width="32" height="32" source="grace-hopper/senior-phase/capstone/phaser-resources/assets/items-asset-pack/SmallManaPotionMoving1.png"/>
+   <image width="32" height="32" source="../../../../phaser-resources/assets/items-asset-pack/SmallManaPotionMoving1.png"/>
   </tile>
   <tile id="15">
-   <image width="32" height="32" source="grace-hopper/senior-phase/capstone/phaser-resources/assets/items-asset-pack/SmallHealthPotionMoving4.png"/>
+   <image width="32" height="32" source="../../../../phaser-resources/assets/items-asset-pack/SmallHealthPotionMoving4.png"/>
   </tile>
   <tile id="16">
-   <image width="32" height="32" source="grace-hopper/senior-phase/capstone/phaser-resources/assets/items-asset-pack/SmallHealthPotionMoving3.png"/>
+   <image width="32" height="32" source="../../../../phaser-resources/assets/items-asset-pack/SmallHealthPotionMoving3.png"/>
   </tile>
   <tile id="17">
-   <image width="32" height="32" source="grace-hopper/senior-phase/capstone/phaser-resources/assets/items-asset-pack/SmallHealthPotionMoving2.png"/>
+   <image width="32" height="32" source="../../../../phaser-resources/assets/items-asset-pack/SmallHealthPotionMoving2.png"/>
   </tile>
   <tile id="18">
-   <image width="32" height="32" source="grace-hopper/senior-phase/capstone/phaser-resources/assets/items-asset-pack/SmallHealthPotionMoving1.png"/>
+   <image width="32" height="32" source="../../../../phaser-resources/assets/items-asset-pack/SmallHealthPotionMoving1.png"/>
   </tile>
   <tile id="19">
-   <image width="32" height="32" source="grace-hopper/senior-phase/capstone/phaser-resources/assets/items-asset-pack/ScrollMoving4.png"/>
+   <image width="32" height="32" source="../../../../phaser-resources/assets/items-asset-pack/ScrollMoving4.png"/>
   </tile>
   <tile id="20">
-   <image width="32" height="32" source="grace-hopper/senior-phase/capstone/phaser-resources/assets/items-asset-pack/ScrollMoving3.png"/>
+   <image width="32" height="32" source="../../../../phaser-resources/assets/items-asset-pack/ScrollMoving3.png"/>
   </tile>
   <tile id="21">
-   <image width="32" height="32" source="grace-hopper/senior-phase/capstone/phaser-resources/assets/items-asset-pack/ScrollMoving2.png"/>
+   <image width="32" height="32" source="../../../../phaser-resources/assets/items-asset-pack/ScrollMoving2.png"/>
   </tile>
   <tile id="22">
-   <image width="32" height="32" source="grace-hopper/senior-phase/capstone/phaser-resources/assets/items-asset-pack/ScrollMoving1.png"/>
+   <image width="32" height="32" source="../../../../phaser-resources/assets/items-asset-pack/ScrollMoving1.png"/>
   </tile>
   <tile id="23">
-   <image width="32" height="32" source="grace-hopper/senior-phase/capstone/phaser-resources/assets/items-asset-pack/PickUpItemEffect6.png"/>
+   <image width="32" height="32" source="../../../../phaser-resources/assets/items-asset-pack/PickUpItemEffect6.png"/>
   </tile>
   <tile id="24">
-   <image width="32" height="32" source="grace-hopper/senior-phase/capstone/phaser-resources/assets/items-asset-pack/PickUpItemEffect5.png"/>
+   <image width="32" height="32" source="../../../../phaser-resources/assets/items-asset-pack/PickUpItemEffect5.png"/>
   </tile>
   <tile id="25">
-   <image width="32" height="32" source="grace-hopper/senior-phase/capstone/phaser-resources/assets/items-asset-pack/PickUpItemEffect4.png"/>
+   <image width="32" height="32" source="../../../../phaser-resources/assets/items-asset-pack/PickUpItemEffect4.png"/>
   </tile>
   <tile id="26">
-   <image width="32" height="32" source="grace-hopper/senior-phase/capstone/phaser-resources/assets/items-asset-pack/PickUpItemEffect3.png"/>
+   <image width="32" height="32" source="../../../../phaser-resources/assets/items-asset-pack/PickUpItemEffect3.png"/>
   </tile>
   <tile id="27">
-   <image width="32" height="32" source="grace-hopper/senior-phase/capstone/phaser-resources/assets/items-asset-pack/PickUpItemEffect2.png"/>
+   <image width="32" height="32" source="../../../../phaser-resources/assets/items-asset-pack/PickUpItemEffect2.png"/>
   </tile>
   <tile id="28">
-   <image width="32" height="32" source="grace-hopper/senior-phase/capstone/phaser-resources/assets/items-asset-pack/PickUpItemEffect1.png"/>
+   <image width="32" height="32" source="../../../../phaser-resources/assets/items-asset-pack/PickUpItemEffect1.png"/>
   </tile>
   <tile id="29">
-   <image width="32" height="32" source="grace-hopper/senior-phase/capstone/phaser-resources/assets/items-asset-pack/HeartMoving4.png"/>
+   <image width="32" height="32" source="../../../../phaser-resources/assets/items-asset-pack/HeartMoving4.png"/>
   </tile>
   <tile id="30">
-   <image width="32" height="32" source="grace-hopper/senior-phase/capstone/phaser-resources/assets/items-asset-pack/HeartMoving3.png"/>
+   <image width="32" height="32" source="../../../../phaser-resources/assets/items-asset-pack/HeartMoving3.png"/>
   </tile>
   <tile id="31">
-   <image width="32" height="32" source="grace-hopper/senior-phase/capstone/phaser-resources/assets/items-asset-pack/HeartMoving2.png"/>
+   <image width="32" height="32" source="../../../../phaser-resources/assets/items-asset-pack/HeartMoving2.png"/>
   </tile>
   <tile id="32">
-   <image width="32" height="32" source="grace-hopper/senior-phase/capstone/phaser-resources/assets/items-asset-pack/HeartMoving1.png"/>
+   <image width="32" height="32" source="../../../../phaser-resources/assets/items-asset-pack/HeartMoving1.png"/>
   </tile>
   <tile id="33">
-   <image width="32" height="32" source="grace-hopper/senior-phase/capstone/phaser-resources/assets/items-asset-pack/GreenCrystalMoving4.png"/>
+   <image width="32" height="32" source="../../../../phaser-resources/assets/items-asset-pack/GreenCrystalMoving4.png"/>
   </tile>
   <tile id="34">
-   <image width="32" height="32" source="grace-hopper/senior-phase/capstone/phaser-resources/assets/items-asset-pack/GreenCrystalMoving3.png"/>
+   <image width="32" height="32" source="../../../../phaser-resources/assets/items-asset-pack/GreenCrystalMoving3.png"/>
   </tile>
   <tile id="35">
-   <image width="32" height="32" source="grace-hopper/senior-phase/capstone/phaser-resources/assets/items-asset-pack/GreenCrystalMoving2.png"/>
+   <image width="32" height="32" source="../../../../phaser-resources/assets/items-asset-pack/GreenCrystalMoving2.png"/>
   </tile>
   <tile id="36">
-   <image width="32" height="32" source="grace-hopper/senior-phase/capstone/phaser-resources/assets/items-asset-pack/GreenCrystalMoving1.png"/>
+   <image width="32" height="32" source="../../../../phaser-resources/assets/items-asset-pack/GreenCrystalMoving1.png"/>
   </tile>
   <tile id="37">
-   <image width="32" height="32" source="grace-hopper/senior-phase/capstone/phaser-resources/assets/items-asset-pack/CoinMoving6.png"/>
+   <image width="32" height="32" source="../../../../phaser-resources/assets/items-asset-pack/CoinMoving6.png"/>
   </tile>
   <tile id="38">
-   <image width="32" height="32" source="grace-hopper/senior-phase/capstone/phaser-resources/assets/items-asset-pack/CoinMoving5.png"/>
+   <image width="32" height="32" source="../../../../phaser-resources/assets/items-asset-pack/CoinMoving5.png"/>
   </tile>
   <tile id="39">
-   <image width="32" height="32" source="grace-hopper/senior-phase/capstone/phaser-resources/assets/items-asset-pack/CoinMoving4.png"/>
+   <image width="32" height="32" source="../../../../phaser-resources/assets/items-asset-pack/CoinMoving4.png"/>
   </tile>
   <tile id="40">
-   <image width="32" height="32" source="grace-hopper/senior-phase/capstone/phaser-resources/assets/items-asset-pack/CoinMoving3.png"/>
+   <image width="32" height="32" source="../../../../phaser-resources/assets/items-asset-pack/CoinMoving3.png"/>
   </tile>
   <tile id="41">
-   <image width="32" height="32" source="grace-hopper/senior-phase/capstone/phaser-resources/assets/items-asset-pack/CoinMoving2.png"/>
+   <image width="32" height="32" source="../../../../phaser-resources/assets/items-asset-pack/CoinMoving2.png"/>
   </tile>
   <tile id="42">
-   <image width="32" height="32" source="grace-hopper/senior-phase/capstone/phaser-resources/assets/items-asset-pack/CoinMoving1.png"/>
+   <image width="32" height="32" source="../../../../phaser-resources/assets/items-asset-pack/CoinMoving1.png"/>
   </tile>
   <tile id="43">
-   <image width="32" height="32" source="grace-hopper/senior-phase/capstone/phaser-resources/assets/items-asset-pack/ChickenThighMoving4.png"/>
+   <image width="32" height="32" source="../../../../phaser-resources/assets/items-asset-pack/ChickenThighMoving4.png"/>
   </tile>
   <tile id="44">
-   <image width="32" height="32" source="grace-hopper/senior-phase/capstone/phaser-resources/assets/items-asset-pack/ChickenThighMoving3.png"/>
+   <image width="32" height="32" source="../../../../phaser-resources/assets/items-asset-pack/ChickenThighMoving3.png"/>
   </tile>
   <tile id="45">
-   <image width="32" height="32" source="grace-hopper/senior-phase/capstone/phaser-resources/assets/items-asset-pack/ChickenThighMoving2.png"/>
+   <image width="32" height="32" source="../../../../phaser-resources/assets/items-asset-pack/ChickenThighMoving2.png"/>
   </tile>
   <tile id="46">
-   <image width="32" height="32" source="grace-hopper/senior-phase/capstone/phaser-resources/assets/items-asset-pack/ChickenThighMoving1.png"/>
+   <image width="32" height="32" source="../../../../phaser-resources/assets/items-asset-pack/ChickenThighMoving1.png"/>
   </tile>
   <tile id="47">
-   <image width="32" height="32" source="grace-hopper/senior-phase/capstone/phaser-resources/assets/items-asset-pack/BlueCrystalMoving4.png"/>
+   <image width="32" height="32" source="../../../../phaser-resources/assets/items-asset-pack/BlueCrystalMoving4.png"/>
   </tile>
   <tile id="48">
-   <image width="32" height="32" source="grace-hopper/senior-phase/capstone/phaser-resources/assets/items-asset-pack/BlueCrystalMoving3.png"/>
+   <image width="32" height="32" source="../../../../phaser-resources/assets/items-asset-pack/BlueCrystalMoving3.png"/>
   </tile>
   <tile id="49">
-   <image width="32" height="32" source="grace-hopper/senior-phase/capstone/phaser-resources/assets/items-asset-pack/BlueCrystalMoving2.png"/>
+   <image width="32" height="32" source="../../../../phaser-resources/assets/items-asset-pack/BlueCrystalMoving2.png"/>
   </tile>
   <tile id="50">
-   <image width="32" height="32" source="grace-hopper/senior-phase/capstone/phaser-resources/assets/items-asset-pack/BlueCrystalMoving1.png"/>
+   <image width="32" height="32" source="../../../../phaser-resources/assets/items-asset-pack/BlueCrystalMoving1.png"/>
   </tile>
   <tile id="51">
-   <image width="32" height="32" source="grace-hopper/senior-phase/capstone/phaser-resources/assets/items-asset-pack/BigManaPotionMoving4.png"/>
+   <image width="32" height="32" source="../../../../phaser-resources/assets/items-asset-pack/BigManaPotionMoving4.png"/>
   </tile>
   <tile id="52">
-   <image width="32" height="32" source="grace-hopper/senior-phase/capstone/phaser-resources/assets/items-asset-pack/BigManaPotionMoving3.png"/>
+   <image width="32" height="32" source="../../../../phaser-resources/assets/items-asset-pack/BigManaPotionMoving3.png"/>
   </tile>
   <tile id="53">
-   <image width="32" height="32" source="grace-hopper/senior-phase/capstone/phaser-resources/assets/items-asset-pack/BigManaPotionMoving2.png"/>
+   <image width="32" height="32" source="../../../../phaser-resources/assets/items-asset-pack/BigManaPotionMoving2.png"/>
   </tile>
   <tile id="54">
-   <image width="32" height="32" source="grace-hopper/senior-phase/capstone/phaser-resources/assets/items-asset-pack/BigManaPotionMoving1.png"/>
+   <image width="32" height="32" source="../../../../phaser-resources/assets/items-asset-pack/BigManaPotionMoving1.png"/>
   </tile>
   <tile id="55">
-   <image width="32" height="32" source="grace-hopper/senior-phase/capstone/phaser-resources/assets/items-asset-pack/BigHealthPotionMoving4.png"/>
+   <image width="32" height="32" source="../../../../phaser-resources/assets/items-asset-pack/BigHealthPotionMoving4.png"/>
   </tile>
   <tile id="56">
-   <image width="32" height="32" source="grace-hopper/senior-phase/capstone/phaser-resources/assets/items-asset-pack/BigHealthPotionMoving3.png"/>
+   <image width="32" height="32" source="../../../../phaser-resources/assets/items-asset-pack/BigHealthPotionMoving3.png"/>
   </tile>
   <tile id="57">
-   <image width="32" height="32" source="grace-hopper/senior-phase/capstone/phaser-resources/assets/items-asset-pack/BigHealthPotionMoving2.png"/>
+   <image width="32" height="32" source="../../../../phaser-resources/assets/items-asset-pack/BigHealthPotionMoving2.png"/>
   </tile>
   <tile id="58">
-   <image width="32" height="32" source="grace-hopper/senior-phase/capstone/phaser-resources/assets/items-asset-pack/BigHealthPotionMoving1.png"/>
+   <image width="32" height="32" source="../../../../phaser-resources/assets/items-asset-pack/BigHealthPotionMoving1.png"/>
   </tile>
   <tile id="59">
-   <image width="32" height="32" source="grace-hopper/senior-phase/capstone/phaser-resources/assets/items-asset-pack/AppleMoving4.png"/>
+   <image width="32" height="32" source="../../../../phaser-resources/assets/items-asset-pack/AppleMoving4.png"/>
   </tile>
   <tile id="60">
-   <image width="32" height="32" source="grace-hopper/senior-phase/capstone/phaser-resources/assets/items-asset-pack/AppleMoving3.png"/>
+   <image width="32" height="32" source="../../../../phaser-resources/assets/items-asset-pack/AppleMoving3.png"/>
   </tile>
   <tile id="61">
-   <image width="32" height="32" source="grace-hopper/senior-phase/capstone/phaser-resources/assets/items-asset-pack/AppleMoving2.png"/>
+   <image width="32" height="32" source="../../../../phaser-resources/assets/items-asset-pack/AppleMoving2.png"/>
   </tile>
   <tile id="62">
-   <image width="32" height="32" source="grace-hopper/senior-phase/capstone/phaser-resources/assets/items-asset-pack/AppleMoving1.png"/>
+   <image width="32" height="32" source="../../../../phaser-resources/assets/items-asset-pack/AppleMoving1.png"/>
   </tile>
  </tileset>
  <tileset firstgid="604" name="furniture" tilewidth="32" tileheight="32" tilecount="256" columns="16">
-  <image source="grace-hopper/senior-phase/capstone/phaser-resources/tilesets/kauzz/shop-and-hospital.png" width="512" height="512"/>
+  <image source="../../../../phaser-resources/tilesets/kauzz/shop-and-hospital.png" width="512" height="512"/>
  </tileset>
- <layer id="1" name="Floors" width="25" height="20" locked="1">
+ <tileset firstgid="860" name="LobbyTiles" tilewidth="32" tileheight="32" tilecount="1064" columns="8">
+  <image source="../../../../phaser-resources/tilesets/LobbyTiles.png" width="256" height="4256"/>
+ </tileset>
+ <layer id="1" name="Floors" width="25" height="20">
   <data encoding="base64">
-   5gAAANMAAADUAAAA1QAAANYAAADXAAAA2AAAANkAAADaAAAA2wAAANwAAADTAAAA1AAAANUAAADWAAAA1wAAANgAAADZAAAA2gAAANsAAADcAAAA3QAAAN4AAADfAAAAXgEAAKABAADQAQAA8AEAAPABAADwAQAA8AEAANIBAADTAQAA1AEAANUBAADwAQAA8AEAAPABAADwAQAA8AEAAPABAADwAQAA8AEAAPABAADwAQAA8AEAAPABAADwAQAA0AEAAKIBAAC+AQAA0AEAANQBAADwAQAA8QEAAPIBAADSAQAA0wEAANQBAADVAQAA8AEAAPEBAADyAQAA8wEAANQBAADVAQAA0gEAANMBAADUAQAA1QEAANIBAADTAQAA1AEAANABAADAAQAA3AEAAPEBAADyAQAA0gEAANMBAADUAQAA0gEAANMBAADUAQAA1QEAAPIBAADzAQAA8AEAAPEBAADyAQAA8wEAAPABAADxAQAA8gEAAPMBAADwAQAA8QEAAPIBAADzAQAA3gEAAKABAADTAQAA0gEAANMBAADUAQAA1QEAANUBAADVAQAA1QEAANUBAADUAQAA1QEAANIBAADTAQAA1AEAANUBAADSAQAA0wEAANQBAADVAQAA0gEAANMBAADUAQAA7gEAAKIBAAC+AQAA0gEAANMBAADUAQAA1QEAANUBAADzAQAA8wEAAPMBAADzAQAA8gEAAPMBAADwAQAA8QEAAPIBAADzAQAA8AEAAPEBAADyAQAA8wEAAPABAADxAQAA8gEAAPMBAADAAQAA3AEAANIBAADTAQAA6gEAANUBAADqAQAA1AEAAOoBAADSAQAA6gEAANQBAADqAQAA0gEAAMwBAADSAQAAzAEAANQBAADMAQAA1AEAAMwBAADSAQAAzAEAANQBAADVAQAA3gEAAPoBAADwAQAA6wEAANMBAADUAQAA1QEAAPIBAADzAQAA8AEAAPEBAADSAQAA0gEAAM0BAADwAQAA0gEAANIBAADSAQAA0gEAANMBAADUAQAA1QEAAPEBAADrAQAA8wEAAPwBAAAYAgAA0wEAANIBAADTAQAA1AEAANUBAADUAQAA0AEAANIBAADTAQAA8AEAAPABAADxAQAA8gEAAPABAADwAQAA8AEAANABAADTAQAA1AEAANUBAADTAQAA1AEAANUBAAAaAgAAoAEAAPEBAADrAQAA0wEAANQBAADVAQAA8gEAAPMBAADwAQAA8QEAAPABAADxAQAAzQEAAPMBAADyAQAA8wEAAPABAADSAQAA0wEAANQBAADVAQAA8QEAAOsBAADzAQAAogEAAL4BAADTAQAA0gEAANIBAADTAQAA1AEAANUBAADQAQAA0gEAANMBAADwAQAA8QEAAPIBAADzAQAA1QEAANUBAADSAQAA0AEAANMBAADUAQAA1QEAANMBAADUAQAA1QEAAMABAADcAQAA8QEAAOsBAADSAQAA0gEAANMBAADUAQAA1QEAAPABAADxAQAA8AEAAPEBAADNAQAA8wEAAPMBAADzAQAA8AEAAPABAADSAQAA0wEAANQBAADVAQAA6wEAAPMBAADeAQAA+gEAANIBAADSAQAA0wEAANQBAADVAQAA1QEAANUBAADVAQAA1QEAANIBAADwAQAA8QEAAPIBAADzAQAA1QEAANIBAADTAQAA0gEAANMBAADUAQAA1QEAANQBAADVAQAA/AEAABgCAADwAQAA6wEAANMBAADUAQAA1QEAANUBAADSAQAA0gEAANIBAADwAQAA8AEAAM0BAADyAQAA8wEAANIBAADSAQAA0gEAANIBAADSAQAA0wEAANQBAADrAQAA8wEAABoCAACgAQAA0wEAANIBAADMAQAA8AEAAMwBAADSAQAAzAEAANIBAADMAQAA0wEAAMwBAADSAQAA6gEAANIBAADqAQAA8AEAAOoBAADwAQAA6gEAANMBAADqAQAA1QEAANUBAACiAQAAvgEAAPEBAADwAQAA0gEAANIBAADSAQAA8AEAAPABAADwAQAA0gEAANIBAADSAQAA6wEAAPABAADwAQAA8AEAAPEBAADSAQAA0wEAANQBAADVAQAA1QEAANUBAADuAQAAwAEAANwBAADTAQAA1AEAANIBAADwAQAA8AEAANIBAADSAQAA0gEAAPABAADwAQAA8AEAAPEBAADSAQAA0gEAANIBAADTAQAA1AEAANUBAADVAQAA8wEAAPMBAADzAQAA1QEAAN4BAAD6AQAA0AEAAPIBAADwAQAA8AEAAPEBAADwAQAA8AEAAPABAADxAQAA8gEAAPMBAADrAQAA8AEAAPABAADwAQAA8QEAAPIBAADzAQAA8wEAAPIBAADzAQAA8gEAANABAAD8AQAAGAIAANABAADUAQAA1QEAANIBAADTAQAA1AEAANUBAADSAQAA0wEAANQBAADVAQAA0gEAANMBAADUAQAA1QEAANIBAADTAQAA1AEAANUBAADSAQAA0wEAANQBAADQAQAAGgIAAFYBAABLAQAATAEAAE0BAABOAQAATwEAAFABAABRAQAAUgEAAFMBAABUAQAASwEAAEwBAABNAQAATgEAAE8BAABQAQAAUQEAAFIBAABTAQAAVAEAAFIBAABTAQAAVAEAAFgBAAA=
+   5gAAANMAAADUAAAA1QAAANYAAADXAAAA2AAAANkAAADaAAAA2wAAANwAAADTAAAA1AAAANUAAADWAAAA1wAAANcAAADZAAAA2gAAANsAAADcAAAA3QAAAN8FAADfAAAAXgEAAKABAADQAQAA8AEAAPABAADwAQAA8AEAANIBAADTAQAA1AEAANUBAADwAQAA8AEAAPABAADwAQAA8AEAAPABAADwAQAA8AEAAPABAADwAQAA8AEAAPABAADwAQAA0AEAAKIBAAC+AQAA0AEAANQBAADwAQAA8QEAAPIBAADSAQAA0wEAANQBAADVAQAA8AEAAPEBAADyAQAA8wEAANQBAADVAQAA0gEAANMBAADUAQAA1QEAANIBAADTAQAA1AEAANABAADAAQAA3AEAAPEBAADyAQAA0gEAANMBAADUAQAA0gEAANMBAADUAQAA1QEAAPIBAADzAQAA8AEAAPEBAADyAQAA8wEAAPABAADxAQAA8gEAAPMBAADwAQAA8QEAAPIBAADzAQAA3gEAAKABAADTAQAA0gEAANMBAADUAQAA1QEAANUBAADVAQAA1QEAANUBAADUAQAA1QEAANIBAADTAQAA1AEAANUBAADSAQAA0wEAANQBAADVAQAA0gEAANMBAADUAQAA7gEAAKIBAAC+AQAA0gEAANMBAADUAQAA1QEAANUBAADzAQAA8wEAAPMBAADzAQAA8gEAAPMBAADwAQAA8QEAAPIBAADzAQAA8AEAAPEBAADyAQAA8wEAAPABAADxAQAA8gEAAPMBAADAAQAA3AEAANIBAADTAQAA6gEAANUBAADqAQAA1AEAAOoBAADSAQAA6gEAANQBAADqAQAA0gEAAMwBAADSAQAAzAEAANQBAADMAQAA1AEAAMwBAADSAQAAzAEAANQBAADVAQAA3gEAAPoBAADwAQAA6wEAANMBAADUAQAA1QEAAPIBAADzAQAA8AEAAPEBAADSAQAA0gEAAM0BAADwAQAA0gEAANIBAADSAQAA0gEAANMBAADUAQAA1QEAAPEBAADrAQAA8wEAAPwBAAAYAgAA0wEAANIBAADTAQAA1AEAANUBAADUAQAA0AEAANIBAADTAQAA8AEAAPABAADxAQAA8gEAAPABAADwAQAA8AEAANABAADTAQAA1AEAANUBAADTAQAA1AEAANUBAAAaAgAAoAEAAPEBAADrAQAA0wEAANQBAADVAQAA8gEAAPMBAADwAQAA8QEAAPABAADxAQAAzQEAAPMBAADyAQAA8wEAAPABAADSAQAA0wEAANQBAADVAQAA8QEAAOsBAADzAQAAogEAAL4BAADTAQAA0gEAANIBAADTAQAA1AEAANUBAADQAQAA0gEAANMBAADwAQAA8QEAAPIBAADzAQAA1QEAANUBAADSAQAA0AEAANMBAADUAQAA1QEAANMBAADUAQAA1QEAAMABAADcAQAA8QEAAOsBAADSAQAA0gEAANMBAADUAQAA1QEAAPABAADxAQAA8AEAAPEBAADNAQAA8wEAAPMBAADzAQAA8AEAAPABAADSAQAA0wEAANQBAADVAQAA6wEAAPMBAADeAQAA+gEAANIBAADSAQAA0wEAANQBAADVAQAA1QEAANUBAADVAQAA1QEAANIBAADwAQAA8QEAAPIBAADzAQAA1QEAANIBAADTAQAA0gEAANMBAADUAQAA1QEAANQBAADVAQAA/AEAABgCAADwAQAA6wEAANMBAADUAQAA1QEAANUBAADSAQAA0gEAANIBAADwAQAA8AEAAM0BAADyAQAA8wEAANIBAADSAQAA0gEAANIBAADSAQAA0wEAANQBAADrAQAA8wEAABoCAACgAQAA0wEAANIBAADMAQAA8AEAAMwBAADSAQAAzAEAANIBAADMAQAA0wEAAMwBAADSAQAA6gEAANIBAADqAQAA8AEAAOoBAADwAQAA6gEAANMBAADqAQAA1QEAANUBAACiAQAAvgEAAPEBAADwAQAA0gEAANIBAADSAQAA8AEAAPABAADwAQAA0gEAANIBAADSAQAA6wEAAPABAADwAQAA8AEAAPEBAADSAQAA0wEAANQBAADVAQAA1QEAANUBAADuAQAAwAEAANwBAADTAQAA1AEAANIBAADwAQAA8AEAANIBAADSAQAA0gEAAPABAADwAQAA8AEAAPEBAADSAQAA0gEAANIBAADTAQAA1AEAANUBAADVAQAA8wEAAPMBAADzAQAA1QEAAN4BAAD6AQAA0AEAAPIBAADwAQAA8AEAAPEBAADwAQAA8AEAAPABAADxAQAA8gEAAPMBAADrAQAA8AEAAPABAADwAQAA8QEAAPIBAADzAQAA8wEAAPIBAADzAQAA8gEAANABAAD8AQAAGAIAANABAADUAQAA1QEAANIBAADTAQAA1AEAANUBAADSAQAA0wEAANQBAADVAQAA0gEAANMBAADUAQAA1QEAANIBAADTAQAA1AEAANUBAADSAQAA0wEAANQBAADQAQAAGgIAAFYBAABLAQAATAEAAE0BAABOAQAATwEAAFABAABRAQAAUgEAAFMBAABUAQAASwEAAEwBAABNAQAATgEAAE8BAABQAQAAUQEAAFIBAABTAQAAVAEAAFIBAABTAQAAVAEAAFgBAAA=
   </data>
  </layer>
  <layer id="2" name="Walls" width="25" height="20" locked="1">
@@ -218,19 +221,28 @@
  </layer>
  <layer id="4" name="Objects" width="25" height="20" locked="1">
   <data encoding="base64">
-   AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAJoCAACoAgAAiwIAAAAAAAB6AgAAewIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAsgIAALMCAAClAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACnAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAawIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAJcCAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=
+   AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAJoCAACoAgAAiwIAAAAAAAB6AgAAewIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAsgIAALMCAAClAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAsDAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACnAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACwMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAawIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAJcCAAAAAAAAAAAAAAAAAAALAwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAGwMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACsDAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=
   </data>
  </layer>
- <objectgroup id="5" name="Interactables">
-  <object id="4" name="chemical" gid="549" x="326.017" y="69.7815" width="32" height="32">
+ <objectgroup id="5" name="Clues" locked="1">
+  <object id="4" name="chemical" gid="549" x="40.3027" y="273.143" width="32" height="32">
    <properties>
     <property name="isCollected" type="bool" value="false"/>
    </properties>
   </object>
-  <object id="6" name="coin" gid="583" x="40.3025" y="288.269" width="16" height="16">
+  <object id="7" name="coal" gid="548" x="727.697" y="242.05" width="32" height="32">
    <properties>
     <property name="isCollected" type="bool" value="false"/>
    </properties>
   </object>
+  <object id="8" name="research" gid="543" x="568.874" y="110.118" width="32" height="32">
+   <properties>
+    <property name="isCollected" type="bool" value="false"/>
+   </properties>
+  </object>
+  <object id="13" name="dna" gid="487" x="735.261" y="384.908" width="32" height="32"/>
+ </objectgroup>
+ <objectgroup id="6" name="Door" locked="1">
+  <object id="15" name="sciDoor" gid="1315" x="703.328" y="30.2857" width="32" height="32"/>
  </objectgroup>
 </map>
