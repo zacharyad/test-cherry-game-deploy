@@ -4,7 +4,6 @@ import Lobby from "./Lobby";
 
 let item;
 let door;
-let exitDoor;
 
 export default class Math extends Phaser.Scene {
   constructor() {
