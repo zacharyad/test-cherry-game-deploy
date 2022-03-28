@@ -96,28 +96,16 @@
                  "y":391
                 }, 
                 {
-                 "gid":2226,
-                 "height":22,
-                 "id":6,
-                 "name":"Rocket",
+                 "gid":2230,
+                 "height":16,
+                 "id":9,
+                 "name":"Pennant",
                  "properties":[
                         {
                          "name":"isVisited",
                          "type":"bool",
                          "value":false
                         }],
-                 "rotation":0,
-                 "type":"",
-                 "visible":true,
-                 "width":23,
-                 "x":130,
-                 "y":575
-                }, 
-                {
-                 "gid":2230,
-                 "height":16,
-                 "id":9,
-                 "name":"Pennant",
                  "rotation":0,
                  "type":"",
                  "visible":true,
@@ -130,6 +118,12 @@
                  "height":20,
                  "id":10,
                  "name":"Calculator",
+                 "properties":[
+                        {
+                         "name":"isVisited",
+                         "type":"bool",
+                         "value":false
+                        }],
                  "rotation":0,
                  "type":"",
                  "visible":true,
@@ -142,12 +136,47 @@
                  "height":27,
                  "id":11,
                  "name":"Medal",
+                 "properties":[
+                        {
+                         "name":"isVisited",
+                         "type":"bool",
+                         "value":false
+                        }],
                  "rotation":0,
                  "type":"",
                  "visible":true,
                  "width":24,
                  "x":574,
                  "y":273
+                }],
+         "opacity":1,
+         "type":"objectgroup",
+         "visible":true,
+         "x":0,
+         "y":0
+        }, 
+        {
+         "draworder":"topdown",
+         "id":12,
+         "name":"Rocket",
+         "objects":[
+                {
+                 "gid":2226,
+                 "height":18.6666666666666,
+                 "id":12,
+                 "name":"Rocket",
+                 "properties":[
+                        {
+                         "name":"isVisited",
+                         "type":"bool",
+                         "value":false
+                        }],
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":18.6666666666667,
+                 "x":130,
+                 "y":576.666666666667
                 }],
          "opacity":1,
          "type":"objectgroup",
@@ -178,8 +207,8 @@
          "x":0,
          "y":0
         }],
- "nextlayerid":12,
- "nextobjectid":12,
+ "nextlayerid":13,
+ "nextobjectid":13,
  "orientation":"orthogonal",
  "renderorder":"right-down",
  "tiledversion":"1.8.2",

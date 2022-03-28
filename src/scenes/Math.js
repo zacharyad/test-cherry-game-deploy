@@ -5,6 +5,7 @@ import SpaceInvaders from "./SpaceInvaders";
 
 let item;
 let door;
+let rocket;
 
 export default class Math extends Phaser.Scene {
   constructor() {
@@ -83,6 +84,19 @@ export default class Math extends Phaser.Scene {
       obj.body.height = object.height;
     });
     this.physics.add.overlap(this.player, door, this.exit, null, this);
+
+
+    let rocketLayer = map.getObjectLayer('Rocket')['objects'];
+    rocket = this.physics.add.staticGroup();
+
+    rocketLayer.forEach((object) => {
+      let obj = rocket.create(object.x, object.y, object.name);
+      obj.setScale(object.width / object.width, object.height / object.height);
+      obj.setOrigin(0);
+      obj.body.width = object.width;
+      obj.body.height = object.height;
+    });
+    this.physics.add.overlap(this.player, rocket, this.startGame, null, this);
 
 
     furnitureLayer.setCollisionByExclusion([-1]);
