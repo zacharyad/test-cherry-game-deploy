@@ -8,7 +8,7 @@ export default class Technology extends Phaser.Scene {
   preload() {
     this.load.tilemapTiledJSON(
       "techMap",
-      "../public/assets/tilemaps/TechRoomM.json"
+      "../public/assets/tilemaps/TechRoomL.json"
     );
     this.load.image(
       "VaporwaveFurniture",
@@ -21,6 +21,14 @@ export default class Technology extends Phaser.Scene {
       "../public/assets/tilesets/RepeatableStoneWall.png"
     );
     this.load.image("Pride", "../public/assets/tilesets/pride.png");
+    this.load.spritesheet(
+      "grace",
+      "../public/assets/sprites/gh-spritesheet.png",
+      {
+        frameWidth: 17,
+        frameHeight: 34,
+      }
+    );
   }
   create() {
     console.log("hi", this.cache.tilemap.get("techMap").data);
@@ -60,6 +68,51 @@ export default class Technology extends Phaser.Scene {
       vaporTiles,
       schoolTiles,
     ]);
+
+    this.player = new Player(this, 470, 610, "grace").setScale(1.75); //Joe is pleased
+    this.createAnimations(); //maybe also move this to player class?
+
+    this.cursors = this.input.keyboard.createCursorKeys();
+    bumpLayer.setCollisionByExclusion([-1]);
+    this.physics.add.collider(this.player, bumpLayer); // move this to PLayer class
   }
-  update() {}
+  update() {
+    this.player.update(this.cursors);
+  }
+  createAnimations() {
+    // Joe says this belongs in the player class, even if it changes by scene - it's attached to each specific sprite
+    this.anims.create({
+      key: "walk right",
+      frames: this.anims.generateFrameNumbers("grace", { start: 11, end: 14 }),
+      //something to keep in mind about line 62 - it is a decision that youre making and it can be a return from a function i.e. getWalkRight and you can pass in string, if character === grace return start (numbers) else if character === mary start(marynumbers)
+      //each mechanism is like its own system
+
+      frameRate: 6,
+      repeat: -1,
+    });
+    this.anims.create({
+      key: "walk left",
+      frames: this.anims.generateFrameNumbers("grace", { start: 15, end: 18 }),
+      frameRate: 6,
+      repeat: -1,
+    });
+    this.anims.create({
+      key: "walk up",
+      frames: this.anims.generateFrameNumbers("grace", { start: 23, end: 30 }),
+      frameRate: 6,
+      repeat: -1,
+    });
+    this.anims.create({
+      key: "walk down",
+      frames: this.anims.generateFrameNumbers("grace", { start: 0, end: 6 }),
+      frameRate: 6,
+      repeat: -1,
+    });
+    this.anims.create({
+      key: "idle",
+      frames: this.anims.generateFrameNumbers("grace", { start: 0, end: 0 }),
+      frameRate: 6,
+      repeat: -1,
+    });
+  }
 }
