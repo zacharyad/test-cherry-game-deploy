@@ -2,6 +2,7 @@ import Phaser from "phaser";
 import Player from "../entities/Player";
 import Technology from "./Technology";
 import Engineering from "./Engineering";
+import Math from "./Math";
 import config from "../config/config";
 
 let Clues;
@@ -13,6 +14,7 @@ let TDoor;
 let EDoor;
 let MDoor;
 let engDoor;
+let mathDoor;
 
 export default class Lobby extends Phaser.Scene {
   constructor() {
@@ -27,6 +29,7 @@ export default class Lobby extends Phaser.Scene {
     this.load.image("Ship", "../public/assets/images/navyShip.png");
     this.load.image("Moth", "../public/assets/images/CompPic.png");
     this.load.image("Engineering", "../public/assets/images/Door.png");
+    this.load.image("Math", "../public/assets/images/Door.png");
     this.load.spritesheet(
       "grace",
       "../public/assets/sprites/gh-spritesheet.png",
@@ -89,6 +92,7 @@ export default class Lobby extends Phaser.Scene {
 
     item = this.physics.add.staticGroup();
     engDoor = this.physics.add.staticGroup();
+    mathDoor = this.physics.add.staticGroup();
     //  console.log(engDoor, 'engDoor')
 
     Clues.forEach((object) => {
@@ -106,12 +110,20 @@ export default class Lobby extends Phaser.Scene {
       obj.setOrigin(0);
       obj.body.width = object.width;
       obj.body.height = object.height;
-      console.log(object);
-      console.log(item);
+    });
+
+    MDoor.forEach((object) => {
+      let obj = mathDoor.create(object.x, object.y, object.name);
+      obj.setScale(object.width / object.width, object.height / object.height);
+      obj.setOrigin(0);
+      obj.body.width = object.width;
+      obj.body.height = object.height;
     });
 
     this.physics.add.overlap(this.player, item, this.collect, null, this);
-    this.physics.add.overlap(this.player, engDoor, this.enterRoom, null, this);
+    this.physics.add.overlap(this.player, engDoor, this.enterERoom, null, this);
+    this.physics.add.overlap(this.player, mathDoor, this.enterMRoom, null, this);
+
 
     text = this.add.text(570, 70, `Clues: x`, {
       fontSize: "20px",
@@ -145,10 +157,14 @@ export default class Lobby extends Phaser.Scene {
     this.player.update(this.cursors);
   }
 
-  enterRoom() {
+  enterERoom() {
     this.scene.stop("Lobby");
     this.scene.start("Engineering", Engineering);
+  }
 
+  enterMRoom() {
+    this.scene.stop("Lobby");
+    this.scene.start("Math", Math);
   }
 
   collect(player, object) { // this is what happens when we overlap with the object
