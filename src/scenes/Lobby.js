@@ -63,7 +63,6 @@ export default class Lobby extends Phaser.Scene {
     let furnitureLayer = map.createLayer("Furniture", lobbyTiles);
     let objectLayer = map.createLayer("Objects", lobbyTiles);
     let letterLayer = map.createLayer("Letters", textTiles);
-    
 
     this.player = new Player(this, 470, 610, "grace").setScale(1.75); //Joe is pleased
 
@@ -86,12 +85,12 @@ export default class Lobby extends Phaser.Scene {
     EDoor = map.getObjectLayer("EDoor")["objects"];
     MDoor = map.getObjectLayer("MDoor")["objects"];
 
-
     console.log(Clues);
     console.log(Clues[0].name);
 
     item = this.physics.add.staticGroup();
     engDoor = this.physics.add.staticGroup();
+    techDoor = this.physics.add.staticGroup();
     mathDoor = this.physics.add.staticGroup();
     //  console.log(engDoor, 'engDoor')
 
@@ -119,11 +118,30 @@ export default class Lobby extends Phaser.Scene {
       obj.body.width = object.width;
       obj.body.height = object.height;
     });
+    TDoor.forEach((object) => {
+      let obj = techDoor.create(object.x, object.y, object.name);
+      obj.setScale(object.width / object.width, object.height / object.height);
+      obj.setOrigin(0);
+      obj.body.width = object.width;
+      obj.body.height = object.height;
+    });
 
     this.physics.add.overlap(this.player, item, this.collect, null, this);
     this.physics.add.overlap(this.player, engDoor, this.enterERoom, null, this);
-    this.physics.add.overlap(this.player, mathDoor, this.enterMRoom, null, this);
-
+    this.physics.add.overlap(
+      this.player,
+      mathDoor,
+      this.enterMRoom,
+      null,
+      this
+    );
+    this.physics.add.overlap(
+      this.player,
+      techDoor,
+      this.enterTRoom,
+      null,
+      this
+    );
 
     text = this.add.text(570, 70, `Clues: x`, {
       fontSize: "20px",
@@ -166,8 +184,13 @@ export default class Lobby extends Phaser.Scene {
     this.scene.stop("Lobby");
     this.scene.start("Math", Math);
   }
+  enterTRoom() {
+    this.scene.stop("Lobby");
+    this.scene.start("Technology", Technology);
+  }
 
-  collect(player, object) { // this is what happens when we overlap with the object
+  collect(player, object) {
+    // this is what happens when we overlap with the object
     object.destroy(object.x, object.y);
     text.setText(`Clues: y`); // set the text to show the current score
     // list = []
