@@ -204,6 +204,17 @@ export default class Lobby extends Phaser.Scene {
     // this is what happens when we overlap with the object
     object.destroy(object.x, object.y);
     text.setText(`Clues: y`); // set the text to show the current score
+    let clue1 = document.getElementById("1");
+    let clue2 = document.getElementById("2");
+
+    console.log(object.texture.key); // object name
+
+    if (object.texture.key === "Ship") {
+      clue1.classList.remove("hidden");
+    } else if (object.texture.key === "Moth") {
+      clue2.classList.remove("hidden");
+    }
+
     // list = []
     // list.push(object.listClues)
     //`${list}
