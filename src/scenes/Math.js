@@ -1,6 +1,7 @@
 import Phaser from 'phaser';
 import Player from '../entities/Player';
 import Lobby from "./Lobby";
+import SpaceInvaders from "./SpaceInvaders";
 
 let item;
 let door;
@@ -102,6 +103,11 @@ export default class Math extends Phaser.Scene {
   collect(player, object) {
     object.destroy(object.x, object.y);
     return false;
+  }
+
+  startGame() {
+    this.scene.stop("Math");
+    this.scene.start("SpaceInvaders", SpaceInvaders);
   }
 
   exit() {
