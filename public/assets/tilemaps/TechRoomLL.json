@@ -32,7 +32,7 @@
          "name":"ACCENTS",
          "opacity":1,
          "type":"tilelayer",
-         "visible":false,
+         "visible":true,
          "width":25,
          "x":0,
          "y":0
@@ -48,6 +48,29 @@
          "type":"tilelayer",
          "visible":true,
          "width":25,
+         "x":0,
+         "y":0
+        }, 
+        {
+         "draworder":"topdown",
+         "id":15,
+         "name":"SPRITE",
+         "objects":[
+                {
+                 "gid":2518,
+                 "height":32,
+                 "id":16,
+                 "name":"",
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":32,
+                 "x":448,
+                 "y":636
+                }],
+         "opacity":1,
+         "type":"objectgroup",
+         "visible":true,
          "x":0,
          "y":0
         }, 
@@ -106,7 +129,7 @@
                 }],
          "opacity":1,
          "type":"objectgroup",
-         "visible":false,
+         "visible":true,
          "x":0,
          "y":0
         }, 
@@ -153,12 +176,12 @@
                 }],
          "opacity":1,
          "type":"objectgroup",
-         "visible":false,
+         "visible":true,
          "x":0,
          "y":0
         }],
- "nextlayerid":15,
- "nextobjectid":16,
+ "nextlayerid":16,
+ "nextobjectid":17,
  "orientation":"orthogonal",
  "renderorder":"right-down",
  "tiledversion":"1.8.2",
@@ -230,8 +253,17 @@
          "tilewidth":32
         }, 
         {
+         "columns":3,
          "firstgid":2517,
-         "source":"..\/..\/..\/..\/lyn.tsx"
+         "image":"..\/..\/..\/..\/Downloads\/Teacher fmale 03.png",
+         "imageheight":128,
+         "imagewidth":96,
+         "margin":0,
+         "name":"Teacher fmale 03",
+         "spacing":0,
+         "tilecount":12,
+         "tileheight":32,
+         "tilewidth":32
         }, 
         {
          "columns":16,

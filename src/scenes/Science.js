@@ -1,5 +1,5 @@
-import Phaser from 'phaser';
-import Player from '../entities/Player';
+import Phaser from "phaser";
+import Player from "../entities/Player";
 
 let item;
 let sciDoor;
@@ -8,61 +8,61 @@ let clueCount = 0;
 
 export default class Science extends Phaser.Scene {
   constructor() {
-    super('Science');
+    super("Science");
   }
 
   preload() {
     this.load.tilemapTiledJSON(
-      'sciMap',
-      '../public/assets/tilemaps/ScienceRoom.json'
+      "sciMap",
+      "../public/assets/tilemaps/ScienceRoom.json"
     );
-    this.load.image('lab', '../public/assets/tilesets/lab.png');
+    this.load.image("lab", "../public/assets/tilesets/lab.png");
     this.load.image(
-      'furniture',
-      '../public/assets/tilesets/shop-and-hospital.png'
+      "furniture",
+      "../public/assets/tilesets/shop-and-hospital.png"
     );
-    this.load.image('lobby', '../public/assets/tilesets/LobbyTiles.png')
-    this.load.image('chemical', '../public/assets/images/chemical.png');
-    this.load.image('coal', '../public/assets/images/coal.png');
-    this.load.image('research', '../public/assets/images/research.png');
-    this.load.image('dna', '../public/assets/images/dna.png');
-    this.load.image('sciDoor', "../public/assets/images/sciDoor.png");
+    this.load.image("lobby", "../public/assets/tilesets/LobbyTiles.png");
+    this.load.image("chemical", "../public/assets/images/chemical.png");
+    this.load.image("coal", "../public/assets/images/coal.png");
+    this.load.image("research", "../public/assets/images/research.png");
+    this.load.image("dna", "../public/assets/images/dna.png");
+    this.load.image("sciDoor", "../public/assets/images/sciDoor.png");
 
-    this.load.spritesheet('rosalind', '../public/assets/sprites/rosalind.png', {
+    this.load.spritesheet("rosalind", "../public/assets/sprites/rosalind.png", {
       frameWidth: 32,
       frameHeight: 32,
     });
   }
 
   create() {
-    console.log(this.cache.tilemap.get('sciMap').data);
+    console.log(this.cache.tilemap.get("sciMap").data);
 
     let scienceClues = document.getElementById("science-clues");
     scienceClues.classList.remove("hidden");
 
     const map = this.make.tilemap({
-      key: 'sciMap',
+      key: "sciMap",
       tileWidth: 32,
       tileHeight: 32,
     });
 
-    const labTiles = map.addTilesetImage('lab', 'lab');
-    const furnitureTiles = map.addTilesetImage('furniture', 'furniture');
-    const lobbyTiles = map.addTilesetImage('LobbyTiles', 'lobby');
+    const labTiles = map.addTilesetImage("lab", "lab");
+    const furnitureTiles = map.addTilesetImage("furniture", "furniture");
+    const lobbyTiles = map.addTilesetImage("LobbyTiles", "lobby");
 
-    let floorLayer = map.createLayer('Floors', [labTiles, lobbyTiles]);
-    let wallLayer = map.createLayer('Walls', labTiles);
-    let furnitureLayer = map.createLayer('Furniture', furnitureTiles);
-    let objectLayer = map.createLayer('Objects', furnitureTiles);
+    let floorLayer = map.createLayer("Floors", [labTiles, lobbyTiles]);
+    let wallLayer = map.createLayer("Walls", labTiles);
+    let furnitureLayer = map.createLayer("Furniture", furnitureTiles);
+    let objectLayer = map.createLayer("Objects", furnitureTiles);
 
-    this.player = new Player(this, 470, 590, 'rosalind').setScale(1.5);
+    this.player = new Player(this, 470, 590, "rosalind").setScale(1.5);
 
     this.createAnimations();
 
     this.cursors = this.input.keyboard.createCursorKeys();
 
-    let clues = map.getObjectLayer('Clues')['objects'];
-    let door = map.getObjectLayer('Door')['objects'];
+    let clues = map.getObjectLayer("Clues")["objects"];
+    let door = map.getObjectLayer("Door")["objects"];
     item = this.physics.add.staticGroup();
     sciDoor = this.physics.add.staticGroup();
 
@@ -126,10 +126,9 @@ export default class Science extends Phaser.Scene {
       clue6.classList.remove("hidden");
     }
 
-
     if (clueCount === 4) {
       let dialogue = document.getElementById("dialogue");
-      dialogue.innerText = "You did it!"
+      dialogue.innerText = "You did it!";
     }
 
     return false;
@@ -142,20 +141,20 @@ export default class Science extends Phaser.Scene {
 
   createAnimations() {
     this.player.anims.create({
-      key: 'walk right',
-      frames: this.anims.generateFrameNumbers('rosalind', { start: 6, end: 8 }),
+      key: "walk right",
+      frames: this.anims.generateFrameNumbers("rosalind", { start: 6, end: 8 }),
       frameRate: 6,
       repeat: -1,
     });
     this.player.anims.create({
-      key: 'walk left',
-      frames: this.anims.generateFrameNumbers('rosalind', { start: 3, end: 5 }),
+      key: "walk left",
+      frames: this.anims.generateFrameNumbers("rosalind", { start: 3, end: 5 }),
       frameRate: 6,
       repeat: -1,
     });
     this.player.anims.create({
-      key: 'walk up',
-      frames: this.anims.generateFrameNumbers('rosalind', {
+      key: "walk up",
+      frames: this.anims.generateFrameNumbers("rosalind", {
         start: 9,
         end: 11,
       }),
@@ -163,14 +162,14 @@ export default class Science extends Phaser.Scene {
       repeat: -1,
     });
     this.player.anims.create({
-      key: 'walk down',
-      frames: this.anims.generateFrameNumbers('rosalind', { start: 0, end: 2 }),
+      key: "walk down",
+      frames: this.anims.generateFrameNumbers("rosalind", { start: 0, end: 2 }),
       frameRate: 6,
       repeat: -1,
     });
     this.player.anims.create({
-      key: 'idle',
-      frames: this.anims.generateFrameNumbers('rosalind', { start: 1, end: 1 }),
+      key: "idle",
+      frames: this.anims.generateFrameNumbers("rosalind", { start: 1, end: 1 }),
       frameRate: 6,
       repeat: -1,
     });

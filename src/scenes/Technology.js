@@ -33,14 +33,10 @@ export default class Technology extends Phaser.Scene {
     this.load.image("DIAMONDOOR", "../public/assets/images/rightDoortech.png");
     this.load.image("DIAMOON", "../public/assets/images/techDoorMiddle.png");
     this.load.image("MOONDOOR", "../public/assets/images/leftTechDoor.png");
-    this.load.spritesheet(
-      "grace",
-      "../public/assets/sprites/gh-spritesheet.png",
-      {
-        frameWidth: 17,
-        frameHeight: 34,
-      }
-    );
+    this.load.spritesheet("LYNN", "../public/assets/sprites/LYNN.png", {
+      frameWidth: 32,
+      frameHeight: 32,
+    });
   }
   create() {
     console.log("hi", this.cache.tilemap.get("techMap").data);
@@ -86,7 +82,7 @@ export default class Technology extends Phaser.Scene {
       bookTiles,
     ]);
 
-    this.player = new Player(this, 470, 610, "grace").setScale(1.75); //Joe is pleased
+    this.player = new Player(this, 470, 590, "LYNN").setScale(1.1); //Joe is pleased
     this.createAnimations(); //maybe also move this to player class?
 
     this.cursors = this.input.keyboard.createCursorKeys();
@@ -143,7 +139,7 @@ export default class Technology extends Phaser.Scene {
       clue26.classList.remove("hidden");
     } else if (object.texture.key === "BOOK") {
       clue27.classList.remove("hidden");
-    } else if (object.texture.key === "FIGURE") {
+    } else if (object.texture.key === "PRIDEFLAG") {
       clue28.classList.remove("hidden");
     }
 
@@ -160,37 +156,36 @@ export default class Technology extends Phaser.Scene {
   }
 
   createAnimations() {
-    // Joe says this belongs in the player class, even if it changes by scene - it's attached to each specific sprite
-    this.anims.create({
+    this.player.anims.create({
       key: "walk right",
-      frames: this.anims.generateFrameNumbers("grace", { start: 11, end: 14 }),
-      //something to keep in mind about line 62 - it is a decision that youre making and it can be a return from a function i.e. getWalkRight and you can pass in string, if character === grace return start (numbers) else if character === mary start(marynumbers)
-      //each mechanism is like its own system
-
+      frames: this.anims.generateFrameNumbers("LYNN", { start: 6, end: 8 }),
       frameRate: 6,
       repeat: -1,
     });
-    this.anims.create({
+    this.player.anims.create({
       key: "walk left",
-      frames: this.anims.generateFrameNumbers("grace", { start: 15, end: 18 }),
+      frames: this.anims.generateFrameNumbers("LYNN", { start: 3, end: 5 }),
       frameRate: 6,
       repeat: -1,
     });
-    this.anims.create({
+    this.player.anims.create({
       key: "walk up",
-      frames: this.anims.generateFrameNumbers("grace", { start: 23, end: 30 }),
+      frames: this.anims.generateFrameNumbers("LYNN", {
+        start: 9,
+        end: 11,
+      }),
       frameRate: 6,
       repeat: -1,
     });
-    this.anims.create({
+    this.player.anims.create({
       key: "walk down",
-      frames: this.anims.generateFrameNumbers("grace", { start: 0, end: 6 }),
+      frames: this.anims.generateFrameNumbers("LYNN", { start: 0, end: 2 }),
       frameRate: 6,
       repeat: -1,
     });
-    this.anims.create({
+    this.player.anims.create({
       key: "idle",
-      frames: this.anims.generateFrameNumbers("grace", { start: 0, end: 0 }),
+      frames: this.anims.generateFrameNumbers("LYNN", { start: 1, end: 1 }),
       frameRate: 6,
       repeat: -1,
     });
