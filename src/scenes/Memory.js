@@ -80,7 +80,7 @@ export default class Memory extends Phaser.Scene {
         }
         currentCards = [];
         if (guesses.length === 12) {
-          win.classList.remove('win');
+          win.classList.toggle('hidden');
         }
       }
     }
@@ -88,6 +88,7 @@ export default class Memory extends Phaser.Scene {
         memory.scene.stop("Memory");
         memory.scene.start("Lobby");
         memoryGame.classList.toggle("hidden");
+        canvas.classList.toggle("hidden")
     }
   }
   update() {}
