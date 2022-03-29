@@ -23,7 +23,7 @@ export default class Scrammble extends Phaser.Scene {
     const attemptsOutput = document.getElementById("attempts");
     const gameContainer = document.getElementById("game-container");
     const guessContainer = document.getElementById("guess-container");
-    const rules = document.getElementById("rules");
+    const rules = document.getElementById("scrammblerules");
     const playBtn = document.getElementById("play-btn");
     const resetBtn = document.getElementById("reset-btn");
     const backToLobby = document.getElementById("back-to-lobby")

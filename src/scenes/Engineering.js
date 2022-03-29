@@ -8,6 +8,7 @@ let eObject;
 let EngineeringClues;
 let Door;
 let backToLobbyDoor;
+let clueCount = 0;
 
 export default class Engineering extends Phaser.Scene {
   constructor() {
@@ -43,7 +44,7 @@ export default class Engineering extends Phaser.Scene {
     this.load.image("skunk", "../public/assets/images/skunk.png");
     this.load.image("flag", "../public/assets/images/cherokeeFlag.png");
     this.load.image("lock", "../public/assets/images/lock.png");
-    this.load.image("door", "../public/assets/images/Door.png")
+    this.load.image("door", "../public/assets/images/Door.png");
     this.load.spritesheet("mary", "../public/assets/sprites/marySprite.png", {
       frameWidth: 32,
       frameHeight: 32,
@@ -52,6 +53,9 @@ export default class Engineering extends Phaser.Scene {
 
   create() {
     this.add.image(0, 0, "engineeringFloor");
+    
+    let engineeringClues = document.getElementById("engineering-clues");    
+    engineeringClues.classList.remove("hidden")
 
     const map = this.make.tilemap({
       key: "enginMap",
@@ -91,7 +95,6 @@ export default class Engineering extends Phaser.Scene {
     let chalkboardLayer = map.createLayer("ChalkBoards", chalkboardTiles);
     let plantsAndDecorLayer = map.createLayer("Objects", plantsAndDecorTiles);
 
-    
     this.player = new Player(this, 470, 610, "mary").setScale(1.5);
     this.createAnimations();
     this.cursors = this.input.keyboard.createCursorKeys();
@@ -109,7 +112,7 @@ export default class Engineering extends Phaser.Scene {
 
     // Door layers
     Door = map.getObjectLayer("Door")["objects"];
-    backToLobbyDoor = this.physics.add.staticGroup()
+    backToLobbyDoor = this.physics.add.staticGroup();
     Door.forEach((object) => {
       let obj = backToLobbyDoor.create(object.x, object.y, object.name);
       obj.setScale(object.width / object.width, object.height / object.height);
@@ -121,7 +124,13 @@ export default class Engineering extends Phaser.Scene {
     });
 
     this.physics.add.overlap(this.player, eItem, this.eCollect, null, this);
-    this.physics.add.overlap(this.player, backToLobbyDoor, this.exitRoom, null, this);
+    this.physics.add.overlap(
+      this.player,
+      backToLobbyDoor,
+      this.exitRoom,
+      null,
+      this
+    );
 
     wallLayer.setCollisionByExclusion([-1]);
     spaceStation.setCollisionByExclusion([-1]);
@@ -145,20 +154,41 @@ export default class Engineering extends Phaser.Scene {
     this.player.update(this.cursors);
   }
 
-
   exitRoom() {
     this.scene.stop("Engineering");
-    this.scene.start("Scrammble")
+    this.scene.start("Scrammble");
     // this.scene.start("Lobby", Lobby);
-
   }
 
   eCollect(player, object) {
+    clueCount += 1;
     object.destroy(object.x, object.y);
-    eText.setText(`Clues: y`); // set the text to show the current score
-    // list = []
-    // list.push(object.listClues)
-    //`${list}
+    let clue7 = document.getElementById("7");
+    let clue8 = document.getElementById("8");
+    let clue9 = document.getElementById("9");
+    let clue10 = document.getElementById("10");
+    let clue11 = document.getElementById("11");
+
+    let count = document.getElementById("eClueCount");
+    count.innerText = clueCount;
+
+    if (object.texture.key === "planet") {
+      clue11.classList.remove("hidden");
+    } else if (object.texture.key === "coin") {
+      clue8.classList.remove("hidden");
+    } else if (object.texture.key === "skunk") {
+      clue9.classList.remove("hidden");
+    } else if (object.texture.key === "flag") {
+      clue7.classList.remove("hidden");
+    } else if (object.texture.key === "lock") {
+      clue10.classList.remove("hidden");
+    }
+
+    if (clueCount === 5){
+      let dialogue = document.getElementById("dialogue");
+      dialogue.innerText = "You did it!"
+    }
+
     return false;
   }
   createAnimations() {

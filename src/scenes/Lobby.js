@@ -45,17 +45,17 @@ export default class Lobby extends Phaser.Scene {
   }
 
   create() {
-    const canvas = document.querySelector('canvas');
-    // canvas.classList.remove("hidden");
-    //to change color of h1 - this is when the lobbby scene is being made
-    const objectlist = document.querySelector("#title h1");
-    // Joe likes query selector because we cna write a css string to write things
-    objectlist.style.color = "white";
-    //can create element + set up container + etc
-    //dom manip stuff is like console log - if you can consle log you can manipulate the dom!
-    //disable cache? yes
-    console.log(this.cache.tilemap.get("map").data);
 
+    console.log(this.cache.tilemap.get("map").data);
+    const rules = document.getElementById("rules")
+    const playGameBtn = document.getElementById("play-maingame-btn")
+    // rules.classList.remove("hidden")
+
+    playGameBtn.addEventListener("click", function (e) {
+      rules.classList.add("hidden")
+    });
+
+    // console.log(this.cache.tilemap.get("map").data);
     const map = this.make.tilemap({
       key: "map",
       tileWidth: 32,

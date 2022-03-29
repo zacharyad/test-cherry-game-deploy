@@ -22,7 +22,6 @@ class Game extends Phaser.Game {
     this.scene.add("SpaceInvaders", SpaceInvaders);
     this.scene.add("Scrammble", Scrammble);
     this.scene.add("Memory", Memory)
-
     this.scene.start("Lobby");
 
     // change scene.start to see if it works to test it & make sure you import it on top

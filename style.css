@@ -4,11 +4,22 @@
     "Lucida Sans", Arial, sans-serif;
 }
 
+
+#objectslist h1 {
+padding: 10px;
+  text-align: center;
+  color: rgb(145, 214, 211);
+  font-size: 2em;
+  letter-spacing: 0.25em;
+  font-weight: 700;
+}
+
 @media screen and (max-width: 1279px) {
     * {
       display: none;
     }
   }
+
 
 body {
   max-width: 500px;
@@ -21,7 +32,7 @@ canvas {
   border-radius: 10px;
 }
 
-#clue-list, #science-clues, #tech-clues {
+#clue-list, #science-clues, #tech-clues, #engineering-clues {
     position: absolute;
     bottom: 100px;
     left: 10px;
@@ -35,19 +46,36 @@ canvas {
     font-size: 5;
 }
 
+
 #rules {
     position: absolute;
-    top: 30px;
-    left: 10px;
+    /* top: 30px; */
+    /* left: 20px; */
     border: 2px solid black;
-    height: 275px;
-    width: 250px;
-    background-color: #87486c;
-    border-radius: 20px;
+    height: 400px;
+    width: 400px;
+    background-color: #ecc9dd;
+    border-radius: 30px;
     padding: 10px;
-    word-wrap: normal;
+    top: 200px;
+    left: 800px;
+    text-align: centered;
+    
 }
-
+#game {
+    position: absolute;
+    /* top: 30px; */
+    /* left: 20px; */
+    border: 2px solid black;
+    height: 400px;
+    width: 400px;
+    background-color: #ecc9dd;
+    border-radius: 30px;
+    padding: 10px;
+    top: 200px;
+    left: 800px;
+    text-align: centered;
+}
 #dialogue {
   color: white;
   overflow: hidden;
@@ -83,6 +111,7 @@ canvas {
     width: 100%;
   }
 }
+
 
 #game {
   position: absolute;
