@@ -169,7 +169,7 @@ export default class Engineering extends Phaser.Scene {
     let clue10 = document.getElementById("10");
     let clue11 = document.getElementById("11");
 
-    let count = document.getElementById("clueCount");
+    let count = document.getElementById("eClueCount");
     count.innerText = clueCount;
 
     if (object.texture.key === "planet") {
