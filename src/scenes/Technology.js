@@ -2,8 +2,7 @@ import Phaser from "phaser";
 import Player from "../entities/Player";
 let tItem;
 let tText;
-let tObject;
-let techClues;
+let clueCount = 0;
 
 export default class Technology extends Phaser.Scene {
   constructor() {
@@ -42,6 +41,9 @@ export default class Technology extends Phaser.Scene {
   create() {
     console.log("hi", this.cache.tilemap.get("techMap").data);
     //this.add.image(275, 275, "Floor");
+
+    let techClues = document.getElementById("tech-clues");
+    techClues.classList.remove("hidden");
 
     const map = this.make.tilemap({
       key: "techMap",
@@ -89,7 +91,7 @@ export default class Technology extends Phaser.Scene {
     this.physics.add.collider(this.player, bumpLayer); // move this to PLayer class
 
     techClues = map.getObjectLayer("ClueObjects")["objects"];
-    console.log(techClues);
+
     tItem = this.physics.add.staticGroup();
 
     techClues.forEach((object) => {
@@ -100,9 +102,9 @@ export default class Technology extends Phaser.Scene {
       obj.body.height = object.height;
     });
     this.physics.add.overlap(this.player, tItem, this.tCollect, null, this);
-    tText = this.add.text(570, 70, `Clues: x`, {
+    tText = this.add.text(500, 70, `Clues List`, {
       fontSize: "20px",
-      fill: "#ffffff",
+      fill: "white",
     });
     tText.setScrollFactor(0);
   }
@@ -110,13 +112,35 @@ export default class Technology extends Phaser.Scene {
     this.player.update(this.cursors);
   }
   tCollect(player, object) {
+    clueCount += 1;
     object.destroy(object.x, object.y);
-    tText.setText(`Clues: y`); // set the text to show the current score
-    // list = []
-    // list.push(object.listClues)
-    //`${list}
+    // text.setText(`Clues: y`); // set the text to show the current score
+    let clue25 = document.getElementById("25");
+    let clue26 = document.getElementById("26");
+    let clue27 = document.getElementById("27");
+    let clue28 = document.getElementById("28");
+
+    let count = document.getElementById("clueCount");
+    count.innerText = clueCount;
+
+    if (object.texture.key === "COMPUTER") {
+      clue25.classList.remove("hidden");
+    } else if (object.texture.key === "CALIWAVES") {
+      clue26.classList.remove("hidden");
+    } else if (object.texture.key === "BOOK") {
+      clue27.classList.remove("hidden");
+    } else if (object.texture.key === "FIGURE") {
+      clue28.classList.remove("hidden");
+    }
+
+    if (clueCount === 4) {
+      let dialogue = document.getElementById("dialogue");
+      dialogue.innerText = "You did it!";
+    }
+
     return false;
   }
+
   createAnimations() {
     // Joe says this belongs in the player class, even if it changes by scene - it's attached to each specific sprite
     this.anims.create({
