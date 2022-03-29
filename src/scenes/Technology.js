@@ -73,6 +73,7 @@ export default class Technology extends Phaser.Scene {
       wallTiles,
       vaporTiles,
       schoolTiles,
+      bookTiles,
     ]);
 
     this.player = new Player(this, 470, 610, "grace").setScale(1.75); //Joe is pleased
