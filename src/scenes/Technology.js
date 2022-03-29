@@ -12,7 +12,7 @@ export default class Technology extends Phaser.Scene {
   preload() {
     this.load.tilemapTiledJSON(
       "techMap",
-      "../public/assets/tilemaps/TechRoomL.json"
+      "../public/assets/tilemaps/TechRoomLL.json"
     );
     this.load.image(
       "VaporwaveFurniture",
