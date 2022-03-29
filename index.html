@@ -16,5 +16,41 @@
       <li id=1 class="hidden">served in the navy</li>
       <li id=2 class="hidden">one of first three computer programmers</li>
     </ul>
+    <div id="game" class="hidden">
+    <nav>
+      <h1>Scrambled Words</h1>
+      <div id="contact">
+        <a target="_blank" href="https://github.com/IAmAlexJohnson"><i class="fab fa-github"></i></a>
+        <a target="_blank" href="https://codepen.io/IAmAlexJohnson/"><i class="fab fa-codepen"></i></a>
+        <a target="_blank" href="https://twitter.com/IAmAlexJohnson"><i class="fab fa-twitter"></i></a>
+      </div>
+      <div id="rules">
+        <p class="lead">Unscamble the words.</p>
+        <p>Type in your guess <small>(Enter works)</small>.</p>
+        <p>Get one correct and level up.</p>
+        <p>Get a word wrong three times and restart.</p>
+        <p>Finish level 8 and you win.</p>
+        <p>Good luck!</p>
+        <button id="play-btn">Let's Play</button>
+      </div>
+    </nav>
+  
+    <div id="game-container" class="hidden">
+      <p>Level: <span id="level">1</span></p>
+      <p>Score: <span id="score">0</span></p>
+      <p>Attempts: <span id="attempts">0</span></p>
+      <p id="info"></p>
+  
+      <div id="guess-container">
+        <p id="scrambled-word"></p>
+  
+        <input id="user-guess" type="text" placeholder="Enter your guess">
+        <button id="submit">Submit</button>
+        <button id="reset-btn">Reset</button>
+        <button id="back-to-lobby">I give up! Take me back to the Lobby..</button>
+      </div>
+  
+    </div>
+  </div>
   </body>
 </html>
