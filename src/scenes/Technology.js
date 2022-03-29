@@ -130,7 +130,7 @@ export default class Technology extends Phaser.Scene {
     let clue27 = document.getElementById("27");
     let clue28 = document.getElementById("28");
 
-    let count = document.getElementById("clueCount");
+    let count = document.getElementById("tClueCount");
     count.innerText = clueCount;
 
     if (object.texture.key === "COMPUTER") {
