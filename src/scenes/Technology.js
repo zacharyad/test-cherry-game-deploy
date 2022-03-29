@@ -1,6 +1,7 @@
 import Phaser from "phaser";
 import Player from "../entities/Player";
 let tItem;
+let techDoor;
 let tText;
 let clueCount = 0;
 
@@ -29,6 +30,9 @@ export default class Technology extends Phaser.Scene {
     this.load.image("FIGURE", "../public/assets/images/stet.png");
     this.load.image("COMPUTER", "../public/assets/images/cemp.png");
     this.load.image("CALIWAVES", "../public/assets/images/cal.png");
+    this.load.image("DIAMONDOOR", "../public/assets/images/rightDoortech.png");
+    this.load.image("DIAMOON", "../public/assets/images/techDoorMiddle.png");
+    this.load.image("MOONDOOR", "../public/assets/images/leftTechDoor.png");
     this.load.spritesheet(
       "grace",
       "../public/assets/sprites/gh-spritesheet.png",
@@ -91,8 +95,9 @@ export default class Technology extends Phaser.Scene {
     this.physics.add.collider(this.player, bumpLayer); // move this to PLayer class
 
     techClues = map.getObjectLayer("ClueObjects")["objects"];
-
+    let door = map.getObjectLayer("DOOR")["objects"];
     tItem = this.physics.add.staticGroup();
+    techDoor = this.physics.add.staticGroup();
 
     techClues.forEach((object) => {
       let obj = tItem.create(object.x, object.y, object.name);
@@ -101,7 +106,16 @@ export default class Technology extends Phaser.Scene {
       obj.body.width = object.width;
       obj.body.height = object.height;
     });
+    door.forEach((object) => {
+      let obj = techDoor.create(object.x, object.y, object.name);
+      obj.setScale(object.width / object.width, object.height / object.height);
+      obj.setOrigin(0);
+      obj.body.width = object.width;
+      obj.body.height = object.height;
+    });
     this.physics.add.overlap(this.player, tItem, this.tCollect, null, this);
+    this.physics.add.overlap(this.player, techDoor, this.exit, null, this);
+
     tText = this.add.text(500, 70, `Clues List`, {
       fontSize: "20px",
       fill: "white",
@@ -139,6 +153,10 @@ export default class Technology extends Phaser.Scene {
     }
 
     return false;
+  }
+  exit() {
+    this.scene.stop("Technology");
+    this.scene.start("Lobby");
   }
 
   createAnimations() {
