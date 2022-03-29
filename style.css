@@ -17,9 +17,11 @@ p {
 
 #game {
     position: absolute;
-    top: 20;
+    top: 250px;
+    left: 250px;
     border: 2px solid black;
     height: 200px;
     width: 300px;
+    text-align: center;
 
 }
