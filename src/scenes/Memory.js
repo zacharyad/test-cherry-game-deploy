@@ -14,6 +14,7 @@ export default class Memory extends Phaser.Scene {
     const memoryGame = document.getElementById('memory');
     const canvas = document.querySelector('canvas');
     const exitButton = document.getElementById('mem-exit');
+    
     canvas.classList.add("hidden")
     memoryGame.classList.remove('hidden');
 

@@ -1,5 +1,6 @@
 import Phaser from 'phaser';
 import Player from '../entities/Player';
+import Memory from '../scenes/Memory';
 
 let item;
 let sciDoor;
@@ -137,7 +138,7 @@ export default class Science extends Phaser.Scene {
 
   exit() {
     this.scene.stop("Science");
-    this.scene.start("Lobby");
+    this.scene.start("Memory");
   }
 
   createAnimations() {
