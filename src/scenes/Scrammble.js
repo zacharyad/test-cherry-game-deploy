@@ -26,6 +26,7 @@ export default class Scrammble extends Phaser.Scene {
     const rules = document.getElementById("rules");
     const playBtn = document.getElementById("play-btn");
     const resetBtn = document.getElementById("reset-btn");
+    const backToLobby = document.getElementById("back-to-lobby")
 
     game.classList.remove("hidden");
 
@@ -182,6 +183,13 @@ export default class Scrammble extends Phaser.Scene {
       checkAnswer(userGuess.value.toLowerCase());
       userGuess.value = "";
     });
+
+      backToLobby.addEventListener("click", function (e) {
+        console.log('im in the backtolobbybbybydfjdfh')
+        exitScrammble()
+    });
+    
+    
 
     window.addEventListener(
       "keypress",
