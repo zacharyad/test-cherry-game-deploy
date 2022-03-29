@@ -48,7 +48,7 @@ export default class Lobby extends Phaser.Scene {
     const canvas = document.querySelector('canvas');
     // canvas.classList.remove("hidden");
     //to change color of h1 - this is when the lobbby scene is being made
-    const objectlist = document.querySelector("#objectslist h1");
+    const objectlist = document.querySelector("#title h1");
     // Joe likes query selector because we cna write a css string to write things
     objectlist.style.color = "white";
     //can create element + set up container + etc
