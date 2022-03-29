@@ -10,8 +10,7 @@ const config = {
       debug: false
     },
   },
-  scene: [],
-  //[Lobby, Engineering]
+  scene: []
 };
 
 export default config;

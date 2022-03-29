@@ -23,7 +23,6 @@ export default class Lobby extends Phaser.Scene {
   }
 
   preload() {
-    // this.load.image('base_tiles', '../public/assets/images/bug.png')
     this.load.tilemapTiledJSON("map", "../public/assets/tilemaps/GHLobby.json");
     this.load.image("lobby", "../public/assets/tilesets/LobbyTiles.png");
     this.load.image("text", "../public/assets/tilesets/Text.png");
