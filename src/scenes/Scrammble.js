@@ -1,4 +1,5 @@
 import Phaser from "phaser";
+import Lobby from "./Lobby";
 
 export default class Scrammble extends Phaser.Scene {
   constructor() {
@@ -6,11 +7,13 @@ export default class Scrammble extends Phaser.Scene {
   }
 
   preload() {
-    this.cameras.main.setBackgroundColor("#000000");
+    this.cameras.main.backgroundColor = Phaser.Display.Color.HexStringToColor("#000000");
+
   }
 
   create() {
-    const game = document.getElementById("game")
+    const scrammble = this;
+    const game = document.getElementById("game");
     const userGuess = document.getElementById("user-guess");
     const submitBtn = document.getElementById("submit");
     const usersWord = document.getElementById("scrambled-word");
@@ -25,7 +28,6 @@ export default class Scrammble extends Phaser.Scene {
     const resetBtn = document.getElementById("reset-btn");
 
     game.classList.remove("hidden");
-
 
     let level = 1;
     let score = 0;
@@ -58,6 +60,13 @@ export default class Scrammble extends Phaser.Scene {
       updateBoard();
       info.innerHTML = "";
       userGuess.value = "";
+    }
+
+    function exitScrammble () {
+        scrammble.scene.stop("Scrammble");
+        scrammble.scene.start("Lobby", Lobby);
+        game.classList.toggle("hidden");
+
     }
 
     function randomWord(lvl) {
@@ -154,13 +163,15 @@ export default class Scrammble extends Phaser.Scene {
       } else if (level == 8) {
         randomWord(lvlEightWords);
       } else if (level > 8) {
-        info.innerHTML =
-          "<span class='win'>You Win! Great job! </br> You can reset or keep playing.</span>";
+        info.innerHTML = "<span class='win'>You Win! Great job! </br></span>";
+        exitScrammble()
       }
 
       console.log(`Word: ${word}`);
       usersWord.innerHTML = scrambleWord(word);
     }
+
+   
 
     playBtn.addEventListener("click", function (e) {
       rules.classList.toggle("hidden");
