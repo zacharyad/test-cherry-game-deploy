@@ -15,6 +15,8 @@ let EDoor;
 let MDoor;
 let engDoor;
 let mathDoor;
+let sciDoor;
+let clueCount = 0;
 
 export default class Lobby extends Phaser.Scene {
   constructor() {
@@ -30,6 +32,7 @@ export default class Lobby extends Phaser.Scene {
     this.load.image("Moth", "../public/assets/images/CompPic.png");
     this.load.image("Engineering", "../public/assets/images/Door.png");
     this.load.image("Math", "../public/assets/images/Door.png");
+    this.load.image("Science", "../public/assets/images/Door.png");
     this.load.spritesheet(
       "grace",
       "../public/assets/sprites/gh-spritesheet.png",
@@ -44,7 +47,7 @@ export default class Lobby extends Phaser.Scene {
     //to change color of h1 - this is when the lobbby scene is being made
     const objectlist = document.querySelector("#objectslist h1");
     // Joe likes query selector because we cna write a css string to write things
-    objectlist.style.color = "blue";
+    objectlist.style.color = "white";
     //can create element + set up container + etc
     //dom manip stuff is like console log - if you can consle log you can manipulate the dom!
     //disable cache? yes
@@ -93,6 +96,7 @@ export default class Lobby extends Phaser.Scene {
     item = this.physics.add.staticGroup();
     engDoor = this.physics.add.staticGroup();
     mathDoor = this.physics.add.staticGroup();
+    sciDoor = this.physics.add.staticGroup();
     //  console.log(engDoor, 'engDoor')
 
     Clues.forEach((object) => {
@@ -120,9 +124,19 @@ export default class Lobby extends Phaser.Scene {
       obj.body.height = object.height;
     });
 
+    SDoor.forEach((object) => {
+      let obj = sciDoor.create(object.x, object.y, object.name);
+      obj.setScale(object.width / object.width, object.height / object.height);
+      obj.setOrigin(0);
+      obj.body.width = object.width;
+      obj.body.height = object.height;
+    });
+
+
     this.physics.add.overlap(this.player, item, this.collect, null, this);
     this.physics.add.overlap(this.player, engDoor, this.enterERoom, null, this);
     this.physics.add.overlap(this.player, mathDoor, this.enterMRoom, null, this);
+    this.physics.add.overlap(this.player, sciDoor, this.enterSRoom, null, this);
 
 
     text = this.add.text(570, 70, `Clues: x`, {
@@ -167,13 +181,21 @@ export default class Lobby extends Phaser.Scene {
     this.scene.start("Math", Math);
   }
 
+  enterSRoom() {
+    this.scene.stop("Lobby");
+    this.scene.start("Science");
+  }
+
   collect(player, object) { // this is what happens when we overlap with the object
+    clueCount += 1;
     object.destroy(object.x, object.y);
-    text.setText(`Clues: y`); // set the text to show the current score
+    // text.setText(`Clues: y`); // set the text to show the current score
     let clue1 = document.getElementById("1");
     let clue2 = document.getElementById("2");
-
-    console.log(object.texture.key); // object name
+    let count = document.getElementById("clueCount");
+    count.innerText = clueCount;
+    
+    // console.log(object.texture.key); // object name
 
     if (object.texture.key === "Ship") {
       clue1.classList.remove("hidden");
@@ -181,6 +203,10 @@ export default class Lobby extends Phaser.Scene {
       clue2.classList.remove("hidden");
     }
 
+    if (clueCount === 2) {
+      let dialogue = document.getElementById("dialogue");
+      dialogue.innerText = "Hmm ... those curtains look funny"
+    }
     // list = []
     // list.push(object.listClues)
     //`${list}
