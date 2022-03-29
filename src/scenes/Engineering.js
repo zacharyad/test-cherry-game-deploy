@@ -8,7 +8,7 @@ let eObject;
 let EngineeringClues;
 let Door;
 let backToLobbyDoor;
-let eClueCount = 0;
+let clueCount = 0;
 
 export default class Engineering extends Phaser.Scene {
   constructor() {
@@ -54,8 +54,7 @@ export default class Engineering extends Phaser.Scene {
   create() {
     this.add.image(0, 0, "engineeringFloor");
     
-    let engineeringClues = document.getElementById("engineering-clues");
-    console.log(engineeringClues)
+    let engineeringClues = document.getElementById("engineering-clues");    
     engineeringClues.classList.remove("hidden")
 
     const map = this.make.tilemap({
@@ -162,7 +161,7 @@ export default class Engineering extends Phaser.Scene {
   }
 
   eCollect(player, object) {
-    eClueCount += 1;
+    clueCount += 1;
     object.destroy(object.x, object.y);
     let clue7 = document.getElementById("7");
     let clue8 = document.getElementById("8");
@@ -170,8 +169,9 @@ export default class Engineering extends Phaser.Scene {
     let clue10 = document.getElementById("10");
     let clue11 = document.getElementById("11");
 
-    let count = document.getElementById("eclueCount");
-    count.innerText = eClueCount;
+    let count = document.getElementById("clueCount");
+    count.innerText = clueCount;
+    
     if (object.texture.key === "planet") {
       clue11.classList.remove("hidden");
     } else if (object.texture.key === "coin") {
@@ -184,7 +184,7 @@ export default class Engineering extends Phaser.Scene {
       clue10.classList.remove("hidden");
     }
 
-    if (eClueCount === 5){
+    if (clueCount === 5){
       let dialogue = document.getElementById("dialogue");
       dialogue.innerText = "You did it!"
     }

@@ -25,6 +25,18 @@ canvas {
     padding: 10px;
 }
 
+#clue-list, #engineering-clues {
+    position: absolute;
+    bottom: 100px;
+    left: 20px;
+    border: 2px solid black;
+    height: 300px;
+    width: 375px;
+    background-color: #87486c;
+    border-radius: 30%;
+    padding: 10px;
+}
+
 #rules {
     position: absolute;
     top: 30px;
