@@ -1,9 +1,9 @@
 import Phaser from "phaser";
 import Player from "../entities/Player";
 let tItem;
+let techDoor;
 let tText;
-let tObject;
-let techClues;
+let clueCount = 0;
 
 export default class Technology extends Phaser.Scene {
   constructor() {
@@ -30,18 +30,20 @@ export default class Technology extends Phaser.Scene {
     this.load.image("FIGURE", "../public/assets/images/stet.png");
     this.load.image("COMPUTER", "../public/assets/images/cemp.png");
     this.load.image("CALIWAVES", "../public/assets/images/cal.png");
-    this.load.spritesheet(
-      "grace",
-      "../public/assets/sprites/gh-spritesheet.png",
-      {
-        frameWidth: 17,
-        frameHeight: 34,
-      }
-    );
+    this.load.image("DIAMONDOOR", "../public/assets/images/rightDoortech.png");
+    this.load.image("DIAMOON", "../public/assets/images/techDoorMiddle.png");
+    this.load.image("MOONDOOR", "../public/assets/images/leftTechDoor.png");
+    this.load.spritesheet("LYNN", "../public/assets/sprites/LYNN.png", {
+      frameWidth: 32,
+      frameHeight: 32,
+    });
   }
   create() {
     console.log("hi", this.cache.tilemap.get("techMap").data);
     //this.add.image(275, 275, "Floor");
+
+    let techClues = document.getElementById("tech-clues");
+    techClues.classList.remove("hidden");
 
     const map = this.make.tilemap({
       key: "techMap",
@@ -80,7 +82,7 @@ export default class Technology extends Phaser.Scene {
       bookTiles,
     ]);
 
-    this.player = new Player(this, 470, 610, "grace").setScale(1.75); //Joe is pleased
+    this.player = new Player(this, 470, 590, "LYNN").setScale(1.1); //Joe is pleased
     this.createAnimations(); //maybe also move this to player class?
 
     this.cursors = this.input.keyboard.createCursorKeys();
@@ -89,8 +91,9 @@ export default class Technology extends Phaser.Scene {
     this.physics.add.collider(this.player, bumpLayer); // move this to PLayer class
 
     techClues = map.getObjectLayer("ClueObjects")["objects"];
-    console.log(techClues);
+    let door = map.getObjectLayer("DOOR")["objects"];
     tItem = this.physics.add.staticGroup();
+    techDoor = this.physics.add.staticGroup();
 
     techClues.forEach((object) => {
       let obj = tItem.create(object.x, object.y, object.name);
@@ -99,10 +102,19 @@ export default class Technology extends Phaser.Scene {
       obj.body.width = object.width;
       obj.body.height = object.height;
     });
+    door.forEach((object) => {
+      let obj = techDoor.create(object.x, object.y, object.name);
+      obj.setScale(object.width / object.width, object.height / object.height);
+      obj.setOrigin(0);
+      obj.body.width = object.width;
+      obj.body.height = object.height;
+    });
     this.physics.add.overlap(this.player, tItem, this.tCollect, null, this);
-    tText = this.add.text(570, 70, `Clues: x`, {
+    this.physics.add.overlap(this.player, techDoor, this.exit, null, this);
+
+    tText = this.add.text(500, 70, `Clues List`, {
       fontSize: "20px",
-      fill: "#ffffff",
+      fill: "white",
     });
     tText.setScrollFactor(0);
   }
@@ -110,45 +122,70 @@ export default class Technology extends Phaser.Scene {
     this.player.update(this.cursors);
   }
   tCollect(player, object) {
+    clueCount += 1;
     object.destroy(object.x, object.y);
-    tText.setText(`Clues: y`); // set the text to show the current score
-    // list = []
-    // list.push(object.listClues)
-    //`${list}
+    // text.setText(`Clues: y`); // set the text to show the current score
+    let clue25 = document.getElementById("25");
+    let clue26 = document.getElementById("26");
+    let clue27 = document.getElementById("27");
+    let clue28 = document.getElementById("28");
+
+    let count = document.getElementById("clueCount");
+    count.innerText = clueCount;
+
+    if (object.texture.key === "COMPUTER") {
+      clue25.classList.remove("hidden");
+    } else if (object.texture.key === "CALIWAVES") {
+      clue26.classList.remove("hidden");
+    } else if (object.texture.key === "BOOK") {
+      clue27.classList.remove("hidden");
+    } else if (object.texture.key === "PRIDEFLAG") {
+      clue28.classList.remove("hidden");
+    }
+
+    if (clueCount === 4) {
+      let dialogue = document.getElementById("dialogue");
+      dialogue.innerText = "You did it!";
+    }
+
     return false;
   }
-  createAnimations() {
-    // Joe says this belongs in the player class, even if it changes by scene - it's attached to each specific sprite
-    this.anims.create({
-      key: "walk right",
-      frames: this.anims.generateFrameNumbers("grace", { start: 11, end: 14 }),
-      //something to keep in mind about line 62 - it is a decision that youre making and it can be a return from a function i.e. getWalkRight and you can pass in string, if character === grace return start (numbers) else if character === mary start(marynumbers)
-      //each mechanism is like its own system
+  exit() {
+    this.scene.stop("Technology");
+    this.scene.start("Lobby");
+  }
 
+  createAnimations() {
+    this.player.anims.create({
+      key: "walk right",
+      frames: this.anims.generateFrameNumbers("LYNN", { start: 6, end: 8 }),
       frameRate: 6,
       repeat: -1,
     });
-    this.anims.create({
+    this.player.anims.create({
       key: "walk left",
-      frames: this.anims.generateFrameNumbers("grace", { start: 15, end: 18 }),
+      frames: this.anims.generateFrameNumbers("LYNN", { start: 3, end: 5 }),
       frameRate: 6,
       repeat: -1,
     });
-    this.anims.create({
+    this.player.anims.create({
       key: "walk up",
-      frames: this.anims.generateFrameNumbers("grace", { start: 23, end: 30 }),
+      frames: this.anims.generateFrameNumbers("LYNN", {
+        start: 9,
+        end: 11,
+      }),
       frameRate: 6,
       repeat: -1,
     });
-    this.anims.create({
+    this.player.anims.create({
       key: "walk down",
-      frames: this.anims.generateFrameNumbers("grace", { start: 0, end: 6 }),
+      frames: this.anims.generateFrameNumbers("LYNN", { start: 0, end: 2 }),
       frameRate: 6,
       repeat: -1,
     });
-    this.anims.create({
+    this.player.anims.create({
       key: "idle",
-      frames: this.anims.generateFrameNumbers("grace", { start: 0, end: 0 }),
+      frames: this.anims.generateFrameNumbers("LYNN", { start: 1, end: 1 }),
       frameRate: 6,
       repeat: -1,
     });

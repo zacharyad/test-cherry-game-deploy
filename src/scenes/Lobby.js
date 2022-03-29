@@ -33,6 +33,7 @@ export default class Lobby extends Phaser.Scene {
     this.load.image("Engineering", "../public/assets/images/Door.png");
     this.load.image("Math", "../public/assets/images/Door.png");
     this.load.image("Science", "../public/assets/images/Door.png");
+    this.load.image("Tech", "../public/assets/images/Door.png");
     this.load.spritesheet(
       "grace",
       "../public/assets/sprites/gh-spritesheet.png",
@@ -45,6 +46,7 @@ export default class Lobby extends Phaser.Scene {
 
   create() {
 
+    console.log(this.cache.tilemap.get("map").data);
     const rules = document.getElementById("rules")
     const playGameBtn = document.getElementById("play-maingame-btn")
     // rules.classList.remove("hidden")
@@ -121,13 +123,6 @@ export default class Lobby extends Phaser.Scene {
 
     MDoor.forEach((object) => {
       let obj = mathDoor.create(object.x, object.y, object.name);
-      obj.setScale(object.width / object.width, object.height / object.height);
-      obj.setOrigin(0);
-      obj.body.width = object.width;
-      obj.body.height = object.height;
-    });
-    TDoor.forEach((object) => {
-      let obj = techDoor.create(object.x, object.y, object.name);
       obj.setScale(object.width / object.width, object.height / object.height);
       obj.setOrigin(0);
       obj.body.width = object.width;

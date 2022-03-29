@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <div id="objectslist">
+    <div id="title">
       <h1>Welcome to Hace Gropper!</h1>
     </div>
     <p id="dialogue">
@@ -20,6 +20,7 @@
         move right: right arrow<br />
         move up: up arrow <br />
         move down: down arrow <br />
+
       </p>
       <p style="color: darkgray">
         The name of the game is to find all the clues ... <br />
@@ -36,21 +37,7 @@
         one of the first three computer programmers
       </li>
     </ul>
-    <ul id="science-clues" class="hidden">
-      <h3 style="text-align: center">Clues: <span id="clueCount">0</span>/4</h3>
-      <li id="3" class="hidden" style="padding-left: 15px">
-        paved the way for discoveries in physical chemistry
-      </li>
-      <li id="4" class="hidden" style="padding-left: 15px">
-        discovery was one step away from the double helix formation (DNA)
-      </li>
-      <li id="5" class="hidden" style="padding-left: 15px">
-        research led to many breakthroughs in virology
-      </li>
-      <li id="6" class="hidden" style="padding-left: 15px">
-        studies on coal led to extracting oxygen from the air
-      </li>
-    </ul>
+    
     <ul id="engineering-clues" class="hidden">
       <h3 style="text-align: center">
         Clues: <span id="eClueCount">0</span>/5
@@ -71,6 +58,19 @@
       <li id="11" class="hidden" style="padding-left: 15px">
         worked on the Agena rocket project, for flyby missions to Venus and Mars
       </li>
+
+    <ul id="science-clues" class="hidden"><h3 style="text-align: center;">Clues: <span id="sciClueCount">0</span>/4</h3>
+      <li id=3 class="hidden" style="padding-left: 15px;">paved the way for discoveries in physical chemistry</li>
+      <li id=4 class="hidden" style="padding-left: 15px;">discovery was one step away from the double helix formation (DNA)</li>
+      <li id=5 class="hidden" style="padding-left: 15px;">research led to many breakthroughs in virology</li>
+      <li id=6 class="hidden" style="padding-left: 15px;">studies on coal led to extracting oxygen from the air</li>
+
+    </ul>
+    <ul id="tech-clues" class="hidden"><h3 style="text-align: center;">Clues: <span id="clueCount">0</span>/4</h3>
+      <li id=25 class="hidden" style="padding-left: 15px;"> “First” career at IBM - invented DIS  - dynamic instruction scheduling. DIS allowed computers to reorganize how they handled commands to maximize efficiency and data flow, and ultimately, led directly to the creation of modern portable computers. </li>
+      <li id=26 class="hidden" style="padding-left: 15px;">“Second” career at PARC - worked with microchip design</li>
+      <li id=27 class="hidden" style="padding-left: 15px;">nother clue</li>
+      <li id=28 class="hidden" style="padding-left: 15px;">yet another clue</li>
     </ul>
     <div id="game" class="hidden">
       <nav>
@@ -104,5 +104,62 @@
         </div>
       </div>
     </div>
+  
+  </div>
+  <div id="memory" class="hidden">
+    <h2 style="color: white">Memory Game</h2>
+    <p style="color: white">Flip over tiles to find each match!</p>
+    <h3 id="win" class="hidden" style="color: firebrick;">You win!</h3>
+    <button id="mem-exit">Exit</button>
+    <div class="container">
+        <div class="card" id ="mem1">
+            <img class="front" src="/public/assets/images/memory/strawberry.jpg"/>
+            <img class="back" src="/public/assets/images/memory/qmark.png" />
+        </div>
+        <div class="card" id ="mem2">
+            <img class="front" src="/public/assets/images/memory/cherries.jpg"/>
+            <img class="back" src="/public/assets/images/memory/qmark.png" />
+        </div>
+        <div class="card" id ="mem3">
+            <img class="front" src="/public/assets/images/memory/strawberry.jpg"/>
+            <img class="back" src="/public/assets/images/memory/qmark.png" />
+        </div>
+        <div class="card" id ="mem4">
+            <img class="front" src="/public/assets/images/memory/pineapple.jpg"/>
+            <img class="back" src="/public/assets/images/memory/qmark.png" />
+        </div>
+        <div class="card" id ="mem5">
+            <img class="front" src="/public/assets/images/memory/avocado.jpg"/>
+            <img class="back" src="/public/assets/images/memory/qmark.png" />
+        </div>
+        <div class="card" id ="mem6">
+            <img class="front" src="/public/assets/images/memory/oranges.jpg"/>
+            <img class="back" src="/public/assets/images/memory/qmark.png" />
+        </div>
+        <div class="card" id ="mem7">
+            <img class="front" src="/public/assets/images/memory/cherries.jpg"/>
+            <img class="back" src="/public/assets/images/memory/qmark.png" />
+        </div>
+        <div class="card" id ="mem8">
+            <img class="front" src="/public/assets/images/memory/orange.jpg"/>
+            <img class="back" src="/public/assets/images/memory/qmark.png" />
+        </div>
+        <div class="card" id ="mem9">
+            <img class="front" src="/public/assets/images/memory/orange.jpg"/>
+            <img class="back" src="/public/assets/images/memory/qmark.png" />
+        </div>
+        <div class="card" id ="mem10">
+            <img class="front" src="/public/assets/images/memory/oranges.jpg"/>
+            <img class="back" src="/public/assets/images/memory/qmark.png" />
+        </div>
+        <div class="card" id ="mem11">
+            <img class="front" src="/public/assets/images/memory/avocado.jpg"/>
+            <img class="back" src="/public/assets/images/memory/qmark.png" />
+        </div>
+        <div class="card" id ="mem12">
+            <img class="front" src="/public/assets/images/memory/pineapple.jpg"/>
+            <img class="back" src="/public/assets/images/memory/qmark.png" />
+        </div>
+  </div>
   </body>
 </html>
