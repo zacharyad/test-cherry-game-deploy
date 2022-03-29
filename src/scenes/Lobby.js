@@ -19,7 +19,6 @@ let sciDoor;
 let clueCount = 0;
 let techDoor;
 
-
 export default class Lobby extends Phaser.Scene {
   constructor() {
     super({ key: "Lobby" });
@@ -34,6 +33,7 @@ export default class Lobby extends Phaser.Scene {
     this.load.image("Engineering", "../public/assets/images/Door.png");
     this.load.image("Math", "../public/assets/images/Door.png");
     this.load.image("Science", "../public/assets/images/Door.png");
+    this.load.image("Tech", "../public/assets/images/Door.png");
     this.load.spritesheet(
       "grace",
       "../public/assets/sprites/gh-spritesheet.png",
@@ -128,13 +128,6 @@ export default class Lobby extends Phaser.Scene {
       obj.body.width = object.width;
       obj.body.height = object.height;
     });
-    TDoor.forEach((object) => {
-      let obj = techDoor.create(object.x, object.y, object.name);
-      obj.setScale(object.width / object.width, object.height / object.height);
-      obj.setOrigin(0);
-      obj.body.width = object.width;
-      obj.body.height = object.height;
-    });
 
     SDoor.forEach((object) => {
       let obj = sciDoor.create(object.x, object.y, object.name);
@@ -144,10 +137,15 @@ export default class Lobby extends Phaser.Scene {
       obj.body.height = object.height;
     });
 
-
     this.physics.add.overlap(this.player, item, this.collect, null, this);
     this.physics.add.overlap(this.player, engDoor, this.enterERoom, null, this);
-    this.physics.add.overlap(this.player, mathDoor, this.enterMRoom, null, this);
+    this.physics.add.overlap(
+      this.player,
+      mathDoor,
+      this.enterMRoom,
+      null,
+      this
+    );
     this.physics.add.overlap(this.player, sciDoor, this.enterSRoom, null, this);
     this.physics.add.overlap(
       this.player,
@@ -157,14 +155,12 @@ export default class Lobby extends Phaser.Scene {
       this
     );
 
-
     text = this.add.text(570, 70, `Clues: x`, {
       fontSize: "20px",
       fill: "#ffffff",
     });
     text.setScrollFactor(0);
 
-    
     furnitureLayer.setCollisionByExclusion([-1]);
     objectLayer.setCollisionByExclusion([-1]);
     this.physics.add.collider(this.player, furnitureLayer);
@@ -189,13 +185,13 @@ export default class Lobby extends Phaser.Scene {
     this.scene.start("Math", Math);
   }
 
-
   enterSRoom() {
     this.scene.stop("Lobby");
     this.scene.start("Science");
   }
 
-  collect(player, object) { // this is what happens when we overlap with the object
+  collect(player, object) {
+    // this is what happens when we overlap with the object
     clueCount += 1;
     object.destroy(object.x, object.y);
     // text.setText(`Clues: y`); // set the text to show the current score
@@ -203,7 +199,7 @@ export default class Lobby extends Phaser.Scene {
     let clue2 = document.getElementById("2");
     let count = document.getElementById("clueCount");
     count.innerText = clueCount;
-    
+
     // console.log(object.texture.key); // object name
 
     if (object.texture.key === "Ship") {
@@ -214,7 +210,7 @@ export default class Lobby extends Phaser.Scene {
 
     if (clueCount === 2) {
       let dialogue = document.getElementById("dialogue");
-      dialogue.innerText = "Hmm ... those curtains look funny"
+      dialogue.innerText = "Hmm ... those curtains look funny";
     }
     // list = []
     // list.push(object.listClues)
