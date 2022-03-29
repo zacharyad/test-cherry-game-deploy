@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <div id="objectslist">
+    <div id="title">
       <h1>Welcome to Hace Gropper!</h1>
     </div>
     <p id="dialogue">
@@ -15,10 +15,10 @@
     <div id="rules">
       <h3 style="text-align: center;">How to play</h3>
       <p>
-        move left: left arrow <img src="/public/assets/images/html/Previous.png"><br />
-        move right: right arrow <img src="/public/assets/images/html/Next.png"/> <br />
-        move up: up arrow <br />
-        move down: down arrow <br />
+        move left: <img style="height: 20px; width: 20px" src="/public/assets/images/html/Back col_Square Button.png"><br />
+        move right: <img style="height: 20px; width: 20px" src="/public/assets/images/html/Next col_Square Button.png"/> <br />
+        move up: <img style="height: 20px; width: 20px" src="/public/assets/images/html/Up col_Square Button.png"/> <br />
+        move down: <img style="height: 20px; width: 20px" src="/public/assets/images/html/Down col_Square Button.png"/><br />
       </p>
       <p style="color: darkgray;">
         The name of the game is to find all the clues ... <br /> ... guessing the sprite's name is entirely up to you!
@@ -28,7 +28,7 @@
       <li id=1 class="hidden" style="padding-left: 15px;">served in the navy</li>
       <li id=2 class="hidden" style="padding-left: 15px;">one of the first three computer programmers</li>
     </ul>
-    <ul id="science-clues" class="hidden"><h3 style="text-align: center;">Clues: <span id="clueCount">0</span>/4</h3>
+    <ul id="science-clues" class="hidden"><h3 style="text-align: center;">Clues: <span id="sciClueCount">0</span>/4</h3>
       <li id=3 class="hidden" style="padding-left: 15px;">paved the way for discoveries in physical chemistry</li>
       <li id=4 class="hidden" style="padding-left: 15px;">discovery was one step away from the double helix formation (DNA)</li>
       <li id=5 class="hidden" style="padding-left: 15px;">research led to many breakthroughs in virology</li>
@@ -75,6 +75,63 @@
       </div>
   
     </div>
+  
+  
+  </div>
+  <div id="memory" class="hidden">
+    <h2 style="color: white">Memory Game</h2>
+    <p style="color: white">Flip over tiles to find each match!</p>
+    <h3 id="win" class="hidden" style="color: firebrick;">You win!</h3>
+    <button id="mem-exit">Exit</button>
+    <div class="container">
+        <div class="card" id ="mem1">
+            <img class="front" src="/public/assets/images/memory/strawberry.jpg"/>
+            <img class="back" src="/public/assets/images/memory/qmark.png" />
+        </div>
+        <div class="card" id ="mem2">
+            <img class="front" src="/public/assets/images/memory/cherries.jpg"/>
+            <img class="back" src="/public/assets/images/memory/qmark.png" />
+        </div>
+        <div class="card" id ="mem3">
+            <img class="front" src="/public/assets/images/memory/strawberry.jpg"/>
+            <img class="back" src="/public/assets/images/memory/qmark.png" />
+        </div>
+        <div class="card" id ="mem4">
+            <img class="front" src="/public/assets/images/memory/pineapple.jpg"/>
+            <img class="back" src="/public/assets/images/memory/qmark.png" />
+        </div>
+        <div class="card" id ="mem5">
+            <img class="front" src="/public/assets/images/memory/avocado.jpg"/>
+            <img class="back" src="/public/assets/images/memory/qmark.png" />
+        </div>
+        <div class="card" id ="mem6">
+            <img class="front" src="/public/assets/images/memory/oranges.jpg"/>
+            <img class="back" src="/public/assets/images/memory/qmark.png" />
+        </div>
+        <div class="card" id ="mem7">
+            <img class="front" src="/public/assets/images/memory/cherries.jpg"/>
+            <img class="back" src="/public/assets/images/memory/qmark.png" />
+        </div>
+        <div class="card" id ="mem8">
+            <img class="front" src="/public/assets/images/memory/orange.jpg"/>
+            <img class="back" src="/public/assets/images/memory/qmark.png" />
+        </div>
+        <div class="card" id ="mem9">
+            <img class="front" src="/public/assets/images/memory/orange.jpg"/>
+            <img class="back" src="/public/assets/images/memory/qmark.png" />
+        </div>
+        <div class="card" id ="mem10">
+            <img class="front" src="/public/assets/images/memory/oranges.jpg"/>
+            <img class="back" src="/public/assets/images/memory/qmark.png" />
+        </div>
+        <div class="card" id ="mem11">
+            <img class="front" src="/public/assets/images/memory/avocado.jpg"/>
+            <img class="back" src="/public/assets/images/memory/qmark.png" />
+        </div>
+        <div class="card" id ="mem12">
+            <img class="front" src="/public/assets/images/memory/pineapple.jpg"/>
+            <img class="back" src="/public/assets/images/memory/qmark.png" />
+        </div>
   </div>
   </body>
 </html>
