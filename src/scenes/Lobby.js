@@ -195,10 +195,6 @@ export default class Lobby extends Phaser.Scene {
     this.scene.stop("Lobby");
     this.scene.start("Math", Math);
   }
-  enterTRoom() {
-    this.scene.stop("Lobby");
-    this.scene.start("Technology", Technology);
-  }
 
   collect(player, object) {
     // this is what happens when we overlap with the object
