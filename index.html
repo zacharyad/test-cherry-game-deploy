@@ -10,11 +10,65 @@
       <h1>Welcome to Hace Gropper!</h1>
     </div>
     <p id="dialogue">
-      GH says ...
+      Your sprite says ... <text>try looking around the room a bit!</text>
     </p>
-    <ul id="lobby"><h3 style="color: blueviolet">Clues</h3>
-      <li id=1 class="hidden">served in the navy</li>
-      <li id=2 class="hidden">one of first three computer programmers</li>
+    <div id="rules">
+      <h3 style="text-align: center;">How to play</h3>
+      <p>
+        move left: left arrow <img src="/public/assets/images/html/Previous.png"><br />
+        move right: right arrow <img src="/public/assets/images/html/Next.png"/> <br />
+        move up: up arrow <br />
+        move down: down arrow <br />
+      </p>
+      <p style="color: darkgray;">
+        The name of the game is to find all the clues ... <br /> ... guessing the sprite's name is entirely up to you!
+      </p>
+    </div>
+    <ul id="clue-list"><h3 style="text-align: center;">Clues: <span id="clueCount">0</span>/2</h3>
+      <li id=1 class="hidden" style="padding-left: 15px;">served in the navy</li>
+      <li id=2 class="hidden" style="padding-left: 15px;">one of the first three computer programmers</li>
     </ul>
+    <ul id="science-clues" class="hidden"><h3 style="text-align: center;">Clues: <span id="clueCount">0</span>/4</h3>
+      <li id=3 class="hidden" style="padding-left: 15px;">paved the way for discoveries in physical chemistry</li>
+      <li id=4 class="hidden" style="padding-left: 15px;">discovery was one step away from the double helix formation (DNA)</li>
+      <li id=5 class="hidden" style="padding-left: 15px;">research led to many breakthroughs in virology</li>
+      <li id=6 class="hidden" style="padding-left: 15px;">studies on coal led to extracting oxygen from the air</li>
+    </ul>
+    <div id="game" class="hidden">
+    <nav>
+      <h1>Scrambled Words</h1>
+      <div id="contact">
+        <a target="_blank" href="https://github.com/IAmAlexJohnson"><i class="fab fa-github"></i></a>
+        <a target="_blank" href="https://codepen.io/IAmAlexJohnson/"><i class="fab fa-codepen"></i></a>
+        <a target="_blank" href="https://twitter.com/IAmAlexJohnson"><i class="fab fa-twitter"></i></a>
+      </div>
+      <div id="rules">
+        <p class="lead">Unscamble the words.</p>
+        <p>Type in your guess <small>(Enter works)</small>.</p>
+        <p>Get one correct and level up.</p>
+        <p>Get a word wrong three times and restart.</p>
+        <p>Finish level 8 and you win.</p>
+        <p>Good luck!</p>
+        <button id="play-btn">Let's Play</button>
+      </div>
+    </nav>
+  
+    <div id="game-container" class="hidden">
+      <p>Level: <span id="level">1</span></p>
+      <p>Score: <span id="score">0</span></p>
+      <p>Attempts: <span id="attempts">0</span></p>
+      <p id="info"></p>
+  
+      <div id="guess-container">
+        <p id="scrambled-word"></p>
+  
+        <input id="user-guess" type="text" placeholder="Enter your guess">
+        <button id="submit">Submit</button>
+        <button id="reset-btn">Reset</button>
+        <button id="back-to-lobby">I give up! Take me back to the Lobby..</button>
+      </div>
+  
+    </div>
+  </div>
   </body>
 </html>

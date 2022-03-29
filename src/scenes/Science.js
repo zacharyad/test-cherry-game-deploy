@@ -4,6 +4,7 @@ import Player from '../entities/Player';
 let item;
 let sciDoor;
 let sText;
+let clueCount = 0;
 
 export default class Science extends Phaser.Scene {
   constructor() {
@@ -35,6 +36,9 @@ export default class Science extends Phaser.Scene {
 
   create() {
     console.log(this.cache.tilemap.get('sciMap').data);
+
+    let scienceClues = document.getElementById("science-clues");
+    scienceClues.classList.remove("hidden");
 
     const map = this.make.tilemap({
       key: 'sciMap',
@@ -101,8 +105,33 @@ export default class Science extends Phaser.Scene {
   }
 
   collect(player, object) {
+    clueCount += 1;
     object.destroy(object.x, object.y);
-    sText.setText(`Clues: y`);
+    // text.setText(`Clues: y`); // set the text to show the current score
+    let clue3 = document.getElementById("3");
+    let clue4 = document.getElementById("4");
+    let clue5 = document.getElementById("5");
+    let clue6 = document.getElementById("6");
+
+    let count = document.getElementById("clueCount");
+    count.innerText = clueCount;
+
+    if (object.texture.key === "chemical") {
+      clue3.classList.remove("hidden");
+    } else if (object.texture.key === "dna") {
+      clue4.classList.remove("hidden");
+    } else if (object.texture.key === "research") {
+      clue5.classList.remove("hidden");
+    } else if (object.texture.key === "coal") {
+      clue6.classList.remove("hidden");
+    }
+
+
+    if (clueCount === 4) {
+      let dialogue = document.getElementById("dialogue");
+      dialogue.innerText = "You did it!"
+    }
+
     return false;
   }
 
