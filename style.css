@@ -51,7 +51,20 @@ canvas {
     display: none;
 }
 
+
 @keyframes typing {
     from {width: 0}
     to {width: 100%}
   }
+
+#game {
+    position: absolute;
+    top: 250px;
+    left: 250px;
+    border: 2px solid black;
+    height: 200px;
+    width: 300px;
+    text-align: center;
+
+}
+

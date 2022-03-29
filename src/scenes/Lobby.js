@@ -17,6 +17,8 @@ let engDoor;
 let mathDoor;
 let sciDoor;
 let clueCount = 0;
+let techDoor;
+
 
 export default class Lobby extends Phaser.Scene {
   constructor() {
@@ -24,7 +26,6 @@ export default class Lobby extends Phaser.Scene {
   }
 
   preload() {
-    // this.load.image('base_tiles', '../public/assets/images/bug.png')
     this.load.tilemapTiledJSON("map", "../public/assets/tilemaps/GHLobby.json");
     this.load.image("lobby", "../public/assets/tilesets/LobbyTiles.png");
     this.load.image("text", "../public/assets/tilesets/Text.png");
@@ -66,7 +67,6 @@ export default class Lobby extends Phaser.Scene {
     let furnitureLayer = map.createLayer("Furniture", lobbyTiles);
     let objectLayer = map.createLayer("Objects", lobbyTiles);
     let letterLayer = map.createLayer("Letters", textTiles);
-    
 
     this.player = new Player(this, 470, 610, "grace").setScale(1.75); //Joe is pleased
 
@@ -89,15 +89,12 @@ export default class Lobby extends Phaser.Scene {
     EDoor = map.getObjectLayer("EDoor")["objects"];
     MDoor = map.getObjectLayer("MDoor")["objects"];
 
-
-    console.log(Clues);
-    console.log(Clues[0].name);
-
     item = this.physics.add.staticGroup();
     engDoor = this.physics.add.staticGroup();
+    techDoor = this.physics.add.staticGroup();
     mathDoor = this.physics.add.staticGroup();
     sciDoor = this.physics.add.staticGroup();
-    //  console.log(engDoor, 'engDoor')
+    techDoor = this.physics.add.staticGroup();
 
     Clues.forEach((object) => {
       let obj = item.create(object.x, object.y, object.name);
@@ -107,7 +104,13 @@ export default class Lobby extends Phaser.Scene {
       obj.body.height = object.height;
       console.log(item);
     });
-
+    TDoor.forEach((object) => {
+      let obj = techDoor.create(object.x, object.y, object.name);
+      obj.setScale(object.width / object.width, object.height / object.height);
+      obj.setOrigin(0);
+      obj.body.width = object.width;
+      obj.body.height = object.height;
+    });
     EDoor.forEach((object) => {
       let obj = engDoor.create(object.x, object.y, object.name);
       obj.setScale(object.width / object.width, object.height / object.height);
@@ -118,6 +121,13 @@ export default class Lobby extends Phaser.Scene {
 
     MDoor.forEach((object) => {
       let obj = mathDoor.create(object.x, object.y, object.name);
+      obj.setScale(object.width / object.width, object.height / object.height);
+      obj.setOrigin(0);
+      obj.body.width = object.width;
+      obj.body.height = object.height;
+    });
+    TDoor.forEach((object) => {
+      let obj = techDoor.create(object.x, object.y, object.name);
       obj.setScale(object.width / object.width, object.height / object.height);
       obj.setOrigin(0);
       obj.body.width = object.width;
@@ -137,6 +147,13 @@ export default class Lobby extends Phaser.Scene {
     this.physics.add.overlap(this.player, engDoor, this.enterERoom, null, this);
     this.physics.add.overlap(this.player, mathDoor, this.enterMRoom, null, this);
     this.physics.add.overlap(this.player, sciDoor, this.enterSRoom, null, this);
+    this.physics.add.overlap(
+      this.player,
+      techDoor,
+      this.enterTRoom,
+      null,
+      this
+    );
 
 
     text = this.add.text(570, 70, `Clues: x`, {
@@ -145,32 +162,21 @@ export default class Lobby extends Phaser.Scene {
     });
     text.setScrollFactor(0);
 
-    //addToList (object) {
-    //     `${listText[obj.skull]}
-    //   }
-    // //listText = {
-    // //   skull:'this is a skull',
-    // //   ship: 'in the navy'
-    // // }
-
-    // // `${listText[obj.skull]}
-
+    
     furnitureLayer.setCollisionByExclusion([-1]);
     objectLayer.setCollisionByExclusion([-1]);
     this.physics.add.collider(this.player, furnitureLayer);
     this.physics.add.collider(this.player, objectLayer);
-    // collider for each specific curtain & separate collider for each curtain
-    // this.physics.add.collider(this.player, curtainE, () => {this.scene.stop('Lobby'); this.scene.launch('Engineering')}) curtainE is an object
-    // this.physics.add.collider(this.player, EDoor, () => this.enterRoom)
-    // console.log(EDoor[0], 'edoor');
-    // console.log(this.scene, 'this scene')
     let curtainsLayer = map.createLayer("Curtains", lobbyTiles);
   }
 
   update() {
     this.player.update(this.cursors);
   }
-
+  enterTRoom() {
+    this.scene.stop("Lobby");
+    this.scene.start("Technology", Technology);
+  }
   enterERoom() {
     this.scene.stop("Lobby");
     this.scene.start("Engineering", Engineering);
@@ -180,6 +186,7 @@ export default class Lobby extends Phaser.Scene {
     this.scene.stop("Lobby");
     this.scene.start("Math", Math);
   }
+
 
   enterSRoom() {
     this.scene.stop("Lobby");
