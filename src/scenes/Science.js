@@ -1,10 +1,12 @@
-import Phaser from "phaser";
-import Player from "../entities/Player";
+import Phaser from 'phaser';
+import Player from '../entities/Player';
+import Memory from '../scenes/Memory';
+
 
 let item;
 let sciDoor;
 let sText;
-let clueCount = 0;
+let sciClueCount = 0;
 
 export default class Science extends Phaser.Scene {
   constructor() {
@@ -21,14 +23,15 @@ export default class Science extends Phaser.Scene {
       "furniture",
       "../public/assets/tilesets/shop-and-hospital.png"
     );
-    this.load.image("lobby", "../public/assets/tilesets/LobbyTiles.png");
-    this.load.image("chemical", "../public/assets/images/chemical.png");
-    this.load.image("coal", "../public/assets/images/coal.png");
-    this.load.image("research", "../public/assets/images/research.png");
-    this.load.image("dna", "../public/assets/images/dna.png");
-    this.load.image("sciDoor", "../public/assets/images/sciDoor.png");
 
-    this.load.spritesheet("rosalind", "../public/assets/sprites/rosalind.png", {
+    this.load.image('lobby', '../public/assets/tilesets/LobbyTiles.png');
+    this.load.image('chemical', '../public/assets/images/chemical.png');
+    this.load.image('coal', '../public/assets/images/coal.png');
+    this.load.image('research', '../public/assets/images/research.png');
+    this.load.image('dna', '../public/assets/images/dna.png');
+    this.load.image('sciDoor', '../public/assets/images/sciDoor.png');
+
+    this.load.spritesheet('rosalind', '../public/assets/sprites/rosalind.png', {
       frameWidth: 32,
       frameHeight: 32,
     });
@@ -37,8 +40,8 @@ export default class Science extends Phaser.Scene {
   create() {
     console.log(this.cache.tilemap.get("sciMap").data);
 
-    let scienceClues = document.getElementById("science-clues");
-    scienceClues.classList.remove("hidden");
+    let scienceClues = document.getElementById('science-clues');
+    scienceClues.classList.remove('hidden');
 
     const map = this.make.tilemap({
       key: "sciMap",
@@ -94,8 +97,8 @@ export default class Science extends Phaser.Scene {
     this.physics.add.collider(this.player, objectLayer);
 
     sText = this.add.text(500, 70, `Clues List`, {
-      fontSize: "20px",
-      fill: "white",
+      fontSize: '20px',
+      fill: 'white',
     });
     sText.setScrollFactor(0);
   }
@@ -105,38 +108,38 @@ export default class Science extends Phaser.Scene {
   }
 
   collect(player, object) {
-    clueCount += 1;
+    sciClueCount += 1;
     object.destroy(object.x, object.y);
     // text.setText(`Clues: y`); // set the text to show the current score
-    let clue3 = document.getElementById("3");
-    let clue4 = document.getElementById("4");
-    let clue5 = document.getElementById("5");
-    let clue6 = document.getElementById("6");
+    let clue3 = document.getElementById('3');
+    let clue4 = document.getElementById('4');
+    let clue5 = document.getElementById('5');
+    let clue6 = document.getElementById('6');
 
-    let count = document.getElementById("clueCount");
-    count.innerText = clueCount;
+    let count = document.getElementById('sciClueCount');
+    count.innerText = sciClueCount;
 
-    if (object.texture.key === "chemical") {
-      clue3.classList.remove("hidden");
-    } else if (object.texture.key === "dna") {
-      clue4.classList.remove("hidden");
-    } else if (object.texture.key === "research") {
-      clue5.classList.remove("hidden");
-    } else if (object.texture.key === "coal") {
-      clue6.classList.remove("hidden");
+    if (object.texture.key === 'chemical') {
+      clue3.classList.remove('hidden');
+    } else if (object.texture.key === 'dna') {
+      clue4.classList.remove('hidden');
+    } else if (object.texture.key === 'research') {
+      clue5.classList.remove('hidden');
+    } else if (object.texture.key === 'coal') {
+      clue6.classList.remove('hidden');
     }
 
-    if (clueCount === 4) {
-      let dialogue = document.getElementById("dialogue");
-      dialogue.innerText = "You did it!";
+    if (sciClueCount === 4) {
+      let dialogue = document.getElementById('dialogue');
+      dialogue.innerText = 'You did it!';
     }
 
     return false;
   }
 
   exit() {
-    this.scene.stop("Science");
-    this.scene.start("Lobby");
+    this.scene.stop('Science');
+    this.scene.start('Memory');
   }
 
   createAnimations() {
