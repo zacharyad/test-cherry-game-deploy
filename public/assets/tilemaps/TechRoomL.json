@@ -199,8 +199,17 @@
          "source":"..\/..\/..\/..\/lyn.tsx"
         }, 
         {
+         "columns":16,
          "firstgid":2529,
-         "source":"..\/tilesets\/BOOKS.tsx"
+         "image":"..\/..\/..\/..\/Downloads\/Modern+ Study Time (32x32) (1)\/Tile 1.png",
+         "imageheight":512,
+         "imagewidth":512,
+         "margin":0,
+         "name":"BOOKS",
+         "spacing":0,
+         "tilecount":256,
+         "tileheight":32,
+         "tilewidth":32
         }],
  "tilewidth":32,
  "type":"map",
