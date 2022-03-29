@@ -91,6 +91,7 @@ export default class Lobby extends Phaser.Scene {
 
     item = this.physics.add.staticGroup();
     engDoor = this.physics.add.staticGroup();
+    techDoor = this.physics.add.staticGroup();
     mathDoor = this.physics.add.staticGroup();
     techDoor = this.physics.add.staticGroup();
     //  console.log(engDoor, 'engDoor')
@@ -120,6 +121,13 @@ export default class Lobby extends Phaser.Scene {
 
     MDoor.forEach((object) => {
       let obj = mathDoor.create(object.x, object.y, object.name);
+      obj.setScale(object.width / object.width, object.height / object.height);
+      obj.setOrigin(0);
+      obj.body.width = object.width;
+      obj.body.height = object.height;
+    });
+    TDoor.forEach((object) => {
+      let obj = techDoor.create(object.x, object.y, object.name);
       obj.setScale(object.width / object.width, object.height / object.height);
       obj.setOrigin(0);
       obj.body.width = object.width;
