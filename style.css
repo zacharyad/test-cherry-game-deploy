@@ -1,19 +1,61 @@
-#lobby {
-    position: absolute;
-    top: 20;
-    left: 850px;
-    border: 2px solid black;
-    height: 200px;
-    width: 300px;
+* {
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
-p {
-    color: red;
+body {
+    max-width: 500px;
+    margin: auto;
+    background-color: #423e41;
+}
+
+canvas {
+    border: 2px solid white;
+    border-radius: 10px;
+}
+
+#clue-list, #science-clues {
+    position: absolute;
+    bottom: 100px;
+    left: 20px;
+    border: 2px solid black;
+    height: 300px;
+    width: 375px;
+    background-color: #87486c;
+    border-radius: 30%;
+    padding: 10px;
+}
+
+#rules {
+    position: absolute;
+    top: 30px;
+    left: 20px;
+    border: 2px solid black;
+    height: 300px;
+    width: 300px;
+    background-color: #87486c;
+    border-radius: 30px;
+    padding: 10px;
+}
+
+#dialogue {
+    color: white;
+    overflow: hidden;
+    border-right: .15em solid yellow;
+    white-space: nowrap;
+    animation: typing 3s steps(20, end) forwards;
+    font-size: 10;
+    width: 800;
 }
 
 .hidden {
     display: none;
 }
+
+
+@keyframes typing {
+    from {width: 0}
+    to {width: 100%}
+  }
 
 #game {
     position: absolute;
@@ -25,3 +67,4 @@ p {
     text-align: center;
 
 }
+
