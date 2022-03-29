@@ -75,12 +75,6 @@ export default class Technology extends Phaser.Scene {
       schoolTiles,
     ]);
 
-    // let objectLayer = map.createLayer("ClueObjects", [
-    //   vaporTiles,
-    //   schoolTiles,
-    //   prideTiles,
-    //   bookTiles,
-    // ]);
     this.player = new Player(this, 470, 610, "grace").setScale(1.75); //Joe is pleased
     this.createAnimations(); //maybe also move this to player class?
 

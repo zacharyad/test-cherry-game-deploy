@@ -57,18 +57,6 @@
          "name":"ClueObjects",
          "objects":[
                 {
-                 "gid":2459,
-                 "height":32,
-                 "id":1,
-                 "name":"",
-                 "rotation":0,
-                 "type":"",
-                 "visible":true,
-                 "width":32,
-                 "x":404,
-                 "y":494.666666666667
-                }, 
-                {
                  "gid":2134,
                  "height":32,
                  "id":5,
@@ -91,18 +79,6 @@
                  "width":32,
                  "x":30.6666666666667,
                  "y":314.666666666667
-                }, 
-                {
-                 "gid":818,
-                 "height":32,
-                 "id":7,
-                 "name":"",
-                 "rotation":0,
-                 "type":"",
-                 "visible":true,
-                 "width":32,
-                 "x":146.666666666667,
-                 "y":393.333333333333
                 }, 
                 {
                  "gid":2243,
