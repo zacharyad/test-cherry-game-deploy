@@ -14,8 +14,8 @@ export default class Memory extends Phaser.Scene {
     const memoryGame = document.getElementById('memory');
     const canvas = document.querySelector('canvas');
     const exitButton = document.getElementById('mem-exit');
-    
-    canvas.classList.add("hidden")
+
+    canvas.classList.add('hidden');
     memoryGame.classList.remove('hidden');
 
     exitButton.addEventListener('click', exitRoom);
@@ -85,11 +85,11 @@ export default class Memory extends Phaser.Scene {
         }
       }
     }
-    function exitRoom(){
-        memory.scene.stop("Memory");
-        memory.scene.start("Lobby");
-        memoryGame.classList.toggle("hidden");
-        canvas.classList.toggle("hidden")
+    function exitRoom() {
+      memory.scene.stop('Memory');
+      memory.scene.start('Lobby');
+      memoryGame.classList.toggle('hidden');
+      canvas.classList.toggle('hidden');
     }
   }
   update() {}

@@ -57,6 +57,19 @@ canvas {
     width: 800;
 }
 
+#mad-libz {
+  position: absolute;
+  top: 150px;
+  left: 600px;
+  border: 2px solid black;
+  height: 275px;
+  width: 250px;
+  background-color: #87486c;
+  border-radius: 20px;
+  padding: 10px;
+  word-wrap: normal;
+}
+
 .hidden {
     display: none;
 }
