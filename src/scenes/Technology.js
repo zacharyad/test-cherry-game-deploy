@@ -25,7 +25,11 @@ export default class Technology extends Phaser.Scene {
       "../public/assets/tilesets/RepeatableStoneWall.png"
     );
     this.load.image("Pride", "../public/assets/tilesets/pride.png");
-    this.load.image("Books", "../public/assets/tilesets/BOOKS.png");
+    this.load.image("BOOK", "../public/assets/images/bewk.png");
+    this.load.image("PRIDEFLAG", "../public/assets/images/fleg.png");
+    this.load.image("FIGURE", "../public/assets/images/stet.png");
+    this.load.image("COMPUTER", "../public/assets/images/cemp.png");
+    this.load.image("CALIWAVES", "../public/assets/images/cal.png");
     this.load.spritesheet(
       "grace",
       "../public/assets/sprites/gh-spritesheet.png",
