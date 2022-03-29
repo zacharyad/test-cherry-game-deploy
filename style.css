@@ -2,6 +2,15 @@
     font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
+#objectslist h1 {
+padding: 10px;
+  text-align: center;
+  color: rgb(145, 214, 211);
+  font-size: 2em;
+  letter-spacing: 0.25em;
+  font-weight: 700;
+}
+
 body {
     max-width: 500px;
     margin: auto;
@@ -39,15 +48,23 @@ canvas {
 
 #rules {
     position: absolute;
-    top: 30px;
-    left: 20px;
+    /* top: 30px; */
+    /* left: 20px; */
     border: 2px solid black;
-    height: 300px;
-    width: 300px;
-    background-color: #87486c;
+    height: 400px;
+    width: 400px;
+    background-color: #ecc9dd;
     border-radius: 30px;
     padding: 10px;
+    top: 200px;
+    left: 800px;
+    text-align: centered;
+    
 }
+
+/* img {
+    margin:
+} */
 
 #dialogue {
     color: white;
@@ -71,8 +88,8 @@ canvas {
 
 #game {
     position: absolute;
-    top: 250px;
-    left: 250px;
+    top: 350px;
+    left: 350px;
     border: 2px solid black;
     height: 200px;
     width: 300px;

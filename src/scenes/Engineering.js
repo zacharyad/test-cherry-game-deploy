@@ -171,7 +171,7 @@ export default class Engineering extends Phaser.Scene {
 
     let count = document.getElementById("clueCount");
     count.innerText = clueCount;
-    
+
     if (object.texture.key === "planet") {
       clue11.classList.remove("hidden");
     } else if (object.texture.key === "coin") {

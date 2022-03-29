@@ -19,7 +19,6 @@ let sciDoor;
 let clueCount = 0;
 let techDoor;
 
-
 export default class Lobby extends Phaser.Scene {
   constructor() {
     super({ key: "Lobby" });
@@ -45,15 +44,16 @@ export default class Lobby extends Phaser.Scene {
   }
 
   create() {
-    //to change color of h1 - this is when the lobbby scene is being made
-    const objectlist = document.querySelector("#objectslist h1");
-    // Joe likes query selector because we cna write a css string to write things
-    objectlist.style.color = "white";
-    //can create element + set up container + etc
-    //dom manip stuff is like console log - if you can consle log you can manipulate the dom!
-    //disable cache? yes
-    console.log(this.cache.tilemap.get("map").data);
 
+    const rules = document.getElementById("rules")
+    const playGameBtn = document.getElementById("play-maingame-btn")
+    rules.classList.remove("hidden")
+
+    playGameBtn.addEventListener("click", function (e) {
+      rules.classList.toggle("hidden")
+    });
+
+    // console.log(this.cache.tilemap.get("map").data);
     const map = this.make.tilemap({
       key: "map",
       tileWidth: 32,
@@ -142,10 +142,15 @@ export default class Lobby extends Phaser.Scene {
       obj.body.height = object.height;
     });
 
-
     this.physics.add.overlap(this.player, item, this.collect, null, this);
     this.physics.add.overlap(this.player, engDoor, this.enterERoom, null, this);
-    this.physics.add.overlap(this.player, mathDoor, this.enterMRoom, null, this);
+    this.physics.add.overlap(
+      this.player,
+      mathDoor,
+      this.enterMRoom,
+      null,
+      this
+    );
     this.physics.add.overlap(this.player, sciDoor, this.enterSRoom, null, this);
     this.physics.add.overlap(
       this.player,
@@ -155,14 +160,12 @@ export default class Lobby extends Phaser.Scene {
       this
     );
 
-
     text = this.add.text(570, 70, `Clues: x`, {
       fontSize: "20px",
       fill: "#ffffff",
     });
     text.setScrollFactor(0);
 
-    
     furnitureLayer.setCollisionByExclusion([-1]);
     objectLayer.setCollisionByExclusion([-1]);
     this.physics.add.collider(this.player, furnitureLayer);
@@ -187,13 +190,13 @@ export default class Lobby extends Phaser.Scene {
     this.scene.start("Math", Math);
   }
 
-
   enterSRoom() {
     this.scene.stop("Lobby");
     this.scene.start("Science");
   }
 
-  collect(player, object) { // this is what happens when we overlap with the object
+  collect(player, object) {
+    // this is what happens when we overlap with the object
     clueCount += 1;
     object.destroy(object.x, object.y);
     // text.setText(`Clues: y`); // set the text to show the current score
@@ -201,7 +204,7 @@ export default class Lobby extends Phaser.Scene {
     let clue2 = document.getElementById("2");
     let count = document.getElementById("clueCount");
     count.innerText = clueCount;
-    
+
     // console.log(object.texture.key); // object name
 
     if (object.texture.key === "Ship") {
@@ -212,7 +215,7 @@ export default class Lobby extends Phaser.Scene {
 
     if (clueCount === 2) {
       let dialogue = document.getElementById("dialogue");
-      dialogue.innerText = "Hmm ... those curtains look funny"
+      dialogue.innerText = "Hmm ... those curtains look funny";
     }
     // list = []
     // list.push(object.listClues)

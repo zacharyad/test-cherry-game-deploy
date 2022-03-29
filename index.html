@@ -12,17 +12,19 @@
     <p id="dialogue">
       Your sprite says ... <text>try looking around the room a bit!</text>
     </p>
-    <div id="rules">
-      <h3 style="text-align: center;">How to play</h3>
+    <div id="rules" class="hidden">
+      <h3 style="text-align: center;">How to Play</h3>
       <p>
-        move left: left arrow <img src="/public/assets/images/html/Previous.png"><br />
-        move right: right arrow <img src="/public/assets/images/html/Next.png"/> <br />
+        <img  src="/public/assets/images/keyArrows.png"> <br/>
+        move left: left arrow <br />
+        move right: right arrow<br />
         move up: up arrow <br />
         move down: down arrow <br />
       </p>
       <p style="color: darkgray;">
         The name of the game is to find all the clues ... <br /> ... guessing the sprite's name is entirely up to you!
       </p>
+      <button id='play-maingame-btn'>Let's Play!</button>
     </div>
     <ul id="clue-list"><h3 style="text-align: center;">Clues: <span id="clueCount">0</span>/2</h3>
       <li id=1 class="hidden" style="padding-left: 15px;">served in the navy</li>
