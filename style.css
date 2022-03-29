@@ -61,11 +61,20 @@ canvas {
     text-align: centered;
     
 }
-
-/* img {
-    margin:
-} */
-
+#game {
+    position: absolute;
+    /* top: 30px; */
+    /* left: 20px; */
+    border: 2px solid black;
+    height: 400px;
+    width: 400px;
+    background-color: #ecc9dd;
+    border-radius: 30px;
+    padding: 10px;
+    top: 200px;
+    left: 800px;
+    text-align: centered;
+}
 #dialogue {
     color: white;
     overflow: hidden;
@@ -86,7 +95,7 @@ canvas {
     to {width: 100%}
   }
 
-#game {
+/* #game {
     position: absolute;
     top: 350px;
     left: 350px;
@@ -95,5 +104,5 @@ canvas {
     width: 300px;
     text-align: center;
 
-}
+} */
 
