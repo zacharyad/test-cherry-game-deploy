@@ -33,7 +33,7 @@ export default class Lobby extends Phaser.Scene {
     this.load.image("Engineering", "../public/assets/images/Door.png");
     this.load.image("Math", "../public/assets/images/Door.png");
     this.load.image("Science", "../public/assets/images/Door.png");
-    this.load.image("Technology", "../public/assets/images/Door.png");
+    this.load.image("Tech", "../public/assets/images/Door.png");
     this.load.spritesheet(
       "grace",
       "../public/assets/sprites/gh-spritesheet.png",
