@@ -12,8 +12,29 @@ export default class Pridle extends Phaser.Scene {
   }
 
   create() {
-    // const flag = this.add.image(400, 300, "Agender");
-    // flag.setScale(4.5);
+    const flagArr = [
+      "Agender2014",
+      "Aromantic",
+      "Asexual",
+      "Bisexual",
+      "Genderfluid",
+      "Genderqueer",
+      "Intersex",
+      "Lesbian2010",
+      "Lesbian2018",
+      "Nonbinary",
+      "Pansexual",
+      "Phillypride",
+      "Polysexual",
+      "Progresspride",
+      "Pride1978",
+      "Transgender",
+    ];
+    var chosenFlag = flagArr[Math.floor(Math.random() * flagArr.length)];
+    var container = document.getElementById("pcontainer");
+    container.style.backgroundImage = `url(../public/assets/images/pridleflags/${chosenFlag}.svg)`;
+    container.style.width = "800px";
+    container.style.height = "650px";
     const pridle = this;
     const pridleGame = document.getElementById("pridle");
     const info = document.getElementById("rules");
@@ -45,10 +66,6 @@ export default class Pridle extends Phaser.Scene {
 
     function removeSquare(num) {
       const name = document.getElementById(`square${num}`);
-      var container = document.getElementById("pcontainer");
-      container.style.backgroundImage = `url(../public/assets/images/pridleflags/Lesbian2010.svg)`;
-      container.style.width = "800px";
-      container.style.height = "650px";
       name.classList.add("hidden");
       squareNum++;
       guessNum++;
@@ -66,8 +83,9 @@ export default class Pridle extends Phaser.Scene {
     function submit() {
       var select = document.getElementById("lang");
       var option = select.options[select.selectedIndex];
+      console.log(option.value);
       //want to display option.value so they know what they guessed
-      if (option.value === "javascript") {
+      if (option.value === chosenFlag) {
         removeAllSquares();
         const win = document.getElementById("winner");
         win.classList.remove("hidden");
