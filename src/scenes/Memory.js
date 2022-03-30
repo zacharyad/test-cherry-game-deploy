@@ -1,6 +1,8 @@
 import Phaser from 'phaser';
 import Lobby from './Lobby';
 
+let sciClues;
+
 export default class Memory extends Phaser.Scene {
   constructor() {
     super('Memory');
@@ -14,6 +16,7 @@ export default class Memory extends Phaser.Scene {
     const memoryGame = document.getElementById('memory');
     const canvas = document.querySelector('canvas');
     const exitButton = document.getElementById('mem-exit');
+    sciClues = document.getElementById('science-clues');
 
     canvas.classList.add('hidden');
     memoryGame.classList.remove('hidden');
@@ -90,6 +93,7 @@ export default class Memory extends Phaser.Scene {
       memory.scene.start('Lobby');
       memoryGame.classList.toggle('hidden');
       canvas.classList.toggle('hidden');
+      sciClues.classList.toggle('hidden');
     }
   }
   update() {}

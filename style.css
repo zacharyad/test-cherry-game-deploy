@@ -40,7 +40,7 @@ canvas {
 }
 
 #clue-list, #science-clues, #tech-clues, #engineering-clues {
-    position: absolute;
+    position: fixed;
     bottom: 100px;
     left: 10px;
     border: 2px solid black;
