@@ -5,7 +5,7 @@
 }
 
 
-#objectslist h1 {
+#title h1 {
 padding: 10px;
   text-align: center;
   color: rgb(145, 214, 211);
@@ -185,5 +185,16 @@ canvas {
   .front {
     transform: rotateY(180deg);
   }
+
+  .blink_me {
+    animation: blinker 2s linear infinite;
+  }
+  
+  @keyframes blinker {
+    50% {
+      opacity: 0;
+    }
+  }
+  
   
   
