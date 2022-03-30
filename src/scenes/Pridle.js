@@ -45,7 +45,10 @@ export default class Pridle extends Phaser.Scene {
 
     function removeSquare(num) {
       const name = document.getElementById(`square${num}`);
-      console.log(name);
+      var container = document.getElementById("pcontainer");
+      container.style.backgroundImage = `url(../public/assets/images/pridleflags/Lesbian2010.svg)`;
+      container.style.width = "800px";
+      container.style.height = "650px";
       name.classList.add("hidden");
       squareNum++;
       guessNum++;
@@ -63,7 +66,7 @@ export default class Pridle extends Phaser.Scene {
     function submit() {
       var select = document.getElementById("lang");
       var option = select.options[select.selectedIndex];
-      console.log(option.value);
+      //want to display option.value so they know what they guessed
       if (option.value === "javascript") {
         removeAllSquares();
         const win = document.getElementById("winner");
