@@ -7,6 +7,7 @@
 
 #title h1 {
 padding: 10px;
+
   text-align: center;
   color: rgb(145, 214, 211);
   font-size: 2em;
@@ -15,11 +16,10 @@ padding: 10px;
 }
 
 @media screen and (max-width: 1279px) {
-    * {
-      display: none;
-    }
+  * {
+    display: none;
   }
-
+}
 
 body {
   /* margin: auto;
@@ -39,22 +39,28 @@ canvas {
   border-radius: 10px;
 }
 
-#clue-list, #science-clues, #tech-clues, #engineering-clues, #math-clues {
-    position: fixed;
-    bottom: 100px;
-    left: 10px;
-    border: 2px solid black;
-    height: 400px;
-    width: 275px;
-    background-color: #87486c;
-    border-radius: 10px;
-    padding: 10px;
-    word-wrap: normal;
-    font-size: 5;
+
+
+#clue-list,
+#science-clues,
+#tech-clues,
+#engineering-clues {
+  position: absolute;
+  bottom: 100px;
+  left: 10px;
+  border: 2px solid black;
+  height: 275px;
+  width: 275px;
+  background-color: #87486c;
+  border-radius: 30%;
+  padding: 10px;
+  word-wrap: normal;
+  font-size: 5;
+
 }
 
 #math-clues {
-  position: fixed;
+  position: absolute;
   bottom: 100px;
   left: 10px;
   border: 2px solid black;
@@ -75,33 +81,34 @@ canvas {
 } */
 
 #rules {
-    position: absolute;
-    /* top: 30px; */
-    /* left: 20px; */
-    border: 2px solid black;
-    height: 400px;
-    width: 400px;
-    background-color: #ecc9dd;
-    border-radius: 30px;
-    padding: 10px;
-    top: 200px;
-    left: 800px;
-    text-align: centered;
-    
+  position: absolute;
+  /* top: 30px; */
+  /* left: 20px; */
+  border: 2px solid black;
+  height: 400px;
+  width: 400px;
+  background-color: #ecc9dd;
+  border-radius: 30px;
+  padding: 10px;
+  top: 200px;
+  left: 800px;
+  text-align: centered;
 }
 #game {
-    position: absolute;
-    /* top: 30px; */
-    /* left: 20px; */
-    border: 2px solid black;
-    height: 350px;
-    width: 450px;
-    background-color: #ecc9dd;
-    border-radius: 30px;
-    padding: 10px;
-    top: 100px;
-    left: 450px;
-    text-align: center;
+
+  position: absolute;
+  /* top: 30px; */
+  /* left: 20px; */
+  border: 2px solid black;
+  height: 350px;
+  width: 450px;
+  background-color: #ecc9dd;
+  border-radius: 30px;
+  padding: 10px;
+  top: 100px;
+  left: 450px;
+  text-align: centered;
+
 }
 #dialogue {
   color: white;
@@ -154,7 +161,36 @@ canvas {
 } */
 
 
-/* memory game styling */
+
+
+/* pridle */
+.pcontainer {
+  width: 800px;
+  height: 640px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  background-image: url("./public/assets/images/pridleflags/Aromantic.svg");
+  background-size: 800x, 640px;
+  background-repeat: no-repeat;
+}
+.black {
+  width: 33.33333%;
+  height: 50%;
+  box-sizing: border-box;
+  background-color: black;
+}
+.playerGuess {
+  width: 500px;
+  height: 200px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  background-color: rgb(245, 255, 63);
+  background-repeat: no-repeat;
+  font-size: 20px;
+}
+  /* memory game styling */
 .container {
     width: 800px;
     height: 650px;
@@ -214,3 +250,4 @@ canvas {
   
   
   
+

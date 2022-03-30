@@ -1,5 +1,6 @@
 import Phaser from "phaser";
 import Player from "../entities/Player";
+import Pridle from "./Pridle";
 let tItem;
 let techDoor;
 let tText;
@@ -152,7 +153,7 @@ export default class Technology extends Phaser.Scene {
   }
   exit() {
     this.scene.stop("Technology");
-    this.scene.start("Lobby");
+    this.scene.start("Pridle");
   }
 
   createAnimations() {

@@ -29,6 +29,7 @@
       </p>
       <button id="play-maingame-btn">Let's Play!</button>
     </div>
+    <div id="root"></div>
     <div id="clue-container">
     <ul id="clue-list">
       <h3 style="text-align: center">Clues: <span id="clueCount">0</span>/2</h3>
@@ -122,61 +123,115 @@
     </div>
   
   </div>
-  <div id="memory" class="hidden">
-    <h2 style="color: white">Memory Game</h2>
-    <p style="color: white">Flip over tiles to find each match!</p>
-    <h3 id="win" class="hidden" style="color: firebrick;">You win!</h3>
-    <button id="mem-exit">Exit</button>
-    <div class="container">
-        <div class="card" id ="mem1">
-            <img class="front" src="/public/assets/images/memory/strawberry.jpg"/>
-            <img class="back" src="/public/assets/images/memory/qmark.png" />
+  <div id="pridle" class="hidden">
+    <h2 style="color: rgb(105, 116, 216)">PRIDLE MINIGAME: WHICH PRIDE FLAG IS HIDDEN BELOW?</h2>
+    <h3 style="color: rgb(74, 193, 70);">click the dropdown to choose a flag. hit submit to lock in your guess and remove one of six black tile.</h3>
+    <h3 id="winner" class="hidden" style="color: rgb(223, 23, 146);">CONGRATS U GOT IT (now slam that sweet exit button to return to the Lobby)</h3>
+    <h3 id="loser" class="hidden" style="color: rgb(240, 108, 0);">PROCESS OF ELIMINATION (now slam that sweet exit button to return to the Lobby)</h3>
+    <button id="pridle-exit">Exit</button>
+      <div id ="pridleimage"></div>
+        <div class = "pcontainer" id ="pcontainer">
+        <div class = "black" id ="square1">
         </div>
-        <div class="card" id ="mem2">
-            <img class="front" src="/public/assets/images/memory/cherries.jpg"/>
-            <img class="back" src="/public/assets/images/memory/qmark.png" />
+        <div class = "black" id ="square2">
         </div>
-        <div class="card" id ="mem3">
-            <img class="front" src="/public/assets/images/memory/strawberry.jpg"/>
-            <img class="back" src="/public/assets/images/memory/qmark.png" />
+        <div class = "black" id ="square3">
         </div>
-        <div class="card" id ="mem4">
-            <img class="front" src="/public/assets/images/memory/pineapple.jpg"/>
-            <img class="back" src="/public/assets/images/memory/qmark.png" />
+        <div class = "black" id ="square4">
+          
         </div>
-        <div class="card" id ="mem5">
-            <img class="front" src="/public/assets/images/memory/avocado.jpg"/>
-            <img class="back" src="/public/assets/images/memory/qmark.png" />
+        <div class = "black" id ="square5">
+          
         </div>
-        <div class="card" id ="mem6">
-            <img class="front" src="/public/assets/images/memory/oranges.jpg"/>
-            <img class="back" src="/public/assets/images/memory/qmark.png" />
+        <div class = "black" id ="square6" >
+          
         </div>
-        <div class="card" id ="mem7">
-            <img class="front" src="/public/assets/images/memory/cherries.jpg"/>
-            <img class="back" src="/public/assets/images/memory/qmark.png" />
         </div>
-        <div class="card" id ="mem8">
-            <img class="front" src="/public/assets/images/memory/orange.jpg"/>
-            <img class="back" src="/public/assets/images/memory/qmark.png" />
-        </div>
-        <div class="card" id ="mem9">
-            <img class="front" src="/public/assets/images/memory/orange.jpg"/>
-            <img class="back" src="/public/assets/images/memory/qmark.png" />
-        </div>
-        <div class="card" id ="mem10">
-            <img class="front" src="/public/assets/images/memory/oranges.jpg"/>
-            <img class="back" src="/public/assets/images/memory/qmark.png" />
-        </div>
-        <div class="card" id ="mem11">
-            <img class="front" src="/public/assets/images/memory/avocado.jpg"/>
-            <img class="back" src="/public/assets/images/memory/qmark.png" />
-        </div>
-        <div class="card" id ="mem12">
-            <img class="front" src="/public/assets/images/memory/pineapple.jpg"/>
-            <img class="back" src="/public/assets/images/memory/qmark.png" />
-        </div>
-  </div>
+        <div>
+            <label form="lang"></label>
+            <select name="languages" id="lang">
+              <option default="null">PICK A FLAG</option>
+              <option value="Agender2014">Agender</option>
+              <option value="Aromantic">Aromantic</option>
+              <option value="Asexual">Asexual</option>
+              <option value="Bisexual">Bisexual</option>
+              <option value="Genderfluid">Genderfluid</option>
+              <option value="Genderqueer">Genderqueer</option>
+              <option value="Intersex">Intersex</option>
+              <option value="Lesbian2010">Lesbian 2010</option>
+              <option value="Lesbian2018">Lesbian 2018</option>
+              <option value="Nonbinary">Nonbinary</option>
+              <option value="Pansexual">Pansexual</option>
+              <option value="Phillypride">Philly Pride</option>
+              <option value="Polysexual">Polysexual</option>
+              <option value="Progresspride">Progress Pride</option>
+              <option value="Pride1978">Pride 1978</option>
+              <option value="Transgender">Transgender</option>
+    
+            </select>
+            <input type="button" button id="bumsit" value="Submit" />
+      </form>
+        
+        <div class = "playerGuess" id ="guessContainer"></br>GUESSES</div>
+      </div>
+      </div>
+
+
+<div id="memory" class="hidden">
+  <h2 style="color: white">Memory Game</h2>
+  <p style="color: white">Flip over tiles to find each match!</p>
+  <h3 id="win" class="hidden" style="color: firebrick;">You win!</h3>
+  <button id="mem-exit">Exit</button>
+  <div class="container">
+      <div class="card" id ="mem1">
+          <img class="front" src="/public/assets/images/memory/strawberry.jpg"/>
+          <img class="back" src="/public/assets/images/memory/qmark.png" />
+      </div>
+      <div class="card" id ="mem2">
+          <img class="front" src="/public/assets/images/memory/cherries.jpg"/>
+          <img class="back" src="/public/assets/images/memory/qmark.png" />
+      </div>
+      <div class="card" id ="mem3">
+          <img class="front" src="/public/assets/images/memory/strawberry.jpg"/>
+          <img class="back" src="/public/assets/images/memory/qmark.png" />
+      </div>
+      <div class="card" id ="mem4">
+          <img class="front" src="/public/assets/images/memory/pineapple.jpg"/>
+          <img class="back" src="/public/assets/images/memory/qmark.png" />
+      </div>
+      <div class="card" id ="mem5">
+          <img class="front" src="/public/assets/images/memory/avocado.jpg"/>
+          <img class="back" src="/public/assets/images/memory/qmark.png" />
+      </div>
+      <div class="card" id ="mem6">
+          <img class="front" src="/public/assets/images/memory/oranges.jpg"/>
+          <img class="back" src="/public/assets/images/memory/qmark.png" />
+      </div>
+      <div class="card" id ="mem7">
+          <img class="front" src="/public/assets/images/memory/cherries.jpg"/>
+          <img class="back" src="/public/assets/images/memory/qmark.png" />
+      </div>
+      <div class="card" id ="mem8">
+          <img class="front" src="/public/assets/images/memory/orange.jpg"/>
+          <img class="back" src="/public/assets/images/memory/qmark.png" />
+      </div>
+      <div class="card" id ="mem9">
+          <img class="front" src="/public/assets/images/memory/orange.jpg"/>
+          <img class="back" src="/public/assets/images/memory/qmark.png" />
+      </div>
+      <div class="card" id ="mem10">
+          <img class="front" src="/public/assets/images/memory/oranges.jpg"/>
+          <img class="back" src="/public/assets/images/memory/qmark.png" />
+      </div>
+      <div class="card" id ="mem11">
+          <img class="front" src="/public/assets/images/memory/avocado.jpg"/>
+          <img class="back" src="/public/assets/images/memory/qmark.png" />
+      </div>
+      <div class="card" id ="mem12">
+          <img class="front" src="/public/assets/images/memory/pineapple.jpg"/>
+          <img class="back" src="/public/assets/images/memory/qmark.png" />
+      </div>
+</div>
 </div>
   </body>
 </html>

@@ -1,4 +1,5 @@
 import Phaser from "phaser";
+
 import config from "./config/config";
 import Lobby from "./scenes/Lobby";
 import Engineering from "./scenes/Engineering";
@@ -8,6 +9,7 @@ import Math from "./scenes/Math";
 import SpaceInvaders from "./scenes/SpaceInvaders";
 import Scrammble from "./scenes/Scrammble";
 import Memory from "./scenes/Memory";
+import Pridle from "./scenes/Pridle";
 
 class Game extends Phaser.Game {
   constructor() {
@@ -21,7 +23,8 @@ class Game extends Phaser.Game {
     this.scene.add("Math", Math);
     this.scene.add("SpaceInvaders", SpaceInvaders);
     this.scene.add("Scrammble", Scrammble);
-    this.scene.add("Memory", Memory)
+    this.scene.add("Memory", Memory);
+    this.scene.add("Pridle", Pridle);
     this.scene.start("Lobby");
 
     // change scene.start to see if it works to test it & make sure you import it on top
