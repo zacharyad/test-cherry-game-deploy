@@ -16,6 +16,8 @@ export default class Pridle extends Phaser.Scene {
     // flag.setScale(4.5);
     const pridle = this;
     const pridleGame = document.getElementById("pridle");
+    const info = document.getElementById("rules");
+    info.classList.add("hidden");
     const canvas = document.querySelector("canvas");
     canvas.classList.add("hidden");
     const exitButton = document.getElementById("pridle-exit");
@@ -39,12 +41,14 @@ export default class Pridle extends Phaser.Scene {
     }
 
     let squareNum = 1;
+    let guessNum = 0;
 
     function removeSquare(num) {
       const name = document.getElementById(`square${num}`);
       console.log(name);
       name.classList.add("hidden");
       squareNum++;
+      guessNum++;
     }
     function removeAllSquares() {
       sq1.classList.add("hidden");
