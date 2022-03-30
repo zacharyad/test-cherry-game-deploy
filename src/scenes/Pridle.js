@@ -10,6 +10,7 @@ export default class Pridle extends Phaser.Scene {
       "../public/assets/images/pridleflags/Agender2014.svg"
     );
   }
+
   create() {
     // const flag = this.add.image(400, 300, "Agender");
     // flag.setScale(4.5);
@@ -36,15 +37,35 @@ export default class Pridle extends Phaser.Scene {
       pridleGame.classList.add("hidden");
       canvas.classList.remove("hidden");
     }
-    function removeSquare() {
-      sq1.classList.add("hidden");
+
+    let squareNum = 1;
+
+    function removeSquare(num) {
+      const name = document.getElementById(`square${num}`);
+      console.log(name);
+      name.classList.add("hidden");
+      squareNum++;
     }
+    function removeAllSquares() {
+      sq1.classList.add("hidden");
+      sq2.classList.add("hidden");
+      sq3.classList.add("hidden");
+      sq4.classList.add("hidden");
+      sq5.classList.add("hidden");
+      sq6.classList.add("hidden");
+      squareNum = 1;
+    }
+
     function submit() {
       var select = document.getElementById("lang");
       var option = select.options[select.selectedIndex];
       console.log(option.value);
-      //   document.getElementById("value").value = option.value;
-      removeSquare();
+      if (option.value === "javascript") {
+        removeAllSquares();
+        const win = document.getElementById("winner");
+        win.classList.remove("hidden");
+      } //   document.getElementById("value").value = option.value;
+      else removeSquare(squareNum);
     }
   }
 
