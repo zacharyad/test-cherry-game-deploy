@@ -22,11 +22,9 @@ padding: 10px;
 
 
 body {
-  max-width: 500px;
-  margin: auto;
+  /* margin: auto;
+  width: 25%; */
   background-color: #423e41;
-
-
 }
 
 /* #game-body {
@@ -36,9 +34,9 @@ body {
 } */
 
 canvas {
+  margin-left: 25%;
   border: 2px solid white;
   border-radius: 10px;
-
 }
 
 #clue-list, #science-clues, #tech-clues, #engineering-clues {
@@ -88,7 +86,7 @@ canvas {
     padding: 10px;
     top: 100px;
     left: 450px;
-    text-align: centered;
+    text-align: center;
 }
 #dialogue {
   color: white;
@@ -98,6 +96,9 @@ canvas {
   animation: typing 3s steps(20, end) forwards;
   font-size: 10;
   width: 800;
+  background-color: black;
+  text-align: center;
+  padding: 10px;
 }
 
 #mad-libz {
