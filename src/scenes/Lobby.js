@@ -196,6 +196,7 @@ export default class Lobby extends Phaser.Scene {
     // text.setText(`Clues: y`); // set the text to show the current score
     let clue1 = document.getElementById("1");
     let clue2 = document.getElementById("2");
+    let clue99 = document.getElementById("99");
     let count = document.getElementById("clueCount");
     count.innerText = clueCount;
 
@@ -210,6 +211,11 @@ export default class Lobby extends Phaser.Scene {
     if (clueCount === 2) {
       let dialogue = document.getElementById("dialogue");
       dialogue.innerText = "Hmm ... those curtains look funny";
+      setTimeout(() => {
+        clue1.classList.toggle("hidden")
+        clue2.classList.toggle("hidden")
+        clue99.classList.remove("hidden")
+      }, 3000);
     }
     // list = []
     // list.push(object.listClues)
