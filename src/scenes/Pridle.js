@@ -83,6 +83,7 @@ export default class Pridle extends Phaser.Scene {
     function submit() {
       var select = document.getElementById("lang");
       var option = select.options[select.selectedIndex];
+      document.getElementById("guessContainer").innerHTML += option.value;
       console.log(option.value);
       //want to display option.value so they know what they guessed
       if (option.value === chosenFlag) {

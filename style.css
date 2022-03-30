@@ -200,3 +200,12 @@ canvas {
   box-sizing: border-box;
   background-color: black;
 }
+.playerGuess {
+  width: 500px;
+  height: 200px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  background-color: rgb(255, 233, 108);
+  background-repeat: no-repeat;
+}
