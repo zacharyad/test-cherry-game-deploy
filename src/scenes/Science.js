@@ -141,7 +141,6 @@ export default class Science extends Phaser.Scene {
         clue101.classList.remove("hidden")
       }, 3000);
     }
-
     return false;
   }
 

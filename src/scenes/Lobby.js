@@ -154,12 +154,6 @@ export default class Lobby extends Phaser.Scene {
       this
     );
 
-    text = this.add.text(570, 70, `Clues: x`, {
-      fontSize: "20px",
-      fill: "#ffffff",
-    });
-    text.setScrollFactor(0);
-
     furnitureLayer.setCollisionByExclusion([-1]);
     objectLayer.setCollisionByExclusion([-1]);
     this.physics.add.collider(this.player, furnitureLayer);
