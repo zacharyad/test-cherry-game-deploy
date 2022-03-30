@@ -6,6 +6,7 @@ import SpaceInvaders from "./SpaceInvaders";
 let item;
 let door;
 let rocket;
+let mathClueCount = 0;
 
 export default class Math extends Phaser.Scene {
   constructor() {
@@ -44,6 +45,9 @@ export default class Math extends Phaser.Scene {
 
   create() {
     console.log(this.cache.tilemap.get("mathMap").data);
+
+    let mathCluesText = document.getElementById('math-clues');
+    mathCluesText.classList.remove('hidden');
 
     const map = this.make.tilemap({
       key: "mathMap",
@@ -84,7 +88,7 @@ export default class Math extends Phaser.Scene {
       obj.body.width = object.width;
       obj.body.height = object.height;
     });
-    this.physics.add.overlap(this.player, item, this.collect, null, this);
+    this.physics.add.overlap(this.player, item, this.mCollect, null, this);
 
     let exitDoor = map.getObjectLayer("Door")["objects"];
     door = this.physics.add.staticGroup();
@@ -125,10 +129,43 @@ export default class Math extends Phaser.Scene {
     this.player.update(this.cursors);
   }
 
-  collect(player, object) {
-    object.destroy(object.x, object.y);
-    return false;
-  }
+  mCollect(player, object) {
+      mathClueCount += 1;
+      object.destroy(object.x, object.y);
+      // text.setText(`Clues: y`); // set the text to show the current score
+      let clue30 = document.getElementById('30');
+      let clue31 = document.getElementById('31');
+      let clue32 = document.getElementById('32');
+      let clue33 = document.getElementById('33');
+      let clue103 = document.getElementById('103');
+
+      let count = document.getElementById('mathClueCount');
+      count.innerText = mathClueCount;
+
+      if (object.texture.key === 'Pennant') {
+        clue30.classList.remove('hidden');
+      } else if (object.texture.key === 'Medal') {
+        clue31.classList.remove('hidden');
+      } else if (object.texture.key === 'Calculator') {
+        clue32.classList.remove('hidden');
+      } else if (object.texture.key === 'Moon') {
+        clue33.classList.remove('hidden');
+      }
+
+      if (mathClueCount === 4) {
+        let dialogue = document.getElementById('dialogue');
+        dialogue.innerText = "Great job! Why don't we head back to the main lobby?";
+        setTimeout(() => {
+          clue30.classList.toggle("hidden")
+          clue31.classList.toggle("hidden")
+          clue32.classList.toggle("hidden")
+          clue33.classList.toggle("hidden")
+          clue103.classList.remove("hidden")
+        }, 3000);
+      }
+      return false;
+    }
+  
 
   startGame() {
     this.scene.stop("Math");
