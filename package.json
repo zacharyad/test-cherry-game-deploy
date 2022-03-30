@@ -1,7 +1,7 @@
 {
-  "name": "phaser3-project-template",
+  "name": "hace-gropper",
   "version": "1.1.2",
-  "description": "A Phaser 3 Project Template",
+  "description": "2D top-down RPG to learn about women in STEM",
   "main": "src/index.js",
   "scripts": {
     "build": "webpack --config webpack/prod.js ",
@@ -29,7 +29,7 @@
     "terser-webpack-plugin": "^2.2.1",
     "webpack": "^4.41.2",
     "webpack-cli": "^3.3.10",
-    "webpack-dev-server": "^3.9.0",
+    "webpack-dev-server": "^3.11.3",
     "webpack-merge": "^4.2.2"
   },
   "dependencies": {
