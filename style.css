@@ -4,9 +4,8 @@
     "Lucida Sans", Arial, sans-serif;
 }
 
-
 #objectslist h1 {
-padding: 10px;
+  padding: 10px;
   text-align: center;
   color: rgb(145, 214, 211);
   font-size: 2em;
@@ -15,18 +14,15 @@ padding: 10px;
 }
 
 @media screen and (max-width: 1279px) {
-    * {
-      display: none;
-    }
+  * {
+    display: none;
   }
-
+}
 
 body {
   max-width: 500px;
   margin: auto;
   background-color: #423e41;
-
-
 }
 
 /* #game-body {
@@ -38,21 +34,23 @@ body {
 canvas {
   border: 2px solid white;
   border-radius: 10px;
-
 }
 
-#clue-list, #science-clues, #tech-clues, #engineering-clues {
-    position: absolute;
-    bottom: 100px;
-    left: 10px;
-    border: 2px solid black;
-    height: 275px;
-    width: 275px;
-    background-color: #87486c;
-    border-radius: 30%;
-    padding: 10px;
-    word-wrap: normal;
-    font-size: 5;
+#clue-list,
+#science-clues,
+#tech-clues,
+#engineering-clues {
+  position: absolute;
+  bottom: 100px;
+  left: 10px;
+  border: 2px solid black;
+  height: 275px;
+  width: 275px;
+  background-color: #87486c;
+  border-radius: 30%;
+  padding: 10px;
+  word-wrap: normal;
+  font-size: 5;
 }
 
 /* #clue-container {
@@ -62,33 +60,32 @@ canvas {
 } */
 
 #rules {
-    position: absolute;
-    /* top: 30px; */
-    /* left: 20px; */
-    border: 2px solid black;
-    height: 400px;
-    width: 400px;
-    background-color: #ecc9dd;
-    border-radius: 30px;
-    padding: 10px;
-    top: 200px;
-    left: 800px;
-    text-align: centered;
-    
+  position: absolute;
+  /* top: 30px; */
+  /* left: 20px; */
+  border: 2px solid black;
+  height: 400px;
+  width: 400px;
+  background-color: #ecc9dd;
+  border-radius: 30px;
+  padding: 10px;
+  top: 200px;
+  left: 800px;
+  text-align: centered;
 }
 #game {
-    position: absolute;
-    /* top: 30px; */
-    /* left: 20px; */
-    border: 2px solid black;
-    height: 350px;
-    width: 450px;
-    background-color: #ecc9dd;
-    border-radius: 30px;
-    padding: 10px;
-    top: 100px;
-    left: 450px;
-    text-align: centered;
+  position: absolute;
+  /* top: 30px; */
+  /* left: 20px; */
+  border: 2px solid black;
+  height: 350px;
+  width: 450px;
+  background-color: #ecc9dd;
+  border-radius: 30px;
+  padding: 10px;
+  top: 100px;
+  left: 450px;
+  text-align: centered;
 }
 #dialogue {
   color: white;
@@ -137,53 +134,72 @@ canvas {
   text-align: center;
 } */
 
-
 /* memory game styling */
 .container {
-    width: 800px;
-    height: 650px;
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    align-content: center;
-    justify-content: center;
-    padding: 5px;
-    perspective: 1000px;
-    background-color: lightpink;
-    border: 2px solid hotpink;
-  }
-  
-  .card {
-    width: calc(25% - 10px);
-    height: calc(33.333% - 10px);
-    position: relative;
-    transform: scale(1);
-    transform-style: preserve-3d;
-    transition: transform .5s;
-    background-color: lightpink;
-    border: 2px solid hotpink;
-  }
-  
-  .card:active {
-    transform: scale(.97);
-    transition: transform 1s;
-  }
-  
-  .card.flip {
-    transform: rotateY(180deg);
-  }
-  
-  .front, .back {
-    width: 100%;
-    height: 100%;
-    /* padding: 10px; */
-    position: absolute;
-    border-radius: 5px;
-    backface-visibility: hidden;
-  }
-  
-  .front {
-    transform: rotateY(180deg);
-  }
-  
-  
+  width: 800px;
+  height: 650px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+  padding: 5px;
+  perspective: 1000px;
+  background-color: lightpink;
+  border: 2px solid hotpink;
+}
+
+.card {
+  width: calc(25% - 10px);
+  height: calc(33.333% - 10px);
+  position: relative;
+  transform: scale(1);
+  transform-style: preserve-3d;
+  transition: transform 0.5s;
+  background-color: lightpink;
+  border: 2px solid hotpink;
+}
+
+.card:active {
+  transform: scale(0.97);
+  transition: transform 1s;
+}
+
+.card.flip {
+  transform: rotateY(180deg);
+}
+
+.front,
+.back {
+  width: 100%;
+  height: 100%;
+  /* padding: 10px; */
+  position: absolute;
+  border-radius: 5px;
+  backface-visibility: hidden;
+}
+
+.front {
+  transform: rotateY(180deg);
+}
+
+/* pridle */
+.pcontainer {
+  width: 800px;
+  height: 640px;
+  display: flex;
+  flex-wrap: wrap-reverse;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+  perspective: 1000px;
+  background-image: url("./public/assets/images/pridleflags/Agender2014.svg");
+  background-size: 800x, 640px;
+  background-repeat: no-repeat;
+}
+.black {
+  width: 33.33333%;
+  height: 50%;
+  box-sizing: border-box;
+  background-color: black;
+}
