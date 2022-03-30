@@ -5,11 +5,14 @@ export default class Pridle extends Phaser.Scene {
   preload() {
     this.cameras.main.backgroundColor =
       Phaser.Display.Color.HexStringToColor("#423e41");
-      this.load.image(
-      "Agender", "../public/assets/images/pridleflags/Agender2014.svg"
+    this.load.image(
+      "Agender",
+      "../public/assets/images/pridleflags/Agender2014.svg"
     );
   }
   create() {
+    const flag = this.add.image(400, 300, "Agender");
+    flag.setScale(4.5);
     const pridle = this;
     const pridleGame = document.getElementById("pridle");
     const canvas = document.querySelector("canvas");
