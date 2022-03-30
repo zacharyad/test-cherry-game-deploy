@@ -5,7 +5,7 @@
 }
 
 
-#objectslist h1 {
+#title h1 {
 padding: 10px;
   text-align: center;
   color: rgb(145, 214, 211);
@@ -22,11 +22,9 @@ padding: 10px;
 
 
 body {
-  max-width: 500px;
-  margin: auto;
+  /* margin: auto;
+  width: 25%; */
   background-color: #423e41;
-
-
 }
 
 /* #game-body {
@@ -36,20 +34,20 @@ body {
 } */
 
 canvas {
+  margin-left: 25%;
   border: 2px solid white;
   border-radius: 10px;
-
 }
 
 #clue-list, #science-clues, #tech-clues, #engineering-clues {
-    position: absolute;
+    position: fixed;
     bottom: 100px;
     left: 10px;
     border: 2px solid black;
-    height: 275px;
+    height: 400px;
     width: 275px;
     background-color: #87486c;
-    border-radius: 30%;
+    border-radius: 10px;
     padding: 10px;
     word-wrap: normal;
     font-size: 5;
@@ -88,7 +86,7 @@ canvas {
     padding: 10px;
     top: 100px;
     left: 450px;
-    text-align: centered;
+    text-align: center;
 }
 #dialogue {
   color: white;
@@ -98,6 +96,9 @@ canvas {
   animation: typing 3s steps(20, end) forwards;
   font-size: 10;
   width: 800;
+  background-color: black;
+  text-align: center;
+  padding: 10px;
 }
 
 #mad-libz {
@@ -185,5 +186,16 @@ canvas {
   .front {
     transform: rotateY(180deg);
   }
+
+  .blink_me {
+    animation: blinker 2s linear infinite;
+  }
+  
+  @keyframes blinker {
+    50% {
+      opacity: 0;
+    }
+  }
+  
   
   
