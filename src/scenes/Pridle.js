@@ -18,6 +18,7 @@ export default class Pridle extends Phaser.Scene {
     const canvas = document.querySelector("canvas");
     canvas.classList.add("hidden");
     const exitButton = document.getElementById("pridle-exit");
+    const choiceButton = document.getElementById("bumsit");
     const option = document.getElementById("pflag");
     const sq1 = document.getElementById("square1");
     const sq2 = document.getElementById("square2");
@@ -27,19 +28,23 @@ export default class Pridle extends Phaser.Scene {
     const sq6 = document.getElementById("square6");
     pridleGame.classList.remove("hidden");
     exitButton.addEventListener("click", exitRoom);
-    option.addEventListener("click", revealSquare(sq1));
+    choiceButton.addEventListener("click", submit);
 
-    function revealSquare(sqare) {
-      sqare.classList.toggle("hidden");
-    }
-    function showOptions() {
-      document.getElementById("myDropdown").classList.toggle("show");
-    }
     function exitRoom() {
       pridle.scene.stop("Pridle");
       pridle.scene.start("Lobby");
       pridleGame.classList.add("hidden");
-      canvas.classList.toggle("hidden");
+      canvas.classList.remove("hidden");
+    }
+    function removeSquare() {
+      sq1.classList.add("hidden");
+    }
+    function submit() {
+      var select = document.getElementById("lang");
+      var option = select.options[select.selectedIndex];
+      console.log(option.value);
+      //   document.getElementById("value").value = option.value;
+      removeSquare();
     }
   }
 
