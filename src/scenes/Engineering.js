@@ -9,6 +9,7 @@ let EngineeringClues;
 let Door;
 let backToLobbyDoor;
 let clueCount = 0;
+let engineeringClues;
 
 export default class Engineering extends Phaser.Scene {
   constructor() {
@@ -54,7 +55,7 @@ export default class Engineering extends Phaser.Scene {
   create() {
     this.add.image(0, 0, "engineeringFloor");
     
-    let engineeringClues = document.getElementById("engineering-clues");    
+    engineeringClues = document.getElementById("engineering-clues");    
     engineeringClues.classList.remove("hidden")
 
     const map = this.make.tilemap({
@@ -119,8 +120,6 @@ export default class Engineering extends Phaser.Scene {
       obj.setOrigin(0);
       obj.body.width = object.width;
       obj.body.height = object.height;
-      console.log(object);
-      console.log(eItem);
     });
 
     this.physics.add.overlap(this.player, eItem, this.eCollect, null, this);
@@ -155,9 +154,11 @@ export default class Engineering extends Phaser.Scene {
   }
 
   exitRoom() {
+
     this.scene.stop("Engineering");
     this.scene.start("Scrammble");
-    // this.scene.start("Lobby", Lobby);
+    // engineeringClues.classList.toggle("hidden")
+    
   }
 
   eCollect(player, object) {
@@ -168,6 +169,8 @@ export default class Engineering extends Phaser.Scene {
     let clue9 = document.getElementById("9");
     let clue10 = document.getElementById("10");
     let clue11 = document.getElementById("11");
+    let clue100 = document.getElementById("100");
+
 
     let count = document.getElementById("eClueCount");
     count.innerText = clueCount;
@@ -187,6 +190,17 @@ export default class Engineering extends Phaser.Scene {
     if (clueCount === 5){
       let dialogue = document.getElementById("dialogue");
       dialogue.innerText = "You did it!"
+      setTimeout(() => {
+        clue7.classList.toggle("hidden")
+        clue8.classList.toggle("hidden")
+        clue9.classList.toggle("hidden")
+        clue10.classList.toggle("hidden")
+        clue11.classList.toggle("hidden")
+        clue100.classList.remove("hidden")
+      }, 3000);
+      
+      
+
     }
 
     return false;

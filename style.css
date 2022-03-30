@@ -4,8 +4,10 @@
     "Lucida Sans", Arial, sans-serif;
 }
 
-#objectslist h1 {
-  padding: 10px;
+
+#title h1 {
+padding: 10px;
+
   text-align: center;
   color: rgb(145, 214, 211);
   font-size: 2em;
@@ -20,8 +22,8 @@
 }
 
 body {
-  max-width: 500px;
-  margin: auto;
+  /* margin: auto;
+  width: 25%; */
   background-color: #423e41;
 }
 
@@ -32,9 +34,11 @@ body {
 } */
 
 canvas {
+  margin-left: 25%;
   border: 2px solid white;
   border-radius: 10px;
 }
+
 
 #clue-list,
 #science-clues,
@@ -51,6 +55,7 @@ canvas {
   padding: 10px;
   word-wrap: normal;
   font-size: 5;
+
 }
 
 /* #clue-container {
@@ -74,6 +79,7 @@ canvas {
   text-align: centered;
 }
 #game {
+
   position: absolute;
   /* top: 30px; */
   /* left: 20px; */
@@ -86,6 +92,7 @@ canvas {
   top: 100px;
   left: 450px;
   text-align: centered;
+
 }
 #dialogue {
   color: white;
@@ -95,6 +102,9 @@ canvas {
   animation: typing 3s steps(20, end) forwards;
   font-size: 10;
   width: 800;
+  background-color: black;
+  text-align: center;
+  padding: 10px;
 }
 
 #mad-libz {
@@ -134,54 +144,8 @@ canvas {
   text-align: center;
 } */
 
-/* memory game styling */
-.container {
-  width: 800px;
-  height: 650px;
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  align-content: center;
-  justify-content: center;
-  padding: 5px;
-  perspective: 1000px;
-  background-color: lightpink;
-  border: 2px solid hotpink;
-}
 
-.card {
-  width: calc(25% - 10px);
-  height: calc(33.333% - 10px);
-  position: relative;
-  transform: scale(1);
-  transform-style: preserve-3d;
-  transition: transform 0.5s;
-  background-color: lightpink;
-  border: 2px solid hotpink;
-}
 
-.card:active {
-  transform: scale(0.97);
-  transition: transform 1s;
-}
-
-.card.flip {
-  transform: rotateY(180deg);
-}
-
-.front,
-.back {
-  width: 100%;
-  height: 100%;
-  /* padding: 10px; */
-  position: absolute;
-  border-radius: 5px;
-  backface-visibility: hidden;
-}
-
-.front {
-  transform: rotateY(180deg);
-}
 
 /* pridle */
 .pcontainer {
@@ -210,3 +174,64 @@ canvas {
   background-repeat: no-repeat;
   font-size: 20px;
 }
+  /* memory game styling */
+.container {
+    width: 800px;
+    height: 650px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    padding: 5px;
+    perspective: 1000px;
+    background-color: lightpink;
+    border: 2px solid hotpink;
+  }
+  
+  .card {
+    width: calc(25% - 10px);
+    height: calc(33.333% - 10px);
+    position: relative;
+    transform: scale(1);
+    transform-style: preserve-3d;
+    transition: transform .5s;
+    background-color: lightpink;
+    border: 2px solid hotpink;
+  }
+  
+  .card:active {
+    transform: scale(.97);
+    transition: transform 1s;
+  }
+  
+  .card.flip {
+    transform: rotateY(180deg);
+  }
+  
+  .front, .back {
+    width: 100%;
+    height: 100%;
+    /* padding: 10px; */
+    position: absolute;
+    border-radius: 5px;
+    backface-visibility: hidden;
+  }
+  
+  .front {
+    transform: rotateY(180deg);
+  }
+
+  .blink_me {
+    animation: blinker 2s linear infinite;
+  }
+  
+  @keyframes blinker {
+    50% {
+      opacity: 0;
+    }
+  }
+  
+  
+  
+
