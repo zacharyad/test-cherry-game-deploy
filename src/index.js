@@ -1,5 +1,5 @@
 import Phaser from "phaser";
-import Pridle from "./scenes/Pridle";
+
 import config from "./config/config";
 import Lobby from "./scenes/Lobby";
 import Engineering from "./scenes/Engineering";
@@ -9,8 +9,7 @@ import Math from "./scenes/Math";
 import SpaceInvaders from "./scenes/SpaceInvaders";
 import Scrammble from "./scenes/Scrammble";
 import Memory from "./scenes/Memory";
-import ReactDOM from "react-dom";
-import React from "react";
+import Pridle from "./scenes/Pridle";
 
 class Game extends Phaser.Game {
   constructor() {
@@ -25,7 +24,8 @@ class Game extends Phaser.Game {
     this.scene.add("SpaceInvaders", SpaceInvaders);
     this.scene.add("Scrammble", Scrammble);
     this.scene.add("Memory", Memory);
-    this.scene.start("Lobby");
+    this.scene.add("Pridle", Pridle);
+    this.scene.start("Pridle");
 
     // change scene.start to see if it works to test it & make sure you import it on top
 
@@ -35,4 +35,3 @@ class Game extends Phaser.Game {
 }
 
 const game = new Game(config);
-ReactDOM.render(<Pridle />, document.getElementById("root"));

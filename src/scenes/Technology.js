@@ -1,5 +1,6 @@
 import Phaser from "phaser";
 import Player from "../entities/Player";
+import Pridle from "./Pridle";
 let tItem;
 let techDoor;
 let tText;
