@@ -115,6 +115,7 @@ export default class Science extends Phaser.Scene {
     let clue4 = document.getElementById('4');
     let clue5 = document.getElementById('5');
     let clue6 = document.getElementById('6');
+    let clue101 = document.getElementById('101')
 
     let count = document.getElementById('sciClueCount');
     count.innerText = sciClueCount;
@@ -132,6 +133,13 @@ export default class Science extends Phaser.Scene {
     if (sciClueCount === 4) {
       let dialogue = document.getElementById('dialogue');
       dialogue.innerText = 'You did it!';
+      setTimeout(() => {
+        clue3.classList.toggle("hidden")
+        clue4.classList.toggle("hidden")
+        clue5.classList.toggle("hidden")
+        clue6.classList.toggle("hidden")
+        clue101.classList.remove("hidden")
+      }, 3000);
     }
 
     return false;

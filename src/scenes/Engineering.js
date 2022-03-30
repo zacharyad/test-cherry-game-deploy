@@ -157,7 +157,7 @@ export default class Engineering extends Phaser.Scene {
 
     this.scene.stop("Engineering");
     this.scene.start("Scrammble");
-    engineeringClues.classList.toggle("hidden")
+    // engineeringClues.classList.toggle("hidden")
     
   }
 
