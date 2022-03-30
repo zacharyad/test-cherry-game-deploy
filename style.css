@@ -188,11 +188,8 @@ canvas {
   width: 800px;
   height: 640px;
   display: flex;
-  flex-wrap: wrap-reverse;
-  align-items: center;
-  align-content: center;
-  justify-content: center;
-  perspective: 1000px;
+  flex-direction: row;
+  flex-wrap: wrap;
   background-image: url("./public/assets/images/pridleflags/Agender2014.svg");
   background-size: 800x, 640px;
   background-repeat: no-repeat;
