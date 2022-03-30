@@ -168,6 +168,8 @@ export default class Engineering extends Phaser.Scene {
     let clue9 = document.getElementById("9");
     let clue10 = document.getElementById("10");
     let clue11 = document.getElementById("11");
+    let clue100 = document.getElementById("100");
+
 
     let count = document.getElementById("eClueCount");
     count.innerText = clueCount;
@@ -187,6 +189,12 @@ export default class Engineering extends Phaser.Scene {
     if (clueCount === 5){
       let dialogue = document.getElementById("dialogue");
       dialogue.innerText = "You did it!"
+      clue7.classList.toggle("hidden")
+      clue8.classList.toggle("hidden")
+      clue9.classList.toggle("hidden")
+      clue10.classList.toggle("hidden")
+      clue11.classList.toggle("hidden")
+      clue100.classList.remove("hidden")
     }
 
     return false;
