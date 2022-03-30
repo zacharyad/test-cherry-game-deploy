@@ -49,7 +49,6 @@ export default class Lobby extends Phaser.Scene {
     console.log(this.cache.tilemap.get("map").data);
     const rules = document.getElementById("rules")
     const playGameBtn = document.getElementById("play-maingame-btn")
-    // rules.classList.remove("hidden")
 
     playGameBtn.addEventListener("click", function (e) {
       rules.classList.add("hidden")

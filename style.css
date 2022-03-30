@@ -25,11 +25,20 @@ body {
   max-width: 500px;
   margin: auto;
   background-color: #423e41;
+
+
 }
+
+/* #game-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+} */
 
 canvas {
   border: 2px solid white;
   border-radius: 10px;
+
 }
 
 #clue-list, #science-clues, #tech-clues, #engineering-clues {
@@ -46,6 +55,11 @@ canvas {
     font-size: 5;
 }
 
+/* #clue-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+} */
 
 #rules {
     position: absolute;
@@ -67,13 +81,13 @@ canvas {
     /* top: 30px; */
     /* left: 20px; */
     border: 2px solid black;
-    height: 400px;
-    width: 400px;
+    height: 350px;
+    width: 450px;
     background-color: #ecc9dd;
     border-radius: 30px;
     padding: 10px;
-    top: 200px;
-    left: 800px;
+    top: 100px;
+    left: 450px;
     text-align: centered;
 }
 #dialogue {
@@ -112,7 +126,7 @@ canvas {
   }
 }
 
-
+/* 
 #game {
   position: absolute;
   top: 250px;
@@ -121,7 +135,7 @@ canvas {
   height: 200px;
   width: 300px;
   text-align: center;
-}
+} */
 
 
 /* memory game styling */

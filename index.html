@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
+    <div id="game-body">
     <div id="title">
       <h1>Welcome to Hace Gropper!</h1>
     </div>
@@ -28,6 +29,7 @@
       </p>
       <button id="play-maingame-btn">Let's Play!</button>
     </div>
+    <div id="clue-container">
     <ul id="clue-list">
       <h3 style="text-align: center">Clues: <span id="clueCount">0</span>/2</h3>
       <li id="1" class="hidden" style="padding-left: 15px">
@@ -58,6 +60,7 @@
       <li id="11" class="hidden" style="padding-left: 15px">
         worked on the Agena rocket project, for flyby missions to Venus and Mars
       </li>
+      </ul>
 
     <ul id="science-clues" class="hidden"><h3 style="text-align: center;">Clues: <span id="sciClueCount">0</span>/4</h3>
       <li id=3 class="hidden" style="padding-left: 15px;">paved the way for discoveries in physical chemistry</li>
@@ -66,12 +69,13 @@
       <li id=6 class="hidden" style="padding-left: 15px;">studies on coal led to extracting oxygen from the air</li>
 
     </ul>
-    <ul id="tech-clues" class="hidden"><h3 style="text-align: center;">Clues: <span id="clueCount">0</span>/4</h3>
+    <ul id="tech-clues" class="hidden"><h3 style="text-align: center;">Clues: <span id="tClueCount">0</span>/4</h3>
       <li id=25 class="hidden" style="padding-left: 15px;"> “First” career at IBM - invented DIS  - dynamic instruction scheduling. DIS allowed computers to reorganize how they handled commands to maximize efficiency and data flow, and ultimately, led directly to the creation of modern portable computers. </li>
       <li id=26 class="hidden" style="padding-left: 15px;">“Second” career at PARC - worked with microchip design</li>
       <li id=27 class="hidden" style="padding-left: 15px;">nother clue</li>
       <li id=28 class="hidden" style="padding-left: 15px;">yet another clue</li>
     </ul>
+  </div>
     <div id="game" class="hidden">
       <nav>
         <h1>Scrambled Words</h1>
@@ -161,5 +165,6 @@
             <img class="back" src="/public/assets/images/memory/qmark.png" />
         </div>
   </div>
+</div>
   </body>
 </html>
